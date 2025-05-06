@@ -4,84 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Especialistas Financieros</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Especialistas Financieros</h1>
     <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
-      <a href="#simulador">Simulador</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#testimonios">Testimonios</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Soluciones Financieras Exclusivas</h2>
-    <p>Asesoría de alto nivel en crédito hipotecario, vehículo, libre inversión y más.</p>
-    <a href="#contacto" class="btn">Solicitar Asesoría</a>
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p>Somos tu aliado experto en soluciones financieras. Conéctate con las mejores opciones de crédito, respaldo profesional y atención personalizada.</p>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="grid">
-      <div class="card">Crédito Hipotecario</div>
-      <div class="card">Crédito Vehicular</div>
-      <div class="card">Libre Inversión</div>
-      <div class="card">Colombianos en el Exterior</div>
-      <div class="card">Protección Patrimonial</div>
+  <section id="nosotros">
+    <h2>¿Quién es Gustavo Lopera?</h2>
+    <div class="perfil">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGxJRupjeTIzQ/profile-displayphoto-shrink_800_800/B4EZamZUO3GYAc-/0/1746548376941?e=1752105600&v=beta&t=hQVgK8NTbUs-cThnFF_yPHNaKFssP-DGOZRlzTLd4Tw" alt="Gustavo Lopera" />
+      <p>Gustavo Lopera es un asesor experto en banca y finanzas con más de 15 años de experiencia. Ha ayudado a cientos de personas y empresas a tomar decisiones acertadas en su camino financiero, siempre con compromiso, ética y profesionalismo.</p>
     </div>
   </section>
 
-  <section id="simulador">
-    <h2>Simulador de Crédito</h2>
-    <form id="simuladorForm">
-      <input type="number" id="monto" placeholder="Monto del crédito" required>
-      <input type="number" id="plazo" placeholder="Plazo en meses" required>
-      <input type="number" id="interes" placeholder="Tasa de interés anual (%)" required>
-      <button type="button" onclick="calcular()">Calcular</button>
-      <p id="resultado"></p>
-    </form>
+  <section id="servicios">
+    <h2>Servicios Financieros</h2>
+    <div class="servicio">
+      <h3>Crédito Hipotecario</h3>
+      <p>Accede a líneas de crédito hipotecario con las mejores tasas del mercado. Ideal para compra de vivienda nueva o usada.</p>
+      <a class="btn" href="https://wa.me/573001234567?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+Cr%C3%A9dito+Hipotecario" target="_blank">Solicitar información</a>
+    </div>
+    <!-- Repite bloques similares para otros servicios -->
   </section>
 
-  <section id="proceso">
-    <h2>Proceso</h2>
-    <ol>
-      <li>Consulta inicial gratuita</li>
-      <li>Análisis de necesidades financieras</li>
-      <li>Propuesta personalizada</li>
-      <li>Gestión y seguimiento del crédito</li>
-    </ol>
-  </section>
-
-  <section id="testimonios">
-    <h2>Testimonios</h2>
-    <blockquote>
-      "Gracias a Especialistas Financieros, obtuve el crédito que necesitaba con las mejores condiciones." - Juan Pérez
-    </blockquote>
-    <blockquote>
-      "Profesionales comprometidos y eficientes. Altamente recomendados." - María Gómez
-    </blockquote>
+  <section id="alianzas">
+    <h2>Bancos aliados</h2>
+    <div class="carousel">
+      <!-- Agrega las imágenes de los bancos aquí -->
+    </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <textarea placeholder="Mensaje" required></textarea>
+    <form action="https://formspree.io/f/mwpoonwv" method="POST" id="form-contacto">
+      <input type="text" name="nombre" placeholder="Tu Nombre" required />
+      <input type="email" name="email" placeholder="Tu Email" required />
+      <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
       <button type="submit">Enviar</button>
+      <p id="mensaje-confirmacion">¡Gracias! Tu mensaje ha sido enviado.</p>
     </form>
   </section>
 
+  <div class="whatsapp">
+    <a href="https://wa.me/573001234567" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+  </div>
+
   <footer>
-    <p>© 2025 Especialistas Financieros. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Gustavo Lopera - Especialistas Financieros</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>
