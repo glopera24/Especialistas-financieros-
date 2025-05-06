@@ -1,4 +1,3 @@
-
 function calcular() {
   const monto = parseFloat(document.getElementById('monto').value);
   const plazo = parseInt(document.getElementById('plazo').value);
