@@ -1,75 +1,61 @@
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #111;
-  color: #fff;
+/* Contenedor base */
+.container { max-width:1200px; margin:0 auto; padding:0 1rem; }
+
+/* Header */
+.header {
+  position:sticky; top:0; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100;
+}
+.header__inner { display:flex; justify-content:space-between; align-items:center; height:4rem; }
+.logo { font-size:1.5rem; color:#003366; }
+.nav a { margin:0 1rem; color:#003366; text-decoration:none; font-weight:600; }
+.nav a:hover { color:#0055a5; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, #003366, #0055a5); color:#fff; text-align:center; padding:6rem 1rem; }
+.hero__inner h2 { font-size:2.5rem; margin-bottom:1rem; }
+.hero__inner p  { font-size:1.125rem; margin-bottom:2rem; }
+.hero__inner button { background:#ffc107; color:#003366; padding:.75rem 1.5rem; font-weight:600; border:none; border-radius:5px; }
+
+/* Grid Servicios (CSS Grid) * / 
+.servicios__grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
+  gap:1.5rem;
+} /* :contentReference[oaicite:0]{index=0} */
+
+/* Cards */
+.card {
+  background:#fff; color:#003366; padding:1.5rem; border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05); text-align:center;
+}
+.card h3 { margin-bottom:.75rem; }
+.btn { display:inline-block; margin-top:1rem; background:#003366; color:#fff; padding:.5rem 1rem; border-radius:5px; }
+
+/* Simulador */
+.simulador label { display:block; margin-bottom:.5rem; font-weight:600; }
+.simulador input { width:100%; padding:.5rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:4px; }
+#resultado-simulador { margin-top:1rem; font-size:1.125rem; color:#007a33; }
+
+/* Carrusel (Flex + animation) */
+.carousel { overflow:hidden; padding:1rem 0; }
+.carousel-track {
+  display:flex; gap:1rem; animation: scroll 20s linear infinite;
+}
+.carousel-track img {
+  flex-shrink:0; width:80px; height:80px; object-fit:contain;
+}
+@keyframes scroll {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
 }
 
-header, footer {
-  background-color: #0f0f0f;
-  padding: 20px;
-  text-align: center;
+/* Form Contacto */
+#form-contacto { background:#f1f1f1; padding:2rem; border-radius:8px; }
+#form-contacto input,
+#form-contacto textarea {
+  width:100%; margin-bottom:1rem; padding:.75rem; border:1px solid #ccc; border-radius:4px;
 }
+#mensaje-confirmacion { display:none; color:#28a745; font-weight:600; }
 
-nav a {
-  margin: 0 15px;
-  color: #0ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-h2 {
-  color: #0ff;
-  margin-bottom: 30px;
-}
-
-.perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.perfil img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-.servicios {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.producto {
-  background: #1a1a1a;
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: scale(1.02);
-}
-
-.producto h3 {
-  color: #0ff;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0ff;
-  color: #000;
-  border: none
-::contentReference[oaicite:0]{index=0}
- 
+/* Footer */
+.footer { text-align:center; padding:2rem 0; background:#003366; color:#fff; }
