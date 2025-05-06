@@ -1,0 +1,79 @@
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #f4f4f4;
+  color: #111;
+}
+
+header {
+  background: #001f3f;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: #ffc107;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('https://source.unsplash.com/1600x600/?finance,business') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.btn {
+  background: #ffc107;
+  color: #111;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+form {
+  text-align: center;
+  padding: 2rem;
+}
+
+input, button {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #001f3f;
+  color: white;
+  font-weight: bold;
+}
+
+footer {
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Especialistas Financieros</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Especialistas Financieros</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Soluciones Financieras Exclusivas</h2>
+    <p>Asesoría de alto nivel en crédito hipotecario, vehículo, libre inversión y más.</p>
+    <a href="#contacto" class="btn">Solicitar Asesoría</a>
+  </section>
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card">Crédito Hipotecario</div>
+      <div class="card">Crédito Vehicular</div>
+      <div class="card">Libre Inversión</div>
+      <div class="card">Colombianos en el Exterior</div>
+      <div class="card">Protección Patrimonial</div>
+    </div>
+  </section>
+  <section id="simulador">
+    <h2>Simulador de Crédito</h2>
+    <form id="simuladorForm">
+      <input type="number" id="monto" placeholder="Monto del crédito" required>
+      <input type="number" id="plazo" placeholder="Plazo en meses" required>
+      <input type="number" id="interes" placeholder="Tasa de interés anual (%)" required>
+      <button type="button" onclick="calcular()">Calcular</button>
+      <p id="resultado"></p>
+    </form>
+  </section>
+  <footer>
+    <p>© 2025 Especialistas Financieros. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
