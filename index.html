@@ -14,8 +14,6 @@
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
-      <a href="#simulador">Simulador</a>
-      <a href="#alianzas">Alianzas</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -28,7 +26,7 @@
   <section id="nosotros">
     <h2>¿Quién es Gustavo Lopera?</h2>
     <div class="perfil">
-      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGxJRupjeTIzQ/profile-displayphoto-shrink_800_800/B4EZamZUO3GYAc-/0/1746548376941?e=1752105600&v=beta&t=hQVgK8NTbUs-cThnFF_yPHNaKFssP-DGOZRlzTLd4Tw" alt="Gustavo Lopera">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGxJRupjeTIzQ/profile-displayphoto-shrink_800_800/B4EZamZUO3GYAc-/0/1746548376941?e=1752105600&v=beta&t=hQVgK8NTbUs-cThnFF_yPHNaKFssP-DGOZRlzTLd4Tw" alt="Gustavo Lopera" />
       <p>Gustavo Lopera es un asesor experto en banca y finanzas con más de 15 años de experiencia. Ha ayudado a cientos de personas y empresas a tomar decisiones acertadas en su camino financiero, siempre con compromiso, ética y profesionalismo.</p>
     </div>
   </section>
@@ -64,35 +62,20 @@
     </div>
   </section>
 
-  <section id="simulador">
-    <h2>Simulador de Crédito</h2>
-    <form id="form-simulador">
-      <label for="monto">Monto del crédito:</label>
-      <input type="number" id="monto" required />
-
-      <label for="plazo">Plazo en meses:</label>
-      <input type="number" id="plazo" required />
-
-      <label for="tasa">Tasa de interés anual (%):</label>
-      <input type="number" id="tasa" step="0.01" required />
-
-      <button type="submit">Calcular</button>
-    </form>
-    <div id="resultado-simulador"></div>
-  </section>
-
   <section id="alianzas">
-    <h2>Bancos Aliados</h2>
+    <h2>Bancos aliados</h2>
     <div class="carousel">
-      <div class="slide"><img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia"></div>
-      <div class="slide"><img src="https://banco.itau.co/documents/106246/0/ITAUCorporate_LOGO_340X340.png/1fd3c96e-cdb4-ab85-dfc2-a23dcc30cced?version=1.0&t=1710893748213" alt="Itaú"></div>
-      <div class="slide"><img src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png" alt="Colpatria"></div>
-      <div class="slide"><img src="https://www.bancodeoccidente.com.co/banco-de-occidente/imagenes/header/logo-bocc-gptw.svg" alt="Banco de Occidente"></div>
-      <div class="slide"><img src="https://vehigrupo.com/images/logomain.png" alt="Vehigrupo"></div>
-      <div class="slide"><img src="https://www.bbva.com/wp-content/uploads/2019/04/Logo-BBVA-1024x576.jpg" alt="BBVA"></div>
-      <div class="slide"><img src="https://www.bancodebogota.com/wps/wcm/connect/banco-de-bogota/9f8ad5b7-dbe2-4a58-bd6e-42f174ed16e1/logo.png" alt="Banco de Bogotá"></div>
-      <div class="slide"><img src="https://www.bancavillas.com.co/wp-content/uploads/2023/03/Logo-Banco-Villas.png" alt="Banco Villas"></div>
-      <div class="slide"><img src="https://www.finesa.com.co/media/finesa_logo_categorizador_hrz_2c_pms.svg" alt="Finesa"></div>
+      <div class="carousel-track">
+        <img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia">
+        <img src="https://banco.itau.co/documents/106246/0/ITAUCorporate_LOGO_340X340.png/1fd3c96e-cdb4-ab85-dfc2-a23dcc30cced?version=1.0&t=1710893748213" alt="Itaú">
+        <img src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png" alt="Colpatria">
+        <img src="https://www.bancodeoccidente.com.co/banco-de-occidente/imagenes/header/logo-bocc-gptw.svg" alt="Banco de Occidente">
+        <img src="https://vehigrupo.com/images/logomain.png" alt="Vehigrupo">
+        <img src="https://www.bbva.com/wp-content/uploads/2019/04/Logo-BBVA-1024x576.jpg" alt="BBVA">
+        <img src="https://www.bancodebogota.com/wps/wcm/connect/banco-de-bogota/9f8ad5b7-dbe2-4a58-bd6e-42f174ed16e1/logo.png" alt="Banco de Bogotá">
+        <img src="https://www.bancavillas.com.co/wp-content/uploads/2023/03/Logo-Banco-Villas.png" alt="Banco Villas">
+        <img src="https://www.finesa.com.co/media/finesa_logo_categorizador_hrz_2c_pms.svg" alt="Finesa">
+      </div>
     </div>
   </section>
 
@@ -101,7 +84,7 @@
     <form action="https://formspree.io/f/mwpoonwv" method="POST" id="form-contacto">
       <input type="text" name="nombre" placeholder="Tu Nombre" required />
       <input type="email" name="email" placeholder="Tu Email" required />
-      <textarea name="mensaje" placeholder="Tu Mensaje" required rows="6"></textarea>
+      <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
       <button type="submit">Enviar</button>
       <p id="mensaje-confirmacion">¡Gracias! Tu mensaje ha sido enviado.</p>
     </form>
