@@ -1,0 +1,75 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  color: #1a1a1a;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.main-header {
+  background: #003366;
+  color: white;
+  padding: 15px 0;
+}
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x600/?bank,finance');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+.cta-button {
+  background: #ffc107;
+  padding: 12px 24px;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+.section {
+  padding: 50px 0;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-family: inherit;
+}
+.main-footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
