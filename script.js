@@ -1,28 +1,36 @@
 // Simulador
-document.getElementById('form-simulador').addEventListener('submit', e => {
-  e.preventDefault();
-  const M = +document.getElementById('monto').value;
-  const N = +document.getElementById('plazo').value;
-  const r = +document.getElementById('tasa').value/100/12;
-  const cuota = (M*r) / (1 - (1+r)**(-N));
-  document.getElementById('resultado-simulador').innerText =
-    `Cuota Mensual: $${cuota.toFixed(2)}`;
-});
+document
+  .getElementById('form-simulador')
+  .addEventListener('submit', function (e) {
+    e.preventDefault();
+    const monto = parseFloat(document.getElementById('monto').value);
+    const plazo = parseInt(document.getElementById('plazo').value);
+    const tasaAnual = parseFloat(document.getElementById('tasa').value);
 
-// Contact Form
-document.getElementById('form-contacto').addEventListener('submit', async e => {
-  e.preventDefault();
-  const form = e.target;
-  const res  = await fetch(form.action, {
-    method:'POST', body:new FormData(form), headers:{Accept:'application/json'}
+    const tasaMensual = tasaAnual / 12 / 100;
+    const cuota =
+      (monto * tasaMensual) /
+      (1 - Math.pow(1 + tasaMensual, -plazo));
+
+    document.getElementById(
+      'resultado-simulador'
+    ).innerHTML = `<h3>Cuota mensual estimada: ${cuota.toLocaleString(
+      'es-CO',
+      { style: 'currency', currency: 'COP' }
+    )}</h3>`;
   });
-  if(res.ok) {
-    form.reset();
-    document.getElementById('mensaje-confirmacion').style.display = 'block';
-  }
-});
 
-// Scroll helper
+// Contacto
+document
+  .getElementById('form-contacto')
+  .addEventListener('submit', function () {
+    document.getElementById('mensaje-confirmacion').style.display =
+      'block';
+  });
+
+// Scroll suave
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior:'smooth' });
+  document
+    .getElementById(id)
+    .scrollIntoView({ behavior: 'smooth' });
 }
