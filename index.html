@@ -2,104 +2,169 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Especialistas Financieros</title>
   <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
-  <header class="header">
-    <div class="container header__inner">
-      <h1 class="logo">Especialistas Financieros</h1>
-      <nav class="nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#simulador">Simulador</a>
-        <a href="#alianzas">Alianzas</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
+  <header>
+    <h1>Especialistas Financieros</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#alianzas">Bancos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <div class="container hero__inner">
-      <h2>Soluciones Financieras a tu Medida</h2>
-      <p>Asesoría experta, simuladores avanzados y respaldo profesional.</p>
-      <button onclick="scrollToSection('simulador')">Probar Simulador</button>
-    </div>
+    <h2>Tu camino financiero empieza aquí</h2>
+    <p>
+      Somos tu aliado experto en soluciones financieras. Conéctate con las
+      mejores opciones de crédito, respaldo profesional y atención
+      personalizada.
+    </p>
   </section>
 
-  <section id="servicios" class="container servicios">
-    <h2>Servicios</h2>
-    <div class="grid servicios__grid">
-      <!-- Crédito Hipotecario -->
+  <section id="servicios" class="section">
+    <h2>Nuestros Productos</h2>
+    <div class="cards">
       <div class="card">
+        <i class="fas fa-home fa-2x"></i>
         <h3>Crédito Hipotecario</h3>
-        <p>Accede a líneas hipotecarias con las mejores tasas.</p>
-        <a href="https://wa.me/573001234567?text=Hipotecario" class="btn">Solicitar</a>
+        <p>
+          Adquiere tu vivienda soñada con tasas competitivas y asesoría
+          personalizada.
+        </p>
       </div>
-      <!-- Crédito Vehicular -->
       <div class="card">
+        <i class="fas fa-car fa-2x"></i>
         <h3>Crédito Vehicular</h3>
-        <p>Financia tu vehículo rápido y fácil.</p>
-        <a href="https://wa.me/573001234567?text=Vehicular" class="btn">Solicitar</a>
+        <p>
+          Financia tu vehículo nuevo o usado con las mejores opciones del
+          mercado.
+        </p>
       </div>
-      <!-- Libre Inversión -->
       <div class="card">
-        <h3>Libre Inversión</h3>
-        <p>Liquidez para tus proyectos personales.</p>
-        <a href="https://wa.me/573001234567?text=Libre+Inversión" class="btn">Solicitar</a>
+        <i class="fas fa-globe fa-2x"></i>
+        <h3>Residentes en el Exterior</h3>
+        <p>
+          Facilitamos créditos para colombianos que viven fuera del país.
+        </p>
       </div>
-      <!-- Colombianos en el Exterior -->
       <div class="card">
-        <h3>Colombianos en el Exterior</h3>
-        <p>Invertir en Colombia desde cualquier parte.</p>
-        <a href="https://wa.me/573001234567?text=Exterior" class="btn">Solicitar</a>
-      </div>
-      <!-- Protección Patrimonial -->
-      <div class="card">
-        <h3>Protección Patrimonial</h3>
-        <p>Estrategias para proteger tu capital.</p>
-        <a href="https://wa.me/573001234567?text=Patrimonial" class="btn">Solicitar</a>
+        <i class="fas fa-briefcase fa-2x"></i>
+        <h3>Crédito Comercial</h3>
+        <p>
+          Impulsa tu negocio con financiamiento a medida y condiciones
+          flexibles.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="simulador" class="container simulador">
+  <section id="alianzas" class="section">
+    <h2>Bancos Aliados</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Repite para cada logo -->
+        <img
+          src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES"
+          alt="Bancolombia"
+        />
+        <img
+          src="https://banco.itau.co/documents/106246/0/ITAUCorporate_LOGO_340X340.png"
+          alt="Itaú"
+        />
+        <img
+          src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png"
+          alt="Scotiabank"
+        />
+        <img
+          src="https://www.bancodeoccidente.com.co/banco-de-occidente/imagenes/header/logo-bocc-gptw.svg"
+          alt="Occidente"
+        />
+        <img
+          src="https://vehigrupo.com/images/logomain.png"
+          alt="Vehigrupo"
+        />
+        <img
+          src="https://www.bbva.com/wp-content/uploads/2019/04/Logo-BBVA-1024x576.jpg"
+          alt="BBVA"
+        />
+        <img
+          src="https://www.bancodebogota.com/wps/wcm/connect/banco-de-bogota/9f8ad5b7-dbe2-4a58-bd6e-42f174ed16e1/logo.png"
+          alt="Bogotá"
+        />
+        <img
+          src="https://www.bancavillas.com.co/wp-content/uploads/2023/03/Logo-Banco-Villas.png"
+          alt="Villas"
+        />
+        <img
+          src="https://www.finesa.com.co/media/finesa_logo_categorizador_hrz_2c_pms.svg"
+          alt="Finesa"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="section container simulador">
     <h2>Simulador de Crédito</h2>
     <form id="form-simulador">
-      <label>Monto (COP): <input type="number" id="monto" required></label>
-      <label>Plazo (meses): <input type="number" id="plazo" required></label>
-      <label>Interés anual (%): <input type="number" id="tasa" step="0.01" required></label>
+      <label>
+        Monto (COP):
+        <input type="number" id="monto" required />
+      </label>
+      <label>
+        Plazo (meses):
+        <input type="number" id="plazo" required />
+      </label>
+      <label>
+        Interés anual (%):
+        <input type="number" id="tasa" step="0.01" required />
+      </label>
       <button type="submit">Calcular</button>
     </form>
     <div id="resultado-simulador"></div>
   </section>
 
-  <section id="alianzas" class="container alianzas">
-    <h2>Bancos Aliados</h2>
-    <div class="carousel">
-      <div class="carousel-track">
-        <!-- Repite para cada logo: -->
-        <img src="https://www.bancolombia.com/.../logo.svg" alt="Bancolombia">
-        <img src="https://banco.itau.co/.../logo.png" alt="Itaú">
-        <img src="https://cdn.aglty.io/.../scotiabank.png" alt="Scotiabank">
-        <!-- ...otros logos -->
-      </div>
+  <section id="nosotros" class="section">
+    <h2>¿Quién es Gustavo Lopera?</h2>
+    <div class="perfil">
+      <img
+        src="https://media.licdn.com/dms/image/v2/D4E03AQGxJRupjeTIzQ/profile-displayphoto-shrink_800_800/B4EZamZUO3GYAc-/0/1746548376941?e=1752105600&v=beta&t=hQVgK8NTbUs-cThnFF_yPHNaKFssP-DGOZRlzTLd4Tw"
+        alt="Gustavo Lopera"
+      />
+      <p>
+        Gustavo Lopera es un asesor experto en banca y finanzas con más de
+        15 años de experiencia. Ha ayudado a cientos de personas y empresas
+        a tomar decisiones acertadas en su camino financiero, siempre con
+        compromiso, ética y profesionalismo.
+      </p>
     </div>
   </section>
 
-  <section id="contacto" class="container contacto">
+  <section id="contacto" class="section container contacto">
     <h2>Contacto</h2>
-    <form action="https://formspree.io/f/mwpoonwv" method="POST" id="form-contacto">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Correo" required>
+    <form
+      action="https://formspree.io/f/mwpoonwv"
+      method="POST"
+      id="form-contacto"
+    >
+      <input type="text" name="nombre" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo" required />
       <textarea name="mensaje" placeholder="Mensaje" required></textarea>
       <button type="submit">Enviar</button>
       <p id="mensaje-confirmacion">¡Gracias! Te contactaremos pronto.</p>
     </form>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 Especialistas Financieros</p>
+  <footer>
+    <p>&copy; 2025 Especialistas Financieros | Todos los derechos reservados</p>
   </footer>
 
   <script src="script.js"></script>
