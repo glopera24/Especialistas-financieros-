@@ -218,10 +218,15 @@ margin-top: 10px;
 footer {
   background-color: #003366;
   color: #fff;
-  text-align: center;
   padding: 20px;
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
+
 footer p {
   font-size: 0.9em;
   margin: 5px 0;
