@@ -2,158 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Especialistas Financieros</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="estilos.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
     <h1>Especialistas Financieros</h1>
-    <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#alianzas">Bancos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </header>
 
-  <!-- HERO RENOVADO -->
+  <nav>
+    <a href="#productos">Nuestros Productos</a>
+    <a href="#perfil">Quiénes Somos</a>
+    <a href="#simulador">Simulador</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
   <section class="hero">
-    <h2>Tu camino financiero empieza aquí</h2>
-    <p>
-      Te ofrecemos asesoría experta en créditos hipotecarios, vehiculares, de
-      libre destino y más, con atención especializada para residentes en el
-      exterior. Nuestro equipo te acompaña en cada paso, facilitando trámites y
-      brindándote soluciones personalizadas que se ajustan a tus necesidades
-      y situación particular. Además, te apoyamos con asesoría legal y fiscal
-      para que tu inversión sea segura y eficiente. Comienza hoy mismo a
-      construir tu futuro financiero con confianza y respaldo profesional.
-    </p>
+    <h2>Asesoría en Crédito Hipotecario y Financiamiento</h2>
+    <p>Te ayudamos a encontrar el mejor crédito según tus necesidades, ya sea en Colombia o desde el exterior.</p>
   </section>
 
-  <section id="servicios" class="section">
+  <section id="productos" class="section">
     <h2>Nuestros Productos</h2>
     <div class="cards">
+
       <div class="card">
-        <i class="fas fa-home fa-2x"></i>
+        <i>🏠</i>
         <h3>Crédito Hipotecario</h3>
-        <p>
-          Adquiere tu vivienda soñada con tasas competitivas y asesoría
-          personalizada.
-        </p>
+        <p>Compra, remodela o invierte.</p>
+        <div class="info-extra">
+          <ul>
+            <li>🏡 Compra de vivienda nueva o usada</li>
+            <li>🔁 Compra de cartera hipotecaria</li>
+            <li>🔧 Crédito para remodelaciones</li>
+            <li>💰 Libre inversión con garantía hipotecaria</li>
+          </ul>
+        </div>
       </div>
+
       <div class="card">
-        <i class="fas fa-car fa-2x"></i>
-        <h3>Crédito Vehicular</h3>
-        <p>
-          Financia tu vehículo nuevo o usado con las mejores opciones del
-          mercado.
-        </p>
+        <i>🚗</i>
+        <h3>Crédito de Vehículo</h3>
+        <p>Nuevo o usado, tú eliges.</p>
+        <div class="info-extra">
+          <ul>
+            <li>🚘 Financiación de vehículo nuevo</li>
+            <li>🚙 Compra de vehículo usado</li>
+            <li>♻️ Compra de cartera vehicular</li>
+            <li>💼 Crédito para leasing de vehículo</li>
+          </ul>
+        </div>
       </div>
+
       <div class="card">
-        <i class="fas fa-globe fa-2x"></i>
+        <i>🌍</i>
         <h3>Residentes en el Exterior</h3>
-        <p>
-          Facilitamos créditos para colombianos que viven fuera del país.
-        </p>
+        <p>Créditos sin estar en Colombia.</p>
+        <div class="info-extra">
+          <ul>
+            <li>🌐 Crédito hipotecario desde el exterior</li>
+            <li>🏠 Leasing habitacional</li>
+            <li>🇺🇸 Financiación para vivienda en Florida, EE.UU.</li>
+            <li>📑 Acompañamiento legal y financiero</li>
+          </ul>
+        </div>
       </div>
+
       <div class="card">
-        <i class="fas fa-briefcase fa-2x"></i>
+        <i>🏢</i>
         <h3>Crédito Comercial</h3>
-        <p>
-          Impulsa tu negocio con financiamiento a medida y condiciones
-          flexibles.
-        </p>
+        <p>Impulsa tu empresa.</p>
+        <div class="info-extra">
+          <ul>
+            <li>🏭 Crédito para empresas</li>
+            <li>📈 Capital de trabajo</li>
+            <li>🏗️ Compra de maquinaria o inmuebles</li>
+            <li>💳 Cupos rotativos empresariales</li>
+          </ul>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <section id="alianzas" class="section">
-    <h2>Bancos Aliados</h2>
-    <div class="carousel">
-      <div class="carousel-track">
-        <!-- logos iguales de tamaño -->
-        <img src="https://www.bancolombia.com/.../logo.svg" alt="Bancolombia" />
-        <img src="https://banco.itau.co/.../logo.png" alt="Itaú" />
-        <img src="https://cdn.aglty.io/.../scotiabank.png" alt="Scotiabank" />
-        <img src="https://.../logo-occidente.svg" alt="Occidente" />
-        <img src="https://vehigrupo.com/.../logo.png" alt="Vehigrupo" />
-        <img src="https://.../bbva.jpg" alt="BBVA" />
-        <img src="https://.../bogota.png" alt="Bogotá" />
-        <img src="https://.../villas.png" alt="Villas" />
-        <img src="https://.../finesa.svg" alt="Finesa" />
-      </div>
-    </div>
+  <section id="perfil" class="section perfil">
+    <h2>Quién es Gustavo Lopera</h2>
+    <img src="gustavo.jpg" alt="Gustavo Lopera">
+    <p>Asesor financiero con más de 15 años de experiencia ayudando a familias y empresas a cumplir sus sueños mediante soluciones de crédito y financiamiento.</p>
   </section>
 
-  <section id="simulador" class="section container simulador">
+  <section id="simulador" class="section simulador">
     <h2>Simulador de Crédito</h2>
     <form id="form-simulador">
-      <label>
-        Monto (COP):
-        <input type="number" id="monto" required />
-      </label>
-      <label>
-        Plazo (meses):
-        <input type="number" id="plazo" required />
-      </label>
-      <label>
-        Tasa anual (%):
-        <input type="number" id="tasa" step="0.01" required />
-      </label>
+      <label for="monto">Monto del préstamo:</label>
+      <input type="number" id="monto" required />
+
+      <label for="plazo">Plazo en meses:</label>
+      <input type="number" id="plazo" required />
+
+      <label for="tasa">Tasa de interés anual (%):</label>
+      <input type="number" id="tasa" required />
+
       <button type="submit">Calcular</button>
     </form>
     <div id="resultado-simulador"></div>
   </section>
 
-  <section id="nosotros" class="section">
-    <h2>¿Quién es Gustavo Lopera?</h2>
-    <div class="perfil">
-      <img
-        src="https://media.licdn.com/.../profile.jpg"
-        alt="Gustavo Lopera"
-      />
-      <p>
-        Gustavo Lopera es un asesor experto en banca y finanzas con más de
-        15 años de experiencia. Ha ayudado a cientos de personas y empresas
-        a tomar decisiones acertadas en su camino financiero, siempre con
-        compromiso, ética y profesionalismo.
-      </p>
-    </div>
-  </section>
-
-  <section id="contacto" class="section container contacto">
-    <h2>Contacto</h2>
-    <form
-      action="https://formspree.io/f/mwpoonwv"
-      method="POST"
-      id="form-contacto"
-    >
-      <input type="text" name="nombre" placeholder="Nombre" required />
-      <input
-        type="tel"
-        name="telefono"
-        placeholder="Teléfono"
-        required
-      />
-      <input type="email" name="email" placeholder="Correo" required />
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+  <section id="contacto" class="section contacto">
+    <h2>Contáctanos</h2>
+    <form id="form-contacto" action="https://formspree.io/f/tu-form-id" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <input type="tel" name="telefono" placeholder="Teléfono" />
+      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
-      <p id="mensaje-confirmacion">¡Gracias! Te contactaremos pronto.</p>
     </form>
+    <div id="mensaje-confirmacion">Gracias por tu mensaje. Te responderemos pronto.</div>
   </section>
 
   <footer>
-    <p>
-      📱 318 326 9385 ✉️ comercial@especialistasfinancieros.com
-    </p>
-    <p>&copy; 2025 Especialistas Financieros | Todos los derechos reservados</p>
+    <p>&copy; 2025 Especialistas Financieros. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
