@@ -1,17 +1,16 @@
-// scroll suave a secciones (si llamas scrollToSection desde botones)
+// scroll suave a secciones
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
 // Simulador de crédito
-document.getElementById('form-simulador').addEventListener('submit', function(e) {
+document.getElementById('form-simulador')?.addEventListener('submit', function(e) {
   e.preventDefault();
-  
-  const monto    = parseFloat(document.getElementById('monto').value);
-  const plazo    = parseInt  (document.getElementById('plazo').value, 10);
-  const tasaAnual= parseFloat(document.getElementById('tasa').value);
 
-  // validar entradas
+  const monto     = parseFloat(document.getElementById('monto').value);
+  const plazo     = parseInt(document.getElementById('plazo').value, 10);
+  const tasaAnual = parseFloat(document.getElementById('tasa').value);
+
   if (isNaN(monto) || isNaN(plazo) || isNaN(tasaAnual) || monto <= 0 || plazo <= 0) {
     document.getElementById('resultado-simulador').textContent = 'Por favor ingresa valores válidos.';
     return;
@@ -19,7 +18,7 @@ document.getElementById('form-simulador').addEventListener('submit', function(e)
 
   const tasaMensual = tasaAnual / 12 / 100;
   const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazo));
-  
+
   document.getElementById('resultado-simulador').innerHTML =
     `<h3>Cuota mensual estimada: ${cuota.toLocaleString('es-CO', {
       style: 'currency',
@@ -27,18 +26,19 @@ document.getElementById('form-simulador').addEventListener('submit', function(e)
     })}</h3>`;
 });
 
-// Animar carrusel infinito (reinicia posición al llegar al final)
+// Animar carrusel (si existiera)
 const track = document.querySelector('.carousel-track');
-track.addEventListener('animationiteration', () => {
-  // nada adicional, la keyframe ya lo repite
+track?.addEventListener('animationiteration', () => {
+  // Loop automático
 });
 
-// Formulario de contacto con confirmación
-document.getElementById('form-contacto').addEventListener('submit', function(e) {
+// Formulario de contacto
+const formContacto = document.getElementById('form-contacto');
+formContacto?.addEventListener('submit', function(e) {
   e.preventDefault();
-  
-  const form     = e.target;
-  const mensaje  = document.getElementById('mensaje-confirmacion');
+
+  const form    = e.target;
+  const mensaje = document.getElementById('mensaje-confirmacion');
 
   fetch(form.action, {
     method:  form.method,
