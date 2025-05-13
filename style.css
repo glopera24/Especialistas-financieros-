@@ -216,16 +216,17 @@ margin-top: 10px;
 
 /\* Footer \*/
 footer {
-background-color: #003366;
-color: #fff;
-text-align: center;
-padding: 20px;
-margin-top: 40px;
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
 footer p {
-font-size: 0.9em;
-margin: 5px 0;
+  font-size: 0.9em;
+  margin: 5px 0;
 }
+
 
 /\* Responsive \*/
 @media (max-width: 768px) {
