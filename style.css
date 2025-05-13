@@ -118,7 +118,7 @@ nav a\:hover {
 .carousel-track {
   display: flex;
   gap: 30px;
-  animation: scroll 40s linear infinite;
+  animation: scroll 28s linear infinite;
 }
 
 .carousel-track img {
