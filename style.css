@@ -245,4 +245,34 @@ footer p {
     height: 40px;
     margin: 0 15px;
   }
+  /* Eslogan motivacional */
+.eslogan {
+  background: #e6f0ff;
+  color: #003366;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.6em;
+  font-weight: bold;
+  font-style: italic;
+  border-top: 4px solid #003366;
+  border-bottom: 4px solid #003366;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  padding: 15px;
+  border-radius: 50%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
 }
