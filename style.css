@@ -72,7 +72,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* Cards de productos */
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,6 +86,8 @@ nav a:hover {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -102,128 +104,31 @@ nav a:hover {
   line-height: 1.4;
 }
 
-/* Carrusel de alianzas */
-.carousel {
-  overflow: hidden;
-  background: #f0f8ff;
-  border-radius: 12px;
-  padding: 20px 0;
+.info-extra {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #e6f0ff;
+  padding: 15px;
+  text-align: left;
+  transition: top 0.4s ease;
+  border-top: 1px solid #003366;
 }
-.carousel-track {
-  display: flex;
-  gap: 30px;
-  animation: scroll 30s linear infinite;
+.card:hover .info-extra {
+  top: 100%;
+  animation: slideDown 0.4s forwards;
 }
-.carousel-track img {
-  height: 60px;
-  object-fit: contain;
-  max-width: 120px;
-}
-@keyframes scroll {
+
+@keyframes slideDown {
   0% {
-    transform: translateX(0);
+    top: 100%;
+    opacity: 0;
   }
   100% {
-    transform: translateX(-50%);
+    top: 100%;
+    opacity: 1;
   }
-}
-
-/* Simulador de crédito */
-.simulador form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.simulador label {
-  font-weight: bold;
-}
-.simulador input,
-.simulador button {
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-.simulador button {
-  background-color: #003366;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.simulador button:hover {
-  background-color: #0059b3;
-}
-#resultado-simulador {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #007a33;
-}
-
-/* Perfil de Gustavo Lopera */
-.perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.perfil img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Formulario de contacto */
-.contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.contacto input,
-.contacto textarea,
-.contacto button {
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-.contacto input[type="tel"] {
-  /* campo de teléfono */
-}
-.contacto button {
-  background-color: #003366;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.contacto button:hover {
-  background-color: #0059b3;
-}
-#mensaje-confirmacion {
-  color: green;
-  display: none;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Footer */
-footer {
-  background-color: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-footer p {
-  font-size: 0.9em;
-  margin: 5px 0;
 }
 
 /* Responsive */
