@@ -294,3 +294,17 @@ footer p {
   width: auto;
   object-fit: contain;
 }
+
+/* Fondo con imagen para la sección HERO */
+.hero {
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 89, 179, 0.7); /* Capa de color encima de la imagen */
+  background-blend-mode: multiply; /* Mezcla color + imagen para mayor contraste */
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
