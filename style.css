@@ -114,19 +114,16 @@ nav a\:hover {
   padding: 20px 0;
   width: 100%; /* Asegura que ocupe todo el ancho */
 }
-
 .carousel-track {
   display: flex;
   gap: 30px;
   animation: scroll 28s linear infinite;
 }
-
 .carousel-track img {
   height: 60px;
   object-fit: contain;
   max-width: 120px;
 }
-
 /* Animación de desplazamiento desde derecha a izquierda */
 @keyframes scroll {
   0% {
@@ -250,7 +247,9 @@ footer p {
     height: 40px;
     margin: 0 15px;
   }
-  /* Eslogan motivacional */
+}
+
+/* Eslogan motivacional */
 .eslogan {
   background: #e6f0ff;
   color: #003366;
@@ -280,4 +279,18 @@ footer p {
 }
 .whatsapp-float:hover {
   background-color: #1ebe5d;
+}
+
+/* Logo y favicon dentro del sitio */
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
 }
