@@ -79,7 +79,7 @@ nav a\:hover {
 /* Cards de productos */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 .card {
@@ -130,10 +130,10 @@ nav a\:hover {
 /* Animación de desplazamiento desde derecha a izquierda */
 @keyframes scroll {
   0% {
-    transform: translateX(100%); /* Comienza desde el 100% (derecha) */
+    transform: translateX(70%); /* Comienza desde el 100% (derecha) */
   }
   100% {
-    transform: translateX(-100%); /* Termina en el -100% (izquierda) */
+    transform: translateX(-70%); /* Termina en el -100% (izquierda) */
   }
 }
 
