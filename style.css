@@ -112,7 +112,7 @@ nav a\:hover {
   background: #f0f8ff;
   border-radius: 12px;
   padding: 20px 0;
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  width: 75%; /* Asegura que ocupe todo el ancho */
 }
 
 .carousel-track {
