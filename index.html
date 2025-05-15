@@ -2,118 +2,113 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Especialistas Financieros</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.png" type="image/png">
-  <script src="https://kit.fontawesome.com/a2e0c6b15b.js" crossorigin="anonymous"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="logo-titulo">
-      <img src="favicon.png" alt="Logo" class="logo" />
-      <h1>Especialistas Financieros</h1>
+    <div class="container header-container">
+      <div class="logo-titulo">
+        <img src="logo.png" alt="Logo Especialistas Financieros" class="logo" />
+        <h1>Especialistas Financieros</h1>
+      </div>
+      <nav>
+        <a href="#inicio" onclick="scrollToSection('inicio')">Inicio</a>
+        <a href="#simulador" onclick="scrollToSection('simulador')">Simulador</a>
+        <a href="#alianzas" onclick="scrollToSection('alianzas')">Alianzas</a>
+        <a href="#contacto" onclick="scrollToSection('contacto')">Contacto</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#productos" onclick="scrollToSection('productos')">Productos</a>
-      <a href="#simulador" onclick="scrollToSection('simulador')">Simulador</a>
-      <a href="#gustavo" onclick="scrollToSection('gustavo')">Perfil</a>
-      <a href="#contacto" onclick="scrollToSection('contacto')">Contacto</a>
-    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Tu futuro financiero empieza aquí</h2>
-    <p>Soluciones a la medida para tus metas económicas, con respaldo y experiencia profesional.</p>
-    <a href="#simulador" class="boton-cta" onclick="scrollToSection('simulador')">Simula tu crédito</a>
-  </section>
-
-  <!-- Eslogan -->
-  <div class="eslogan">“Haz que tu dinero trabaje para ti”</div>
-
-  <!-- Productos -->
-  <section class="section" id="productos">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards">
-      <div class="card">
-        <i class="fas fa-chart-line fa-2x"></i>
-        <h3>Asesoría financiera</h3>
-        <p>Orientación profesional en decisiones económicas y patrimoniales.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hand-holding-usd fa-2x"></i>
-        <h3>Créditos a tu medida</h3>
-        <p>Accede a soluciones de financiamiento según tus necesidades.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-shield-alt fa-2x"></i>
-        <h3>Protección patrimonial</h3>
-        <p>Garantiza tu bienestar y el de tu familia con planes personalizados.</p>
-      </div>
+  <section id="inicio" class="hero">
+    <div class="container">
+      <h2>Tu aliado financiero confiable</h2>
+      <p>
+        Te ayudamos a tomar las mejores decisiones con análisis claros, 
+        asesoría experta y soluciones personalizadas.
+      </p>
     </div>
   </section>
 
-  <!-- Carrusel de alianzas -->
-  <section class="carousel">
-    <div class="carousel-track">
-      <img src="logo1.png" alt="Alianza 1" />
-      <img src="logo2.png" alt="Alianza 2" />
-      <img src="logo3.png" alt="Alianza 3" />
-      <img src="logo4.png" alt="Alianza 4" />
-    </div>
-  </section>
-
-  <!-- Simulador -->
-  <section class="section simulador" id="simulador">
-    <h2>Simula tu crédito</h2>
+  <section id="simulador" class="section simulador">
+    <h2>Simulador de Crédito</h2>
     <form id="form-simulador">
-      <label for="monto">Monto del crédito (COP):</label>
-      <input type="number" id="monto" required />
+      <label for="monto">Monto del préstamo (COP):</label>
+      <input type="number" id="monto" name="monto" min="100000" required />
 
-      <label for="plazo">Plazo (meses):</label>
-      <input type="number" id="plazo" required />
+      <label for="plazo">Plazo en meses:</label>
+      <input type="number" id="plazo" name="plazo" min="1" max="360" required />
 
-      <label for="tasa">Tasa de interés anual (%):</label>
-      <input type="number" id="tasa" required />
+      <label for="tasa">Tasa anual (%):</label>
+      <input
+        type="number"
+        id="tasa"
+        name="tasa"
+        step="0.01"
+        min="0.1"
+        max="100"
+        required
+      />
 
       <button type="submit">Calcular cuota</button>
     </form>
     <div id="resultado-simulador"></div>
   </section>
 
-  <!-- Perfil -->
-  <section class="section perfil" id="gustavo">
-    <img src="gustavo.jpg" alt="Gustavo Lopera" />
-    <h2>Gustavo Lopera</h2>
-    <p>Asesor financiero con más de 15 años de experiencia ayudando a cientos de personas a lograr su tranquilidad económica.</p>
+  <section id="alianzas" class="section alianzas">
+    <h2>Alianzas Estratégicas</h2>
+    <div class="carousel">
+      <div class="carousel-track" aria-label="Logos de bancos aliados">
+        <img src="logos/banco1.png" alt="Banco 1" />
+        <img src="logos/banco2.png" alt="Banco 2" />
+        <img src="logos/banco3.png" alt="Banco 3" />
+        <img src="logos/banco4.png" alt="Banco 4" />
+        <img src="logos/banco5.png" alt="Banco 5" />
+        <img src="logos/banco6.png" alt="Banco 6" />
+      </div>
+    </div>
   </section>
 
-  <!-- Contacto -->
-  <section class="section contacto" id="contacto">
-    <h2>Contáctanos</h2>
-    <form id="form-contacto" action="https://formspree.io/f/xyz" method="POST">
+  <section class="eslogan">
+    <p>
+      "Conocimiento financiero que impulsa tu éxito."
+    </p>
+  </section>
+
+  <section id="contacto" class="section contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto" action="https://formspree.io/f/mwkajnwp" method="POST">
       <input type="text" name="nombre" placeholder="Tu nombre" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <input type="tel" name="telefono" placeholder="Tu teléfono (opcional)" />
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-      <div id="mensaje-confirmacion">¡Gracias! Tu mensaje ha sido enviado.</div>
+      <input type="tel" name="telefono" placeholder="Tu teléfono" />
+      <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
+    <div id="mensaje-confirmacion" role="alert" aria-live="polite">
+      ¡Gracias por contactarnos! Te responderemos pronto.
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Especialistas Financieros. Todos los derechos reservados.</p>
-    <p>Diseñado con estilo tipo Chase Bank</p>
-  </footer>
-
-  <!-- WhatsApp -->
-  <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="whatsapp-float">
+  <a
+    href="https://wa.me/573001234567"
+    class="whatsapp-float"
+    aria-label="Chat de WhatsApp"
+    target="_blank"
+    rel="noopener"
+  >
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <footer>
+    <p>© 2025 Especialistas Financieros. Todos los derechos reservados.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
