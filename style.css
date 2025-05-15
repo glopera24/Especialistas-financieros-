@@ -5,306 +5,324 @@
   padding: 0;
 }
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #002855;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 /* Header y navegación */
 header {
-  background-color: #003366;
+  background-color: #002855;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 header h1 {
-  text-align: center; /* CENTRADO */
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff;
+  user-select: none;
 }
 nav {
-  background-color: #0059b3;
   display: flex;
-  justify-content: center;
+  gap: 28px;
   flex-wrap: wrap;
-  padding: 10px 0;
 }
 nav a {
   color: #fff;
+  font-weight: 600;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
 }
-nav a\:hover {
-  text-decoration: underline;
+nav a:hover,
+nav a:focus {
+  background-color: #0048b5;
+  outline: none;
+  color: #e0f0ff;
+  text-decoration: none;
 }
 
 /* Hero */
 .hero {
-  background-color: #0059b3;
+  position: relative;
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 72, 181, 0.75);
+  background-blend-mode: multiply;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 140px 20px 100px;
+  user-select: none;
 }
 .hero h2 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  text-align: center; /* CENTRADO */
+  font-size: 3.6rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 .hero p {
-  font-size: 1.2em;
-  max-width: 800px;
+  font-size: 1.4rem;
+  max-width: 720px;
   margin: 0 auto;
+  font-weight: 500;
   line-height: 1.5;
 }
 
 /* Secciones generales */
 .section {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  padding: 60px 20px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.07);
+  margin: 48px auto;
+  padding: 56px 32px;
+  max-width: 900px;
 }
 .section h2 {
-  color: #003366;
-  font-size: 2em;
-  margin-bottom: 40px;
+  font-size: 2.4rem;
+  color: #002855;
+  font-weight: 700;
+  margin-bottom: 48px;
   text-align: center;
+  user-select: none;
 }
 
-/* Cards de productos */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.card {
-  background: #f0f8ff;
-  border-top: 4px solid #003366;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-.card\:hover {
-  transform: translateY(-5px);
-}
-.card i {
-  color: #003366;
-  margin-bottom: 10px;
-}
-.card h3 {
-  color: #003366;
-  margin: 10px 0;
-}
-.card p {
-  line-height: 1.4;
-}
-
-/* Carrusel de alianzas */
-.carousel {
-  overflow: hidden;
-  background: #f0f8ff;
-  border-radius: 12px;
-  padding: 20px 0;
-  width: 100%; /* Asegura que ocupe todo el ancho */
-}
-.carousel-track {
-  display: flex;
-  gap: 30px;
-  animation: scroll 28s linear infinite;
-}
-.carousel-track img {
-  height: 60px;
-  object-fit: contain;
-  max-width: 120px;
-}
-/* Animación de desplazamiento desde derecha a izquierda */
-@keyframes scroll {
-  0% {
-    transform: translateX(70%); /* Comienza desde el 100% (derecha) */
-  }
-  100% {
-    transform: translateX(-70%); /* Termina en el -100% (izquierda) */
-  }
-}
-
-/* Simulador de crédito */
+/* Simulador */
 .simulador form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
   max-width: 600px;
   margin: 0 auto;
 }
 .simulador label {
-  font-weight: bold;
+  grid-column: span 2;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #002855;
+  user-select: none;
 }
 .simulador input,
 .simulador button {
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.8px solid #0048b5;
+  transition: box-shadow 0.3s ease;
+}
+.simulador input:focus {
+  outline: none;
+  border-color: #0079d3;
+  box-shadow: 0 0 8px 2px #0079d3aa;
 }
 .simulador button {
-  background-color: #003366;
-  color: #fff;
+  grid-column: span 2;
+  background-color: #0048b5;
+  color: white;
+  font-weight: 700;
   cursor: pointer;
+  border: none;
+  user-select: none;
   transition: background-color 0.3s ease;
 }
-.simulador button\:hover {
-  background-color: #0059b3;
+.simulador button:hover,
+.simulador button:focus {
+  background-color: #0066cc;
+  outline: none;
 }
 #resultado-simulador {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #007a33;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #008341;
+  user-select: none;
 }
 
-/* Perfil de Gustavo Lopera */
-.perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-  max-width: 800px;
+/* Alianzas - carrusel */
+.alianzas .carousel {
+  overflow: hidden;
+  background: #f0f5fa;
+  border-radius: 14px;
+  padding: 24px 0;
+  max-width: 900px;
   margin: 0 auto;
 }
-.perfil img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.perfil p {
-  text-align: center; /* CENTRADO */
-}
-
-/* Formulario de contacto */
-.contacto form {
+.carousel-track {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
+  gap: 40px;
+  animation: scroll 28s linear infinite;
+  user-select: none;
 }
-.contacto input,
-.contacto textarea,
-.contacto button {
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.carousel-track img {
+  height: 64px;
+  object-fit: contain;
+  max-width: 140px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.05));
+  transition: transform 0.3s ease;
 }
-.contacto input[type="tel"] {
+.carousel-track img:hover,
+.carousel-track img:focus {
+  transform: scale(1.1);
+  outline: none;
 }
-.contacto button {
-  background-color: #003366;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.contacto button\:hover {
-  background-color: #0059b3;
-}
-#mensaje-confirmacion {
-  color: green;
-  display: none;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Footer */
-footer {
-  background-color: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-footer p {
-  font-size: 0.9em;
-  margin: 5px 0;
-  text-align: center; /* CENTRADO */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 2em;
+@keyframes scroll {
+  0% {
+    transform: translateX(70%);
   }
-  .hero p {
-    font-size: 1em;
-  }
-  .carousel-track img {
-    height: 40px;
-    margin: 0 15px;
+  100% {
+    transform: translateX(-70%);
   }
 }
 
 /* Eslogan motivacional */
 .eslogan {
-  background: #e6f0ff;
-  color: #003366;
+  background: #e8f0fe;
+  color: #002855;
   text-align: center;
-  padding: 40px 20px;
-  font-size: 1.6em;
-  font-weight: bold;
+  padding: 48px 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-style: italic;
-  border-top: 4px solid #003366;
-  border-bottom: 4px solid #003366;
+  border-top: 5px solid #0048b5;
+  border-bottom: 5px solid #0048b5;
+  user-select: none;
 }
 
-/* Botón flotante de WhatsApp */
+/* Formulario de contacto */
+.contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacto input,
+.contacto textarea {
+  padding: 14px 16px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1.8px solid #0048b5;
+  resize: vertical;
+  transition: box-shadow 0.3s ease;
+}
+.contacto input:focus,
+.contacto textarea:focus {
+  outline: none;
+  border-color: #0079d3;
+  box-shadow: 0 0 10px 3px #0079d3aa;
+}
+.contacto button {
+  background-color: #0048b5;
+  color: #fff;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.contacto button:hover,
+.contacto button:focus {
+  background-color: #0066cc;
+  outline: none;
+}
+#mensaje-confirmacion {
+  color: #008341;
+  display: none;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 16px;
+  user-select: none;
+}
+
+/* Footer */
+footer {
+  background-color: #002855;
+  color: #e0e7ff;
+  text-align: center;
+  padding: 20px 0;
+  user-select: none;
+}
+footer p {
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+/* Botón flotante WhatsApp */
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
   color: white;
   font-size: 28px;
-  padding: 15px;
+  padding: 16px;
   border-radius: 50%;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: background-color 0.3s;
+  z-index: 9999;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   text-decoration: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
 }
-.whatsapp-float:hover {
+.whatsapp-float:hover,
+.whatsapp-float:focus {
   background-color: #1ebe5d;
+  outline: none;
 }
 
-/* Logo y favicon dentro del sitio */
-.logo-titulo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .simulador form {
+    grid-template-columns: 1fr;
+  }
+  .simulador label {
+    grid-column: span 1;
+  }
+  .carousel-track img {
+    height: 48px;
+    max-width: 100px;
+    gap: 20px;
+  }
 }
-.logo {
-  height: 56px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Fondo con imagen para la sección HERO */
-.hero {
-  background-image: url("banner.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 89, 179, 0.7); /* Capa de color encima de la imagen */
-  background-blend-mode: multiply; /* Mezcla color + imagen para mayor contraste */
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-}
-
