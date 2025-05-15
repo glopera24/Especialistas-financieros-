@@ -5,161 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Especialistas Financieros</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="apple-touch-icon" href="favicon.png" />
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script src="https://kit.fontawesome.com/a2e0c6b15b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="logo-titulo">
-      <img src="favicon.png" alt="Logo Especialistas Financieros" class="logo" />
+      <img src="favicon.png" alt="Logo" class="logo" />
       <h1>Especialistas Financieros</h1>
     </div>
     <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#alianzas">Bancos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#productos" onclick="scrollToSection('productos')">Productos</a>
+      <a href="#simulador" onclick="scrollToSection('simulador')">Simulador</a>
+      <a href="#gustavo" onclick="scrollToSection('gustavo')">Perfil</a>
+      <a href="#contacto" onclick="scrollToSection('contacto')">Contacto</a>
     </nav>
   </header>
 
-  <!-- HERO RENOVADO -->
+  <!-- Hero -->
   <section class="hero">
-    <h2>Tu camino financiero empieza aquí</h2>
-    <p>
-      Te ofrecemos asesoría experta en créditos hipotecarios, vehiculares, de
-      libre destino y más, con atención especializada para residentes en el
-      exterior. Nuestro equipo te acompaña en cada paso, facilitando trámites y
-      brindándote soluciones personalizadas que se ajustan a tus necesidades
-      y situación particular. Además, te apoyamos con asesoría legal y fiscal
-      para que tu inversión sea segura y eficiente. Comienza hoy mismo a
-      construir tu futuro financiero con confianza y respaldo profesional.
-    </p>
+    <h2>Tu futuro financiero empieza aquí</h2>
+    <p>Soluciones a la medida para tus metas económicas, con respaldo y experiencia profesional.</p>
+    <a href="#simulador" class="boton-cta" onclick="scrollToSection('simulador')">Simula tu crédito</a>
   </section>
 
-  <section id="servicios" class="section">
-    <h2>Nuestros Productos</h2>
+  <!-- Eslogan -->
+  <div class="eslogan">“Haz que tu dinero trabaje para ti”</div>
+
+  <!-- Productos -->
+  <section class="section" id="productos">
+    <h2>Nuestros Servicios</h2>
     <div class="cards">
       <div class="card">
-        <i class="fas fa-home fa-2x"></i>
-        <h3>Crédito Hipotecario</h3>
-        <p>
-          Adquiere tu vivienda soñada con tasas competitivas y asesoría
-          personalizada.
-        </p>
+        <i class="fas fa-chart-line fa-2x"></i>
+        <h3>Asesoría financiera</h3>
+        <p>Orientación profesional en decisiones económicas y patrimoniales.</p>
       </div>
       <div class="card">
-        <i class="fas fa-car fa-2x"></i>
-        <h3>Crédito Vehicular</h3>
-        <p>
-          Financia tu vehículo nuevo o usado con las mejores opciones del
-          mercado.
-        </p>
+        <i class="fas fa-hand-holding-usd fa-2x"></i>
+        <h3>Créditos a tu medida</h3>
+        <p>Accede a soluciones de financiamiento según tus necesidades.</p>
       </div>
       <div class="card">
-        <i class="fas fa-globe fa-2x"></i>
-        <h3>Residentes en el Exterior</h3>
-        <p>
-          Facilitamos créditos para colombianos que viven fuera del país.
-        </p>
-      </div>
-      <div class="card">
-        <i class="fas fa-briefcase fa-2x"></i>
-        <h3>Crédito Comercial</h3>
-        <p>
-          Impulsa tu negocio con financiamiento a medida y condiciones
-          flexibles.
-        </p>
+        <i class="fas fa-shield-alt fa-2x"></i>
+        <h3>Protección patrimonial</h3>
+        <p>Garantiza tu bienestar y el de tu familia con planes personalizados.</p>
       </div>
     </div>
   </section>
 
-  <section id="alianzas" class="section">
-    <h2>Bancos Aliados</h2>
-    <div class="carousel">
-      <div class="carousel-track">
-        <img src="https://i.pinimg.com/474x/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.jpg" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ita%C3%BA_Unibanco_logo_2023.svg/2048px-Ita%C3%BA_Unibanco_logo_2023.svg.png" />
-        <img src="https://www.valoraanalitik.com/wp-content/uploads/2021/12/Scotiabank-colpatria.jpg" />
-        <img src="https://www.bancodeoccidente.com.co/BuscadordePuntosOccidente/images/occidenteIconBancoCuadrado.png" />
-        <img src="https://suzuki.com.co/sites/default/files/2024-02/LOGO%20VEHIGRUPO.png" />
-        <img src="https://play-lh.googleusercontent.com/m2L9SbuInUaaTiJfW163NqXDLh_ilqXERaZIpYEyTYvO51YwmjtrRn5doyVOa-YV2w" />
-        <img src="https://play-lh.googleusercontent.com/zBd7Q4x1OcQbBubjxwrCYzj2bJx8-tpF045EkxWgSDzQ33wOLhoqiHJp0ovSzTdCI54" />
-        <img src="https://play-lh.googleusercontent.com/pyqnUp4ZXvISJXjMCBRybMsyEKZd-tqJa00LzmHaCf7LElBtY_3yYXqImdb6k-b5IHmT" />
-        <img src="https://inelco.com.co/wp-content/uploads/2024/06/finesa-logo-categorizador-hrz-color-corto.png" />
-      </div>
+  <!-- Carrusel de alianzas -->
+  <section class="carousel">
+    <div class="carousel-track">
+      <img src="logo1.png" alt="Alianza 1" />
+      <img src="logo2.png" alt="Alianza 2" />
+      <img src="logo3.png" alt="Alianza 3" />
+      <img src="logo4.png" alt="Alianza 4" />
     </div>
   </section>
 
-  <section id="simulador" class="section container simulador">
-    <h2>Simulador de Crédito</h2>
+  <!-- Simulador -->
+  <section class="section simulador" id="simulador">
+    <h2>Simula tu crédito</h2>
     <form id="form-simulador">
-      <label>
-        Monto (COP):
-        <input type="number" id="monto" required />
-      </label>
-      <label>
-        Plazo (meses):
-        <input type="number" id="plazo" required />
-      </label>
-      <label>
-        Tasa anual (%):
-        <input type="number" id="tasa" step="0.01" required />
-      </label>
-      <button type="submit">Calcular</button>
+      <label for="monto">Monto del crédito (COP):</label>
+      <input type="number" id="monto" required />
+
+      <label for="plazo">Plazo (meses):</label>
+      <input type="number" id="plazo" required />
+
+      <label for="tasa">Tasa de interés anual (%):</label>
+      <input type="number" id="tasa" required />
+
+      <button type="submit">Calcular cuota</button>
     </form>
     <div id="resultado-simulador"></div>
   </section>
 
-  <section id="nosotros" class="section">
-    <h2>¿Quienes somos?</h2>
-    <div class="perfil">
-      <img
-        src=https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/497629075_1239978097753276_7374253345382436966_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=-13GZzhUNbYQ7kNvwGN4TKE&_nc_oc=AdlwQNWNRxJKR0VU3jzWQ9BCHFuypx8C9SW3SrSGwf1QT2P7PKKqz5l1rFXg7kZnxxyn6WiI-zOvZfYWZnogU7RH&_nc_zt=23&_nc_ht=scontent.fbog2-4.fna&_nc_gid=TvSTYMlJmhGwdpwlvNcbBQ&oh=00_AfI0q9p9o2f_boRoms_d2EDqTxOrkqsaQfrKgN-mwh6_Ag&oe=682BEF03"
-        alt="Gustavo Lopera"
-      />
-      <p>
-      Somos una firma especializada en banca y finanzas, con amplia trayectoria en el sector financiero.
-      Hemos acompañado a cientos de personas y empresas a tomar decisiones acertadas en su camino financiero, brindando siempre un servicio basado en la ética, el compromiso y el profesionalismo.
-      </p>
-    </div>
+  <!-- Perfil -->
+  <section class="section perfil" id="gustavo">
+    <img src="gustavo.jpg" alt="Gustavo Lopera" />
+    <h2>Gustavo Lopera</h2>
+    <p>Asesor financiero con más de 15 años de experiencia ayudando a cientos de personas a lograr su tranquilidad económica.</p>
   </section>
 
-  <section id="contacto" class="section container contacto">
-    <h2>Contacto</h2>
-    <form
-      action="https://formspree.io/f/mwpoonwv"
-      method="POST"
-      id="form-contacto"
-    >
-      <input type="text" name="nombre" placeholder="Nombre" required />
-      <input
-        type="tel"
-        name="telefono"
-        placeholder="Teléfono"
-        required
-      />
-      <input type="email" name="email" placeholder="Correo" required />
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-      <p id="mensaje-confirmacion">¡Gracias! Te contactaremos pronto.</p>
+  <!-- Contacto -->
+  <section class="section contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="form-contacto" action="https://formspree.io/f/xyz" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="telefono" placeholder="Tu teléfono (opcional)" />
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+      <div id="mensaje-confirmacion">¡Gracias! Tu mensaje ha sido enviado.</div>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>
-      📱 318 326 9385 ✉️ comercial@especialistasfinancieros.com
-    </p>
-    <p>&copy; 2025 Especialistas Financieros | Todos los derechos reservados</p>
+    <p>&copy; 2025 Especialistas Financieros. Todos los derechos reservados.</p>
+    <p>Diseñado con estilo tipo Chase Bank</p>
   </footer>
 
+  <!-- WhatsApp -->
+  <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <script src="script.js"></script>
-  <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
 </body>
 </html>
