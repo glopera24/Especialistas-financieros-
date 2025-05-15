@@ -1,60 +1,62 @@
-// Scroll suave a secciones (desde navegación)
-function scrollToSection(id) {
-  const elem = document.getElementById(id);
-  if (elem) {
-    elem.scrollIntoView({ behavior: "smooth" });
-  }
-}
+document.addEventListener('DOMContentLoaded', function() {
+  // Animación al scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
 
-// Simulador de crédito
-document.getElementById("form-simulador").addEventListener("submit", function (e) {
-  e.preventDefault();
+  document.querySelectorAll('.card, .section').forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+  });
 
-  const monto = parseFloat(document.getElementById("monto").value);
-  const plazo = parseInt(document.getElementById("plazo").value, 10);
-  const tasaAnual = parseFloat(document.getElementById("tasa").value);
+  // Simulador de crédito
+  document.getElementById('form-simulador').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const monto = parseFloat(document.getElementById('monto').value);
+    const plazo = parseInt(document.getElementById('plazo').value, 10);
+    const tasaAnual = parseFloat(document.getElementById('tasa').value);
 
-  // Validar entradas
-  if (isNaN(monto) || isNaN(plazo) || isNaN(tasaAnual) || monto <= 0 || plazo <= 0) {
-    document.getElementById("resultado-simulador").textContent =
-      "Por favor ingresa valores válidos.";
-    return;
-  }
+    if (isNaN(monto) || isNaN(plazo) || isNaN(tasaAnual) || monto <= 0 || plazo <= 0) {
+      document.getElementById('resultado-simulador').textContent = 'Por favor ingresa valores válidos.';
+      return;
+    }
 
-  const tasaMensual = tasaAnual / 12 / 100;
-  const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazo));
-  const cuotaRedondeada = cuota.toFixed(2);
+    const tasaMensual = tasaAnual / 12 / 100;
+    const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazo));
+    
+    document.getElementById('resultado-simulador').innerHTML = `
+      <h3>Cuota mensual estimada: ${cuota.toLocaleString('es-CO', {
+        style: 'currency',
+        currency: 'COP'
+      })}</h3>
+    `;
+  });
 
-  document.getElementById("resultado-simulador").textContent =
-    `Tu cuota mensual aproximada es: $${cuotaRedondeada} COP`;
-});
+  // Formulario de contacto
+  document.getElementById('form-contacto').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const mensaje = document.getElementById('mensaje-confirmacion');
 
-// Envío formulario contacto con confirmación simple
-const formContacto = document.getElementById("form-contacto");
-const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
-
-formContacto.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(formContacto);
-  fetch(formContacto.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
       if (response.ok) {
-        mensajeConfirmacion.style.display = "block";
-        formContacto.reset();
-        setTimeout(() => {
-          mensajeConfirmacion.style.display = "none";
-        }, 8000);
-      } else {
-        alert("Hubo un problema enviando el mensaje, inténtalo de nuevo.");
+        form.reset();
+        mensaje.style.display = 'block';
+        setTimeout(() => mensaje.style.display = 'none', 3000);
       }
     })
-    .catch(() => {
-      alert("Hubo un problema enviando el mensaje, inténtalo de nuevo.");
-    });
+    .catch(() => alert('Error de red al enviar el formulario.'));
+  });
 });
