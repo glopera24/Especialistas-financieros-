@@ -1,103 +1,138 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Asesoría financiera de alto nivel - Especialistas Financieros.">
+  <link rel="icon" href="favicon.png" type="image/png">
   <title>Especialistas Financieros</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container header-content">
-      <div class="logo-titulo">
-        <img src="favicon.png" alt="Logo" class="logo">
-        <h1>Especialistas Financieros</h1>
-      </div>
-      <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#alianzas">Bancos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+  <header class="sticky">
+    <div class="logo-titulo">
+      <img src="favicon.png" alt="Logo" class="logo" />
+      <h1>Especialistas Financieros</h1>
     </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#productos">Productos</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h1>Tu camino financiero empieza aquí</h1>
-      <p>Te ofrecemos asesoría experta en créditos hipotecarios, vehiculares y más</p>
-      <a href="#contacto" class="cta-button">Solicitar Asesoría</a>
-    </div>
+    <h2>Transformamos tu futuro financiero</h2>
+    <p>Asesoría personalizada para cumplir tus metas económicas con herramientas innovadoras y un equipo humano experto.</p>
   </section>
 
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2>Nuestros Productos</h2>
-      <div class="grid-servicios">
-        <!-- Tus tarjetas originales aquí -->
+  <section class="section" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-handshake"></i>
+        <h3>Asesoría Personalizada</h3>
+        <p>Soluciones diseñadas a tu medida por expertos financieros.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Proyecciones y Planes</h3>
+        <p>Simulación y planificación estratégica para tus inversiones.</p>
       </div>
     </div>
   </section>
 
-  <section id="alianzas" class="section bancos-section">
-    <div class="container">
-      <h2>Bancos Aliados</h2>
-      <div class="marcas-container">
-        <!-- Tus imágenes de bancos originales aquí -->
+  <section class="section" id="productos">
+    <h2>Productos Financieros</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-piggy-bank"></i>
+        <h3>Créditos</h3>
+        <p>Accede a créditos con tasas preferenciales y trámites ágiles.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Seguros</h3>
+        <p>Protege tu futuro con seguros integrales y confiables.</p>
       </div>
     </div>
   </section>
 
-  <section id="simulador" class="section simulador-section">
-    <div class="container">
-      <h2>Simulador de Crédito</h2>
-      <div class="simulador-container">
-        <form id="form-simulador">
-          <!-- Tus campos de formulario originales aquí -->
-        </form>
-        <div id="resultado-simulador"></div>
+  <section class="section simulador" id="simulador">
+    <h2>Simulador de Crédito</h2>
+    <form id="formSimulador">
+      <label for="monto">Monto solicitado:</label>
+      <input type="number" id="monto" required />
+
+      <label for="plazo">Plazo (meses):</label>
+      <input type="number" id="plazo" required />
+
+      <label for="tasa">Tasa de interés (% anual):</label>
+      <input type="number" id="tasa" required />
+
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado-simulador"></div>
+  </section>
+
+  <section class="section" id="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="cards">
+      <div class="card">
+        <p>"Gracias a su asesoría pude ahorrar y planear mi retiro con confianza."</p>
+        <strong>- Laura G.</strong>
+      </div>
+      <div class="card">
+        <p>"Su atención personalizada y herramientas digitales son únicas."</p>
+        <strong>- Mario L.</strong>
       </div>
     </div>
   </section>
 
-  <section id="nosotros" class="section equipo-section">
-    <div class="container">
-      <h2>¿Quiénes Somos?</h2>
-      <div class="equipo-content">
-        <img src="https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/497629075_1239978097753276_73742534... alt="Gustavo Lopera" class="foto-perfil">
-        <div class="texto-equipo">
-          <p>Somos una firma especializada en banca y finanzas...</p>
-        </div>
+  <section class="section" id="proceso">
+    <h2>Nuestro Proceso</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>1. Diagnóstico</h3>
+        <p>Analizamos tu situación financiera y objetivos.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>2. Propuesta</h3>
+        <p>Te mostramos una solución detallada y clara.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-thumbs-up"></i>
+        <h3>3. Acompañamiento</h3>
+        <p>Implementamos y hacemos seguimiento contigo.</p>
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="section contacto-section">
-    <div class="container">
-      <h2>Contacto</h2>
-      <div class="contacto-container">
-        <form id="form-contacto">
-          <!-- Tus campos de contacto originales aquí -->
-        </form>
-        <div class="info-contacto">
-          <p>📱 318 326 9385</p>
-          <p>✉️ comercial@especialistasfinancieros.com</p>
-        </div>
-      </div>
-    </div>
+  <section class="section contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="formContacto">
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="tel" placeholder="Teléfono (opcional)" />
+      <textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
+      <button type="submit">Enviar</button>
+      <div id="mensaje-confirmacion">¡Gracias por contactarnos!</div>
+    </form>
   </section>
+
+  <div class="eslogan">Impulsamos tu bienestar financiero.</div>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Especialistas Financieros</p>
-    </div>
+    <p>&copy; 2025 Especialistas Financieros. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
-  <a href="https://wa.me/573183269385" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank">💬</a>
 </body>
 </html>
