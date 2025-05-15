@@ -1,70 +1,40 @@
-// Simulador de crédito
-document.addEventListener("DOMContentLoaded", () => {
-  const simuladorForm = document.getElementById("form-simulador");
-  const resultadoDiv = document.getElementById("resultado-simulador");
+document.addEventListener('DOMContentLoaded', () => {
+  // Simulador de crédito
+  const formSimulador = document.getElementById('form-simulador');
+  const resultadoSimulador = document.getElementById('resultado-simulador');
 
-  if (simuladorForm) {
-    simuladorForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const monto = parseFloat(document.getElementById("monto").value);
-      const interes = parseFloat(document.getElementById("interes").value);
-      const plazo = parseInt(document.getElementById("plazo").value);
+  formSimulador.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const monto = parseFloat(document.getElementById('monto').value);
+    const plazo = parseInt(document.getElementById('plazo').value);
+    const tasa = parseFloat(document.getElementById('tasa').value) / 100 / 12;
 
-      if (isNaN(monto) || isNaN(interes) || isNaN(plazo)) {
-        resultadoDiv.textContent = "Por favor ingresa valores válidos.";
-        resultadoDiv.style.color = "red";
-        return;
-      }
+    if (!monto || !plazo || !tasa) {
+      resultadoSimulador.innerHTML = '<p style="color:red">Todos los campos son obligatorios.</p>';
+      return;
+    }
 
-      const tasaMensual = interes / 100 / 12;
-      const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazo));
-      resultadoDiv.textContent = `Cuota mensual aproximada: $${cuota.toFixed(2)}`;
-      resultadoDiv.style.color = "#007a33";
-    });
-  }
+    const cuota = (monto * tasa) / (1 - Math.pow(1 + tasa, -plazo));
+    const total = cuota * plazo;
+
+    resultadoSimulador.innerHTML = `
+      <div class="resultado">
+        <p><strong>Cuota mensual:</strong> $${cuota.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+        <p><strong>Total a pagar:</strong> $${total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+      </div>
+    `;
+  });
 
   // Formulario de contacto
-  const formContacto = document.getElementById("form-contacto");
-  const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
+  const formContacto = document.getElementById('form-contacto');
+  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
 
   if (formContacto) {
-    formContacto.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById("nombre").value.trim();
-      const correo = document.getElementById("correo").value.trim();
-      const telefono = document.getElementById("telefono").value.trim();
-      const mensaje = document.getElementById("mensaje").value.trim();
-
-      if (!nombre || !correo || !telefono || !mensaje) {
-        alert("Por favor completa todos los campos.");
-        return;
-      }
-
-      mensajeConfirmacion.style.display = "block";
-      mensajeConfirmacion.textContent = "Gracias por contactarnos. Te responderemos pronto.";
-
-      formContacto.reset();
+    formContacto.addEventListener('submit', () => {
+      setTimeout(() => {
+        mensajeConfirmacion.style.display = 'block';
+        formContacto.reset();
+      }, 1000);
     });
   }
-
-  // Animaciones de scroll (opcional para mejorar UX)
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
-
-  const elementosAnimados = document.querySelectorAll(".section, .card, .perfil, .simulador, .contacto");
-  elementosAnimados.forEach(el => {
-    el.classList.add("oculto"); // Ocultos inicialmente con CSS
-    observer.observe(el);
-  });
 });
