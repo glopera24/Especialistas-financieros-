@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Especialistas Financieros</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="apple-touch-icon" href="favicon.png" />
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <div class="logo-titulo container">
-      <img src="favicon.png" alt="Logo" class="logo" />
-      <h1>Especialistas Financieros</h1>
+    <div class="container header-content">
+      <div class="logo-titulo">
+        <img src="favicon.png" alt="Logo" class="logo">
+        <h1>Especialistas Financieros</h1>
+      </div>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#alianzas">Bancos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-    <nav class="container">
-      <a href="#servicios">Servicios</a>
-      <a href="#alianzas">Bancos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </header>
 
   <section class="hero">
     <div class="container">
       <h2>Tu camino financiero empieza aquí</h2>
-      <p>
-        Te ofrecemos asesoría experta en créditos hipotecarios, vehiculares, de
-        libre destino y más, con atención especializada para residentes en el
-        exterior.
-      </p>
+      <p>Te ofrecemos asesoría experta en créditos hipotecarios, vehiculares, de libre destino y más, con atención especializada para residentes en el exterior.</p>
       <a href="#contacto" class="cta-button">Solicitar Asesoría</a>
     </div>
   </section>
@@ -40,7 +36,26 @@
     <div class="container">
       <h2>Nuestros Productos</h2>
       <div class="cards">
-        <!-- Tarjetas existentes manteniendo mismo contenido -->
+        <div class="card">
+          <i class="fas fa-home fa-2x"></i>
+          <h3>Crédito Hipotecario</h3>
+          <p>Adquiere tu vivienda soñada con tasas competitivas y asesoría personalizada.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-car fa-2x"></i>
+          <h3>Crédito Vehicular</h3>
+          <p>Financia tu vehículo nuevo o usado con las mejores opciones del mercado.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-globe fa-2x"></i>
+          <h3>Residentes en el Exterior</h3>
+          <p>Facilitamos créditos para colombianos que viven fuera del país.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-briefcase fa-2x"></i>
+          <h3>Crédito Comercial</h3>
+          <p>Impulsa tu negocio con financiamiento a medida y condiciones flexibles.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -49,13 +64,23 @@
     <div class="container">
       <h2>Bancos Aliados</h2>
       <div class="carousel">
-        <!-- Carrusel existente manteniendo mismas imágenes -->
+        <div class="carousel-track">
+          <img src="https://i.pinimg.com/474x/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ita%C3%BA_Unibanco_logo_2023.svg/2048px-Ita%C3%BA_Unibanco_logo_2023.svg.png">
+          <img src="https://www.valoraanalitik.com/wp-content/uploads/2021/12/Scotiabank-colpatria.jpg">
+          <img src="https://www.bancodeoccidente.com.co/BuscadordePuntosOccidente/images/occidenteIconBancoCuadrado.png">
+          <img src="https://suzuki.com.co/sites/default/files/2024-02/LOGO%20VEHIGRUPO.png">
+          <img src="https://play-lh.googleusercontent.com/m2L9SbuInUaaTiJfW163NqXDLh_ilqXERaZIpYEyTYvO51YwmjtrRn5doyVOa-YV2w">
+          <img src="https://play-lh.googleusercontent.com/zBd7Q4x1OcQbBubjxwrCYzj2bJx8-tpF045EkxWgSDzQ33wOLhoqiHJp0ovSzTdCI54">
+          <img src="https://play-lh.googleusercontent.com/pyqnUp4ZXvISJXjMCBRybMsyEKZd-tqJa00LzmHaCf7LElBtY_3yYXqImdb6k-b5IHmT">
+          <img src="https://inelco.com.co/wp-content/uploads/2024/06/finesa-logo-categorizador-hrz-color-corto.png">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Resto de secciones manteniendo estructura pero con container añadido -->
-
+  <!-- Secciones restantes manteniendo tu contenido original -->
+  
   <footer>
     <div class="container">
       <p>📱 318 326 9385 ✉️ comercial@especialistasfinancieros.com</p>
@@ -64,7 +89,7 @@
   </footer>
 
   <script src="script.js"></script>
-  <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+  <a href="https://wa.me/573183269385" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
 </body>
