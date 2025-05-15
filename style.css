@@ -1,21 +1,14 @@
 :root {
-  --color-primario: #117ACA;
-  --color-secundario: #0d5d9f;
-  --texto-oscuro: #333;
-  --texto-claro: #fff;
-  --fondo-claro: #f8f9fa;
+  --azul-primario: #117ACA;
+  --azul-oscuro: #0B5294;
+  --gris-oscuro: #2D3436;
+  --gris-claro: #F8F9FA;
 }
 
-/* Reset y base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos Generales */
 body {
   font-family: 'Arial', sans-serif;
-  color: var(--texto-oscuro);
+  color: var(--gris-oscuro);
   line-height: 1.6;
 }
 
@@ -27,9 +20,10 @@ body {
 
 /* Header */
 header {
-  background: var(--texto-claro);
+  background: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -52,151 +46,178 @@ header {
 }
 
 .logo-titulo h1 {
-  color: var(--color-primario);
-  font-size: 1.8rem;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
+  color: var(--azul-primario);
+  font-size: 24px;
 }
 
 nav a {
-  color: var(--texto-oscuro);
+  color: var(--gris-oscuro);
   text-decoration: none;
+  margin-left: 30px;
   font-weight: 500;
-  position: relative;
   transition: color 0.3s;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primario);
-  transition: width 0.3s;
-}
-
 nav a:hover {
-  color: var(--color-primario);
+  color: var(--azul-primario);
 }
 
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Hero */
+/* Hero Section */
 .hero {
   background: linear-gradient(rgba(17,122,202,0.9), rgba(17,122,202,0.9)),
               url('banner.jpg') center/cover;
-  color: var(--texto-claro);
-  padding: 120px 0;
+  color: white;
+  padding: 160px 0 100px;
   text-align: center;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 25px;
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 800px;
-  margin: 0 auto 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
 .cta-button {
-  display: inline-block;
-  background: var(--texto-claro);
-  color: var(--color-primario);
+  background: white;
+  color: var(--azul-primario);
   padding: 15px 40px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 700;
-  border: 2px solid var(--color-primario);
-  transition: all 0.3s;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s;
 }
 
 .cta-button:hover {
-  background: var(--color-primario);
-  color: var(--texto-claro);
+  transform: translateY(-3px);
 }
 
-/* Productos */
-.section {
-  padding: 80px 0;
-}
-
-.section h2 {
-  color: var(--color-primario);
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.cards {
+/* Sección Servicios */
+.grid-servicios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
+  margin-top: 40px;
 }
 
-.card {
-  background: var(--texto-claro);
-  border: 1px solid #eee;
+.card-servicio {
+  background: white;
   border-radius: 10px;
   padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(17,122,202,0.1);
+.card-servicio:hover {
+  transform: translateY(-10px);
 }
 
-.card i {
-  color: var(--color-primario);
-  font-size: 2.5rem;
+.card-servicio i {
+  color: var(--azul-primario);
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
-/* Carrusel */
-.carousel {
-  background: var(--fondo-claro);
-  padding: 40px 0;
-  margin: 50px 0;
-  overflow: hidden;
+/* Sección Bancos */
+.bancos-section {
+  background: var(--gris-claro);
+  padding: 60px 0;
 }
 
-.carousel-track {
+.marcas-container {
   display: flex;
-  gap: 50px;
-  animation: scroll 25s linear infinite;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.carousel-track img {
-  height: 50px;
+.marcas-container img {
+  height: 40px;
   filter: grayscale(100%);
   transition: filter 0.3s;
 }
 
-.carousel-track img:hover {
+.marcas-container img:hover {
   filter: grayscale(0);
 }
 
-@keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* Simulador */
+.simulador-section {
+  padding: 80px 0;
 }
 
-/* Footer */
-footer {
-  background: var(--color-primario);
-  color: var(--texto-claro);
-  padding: 40px 0;
-  margin-top: 80px;
-  text-align: center;
+.simulador-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#form-simulador {
+  display: grid;
+  gap: 20px;
+}
+
+#form-simulador input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Sección Nosotros */
+.equipo-section {
+  background: var(--gris-claro);
+}
+
+.equipo-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.foto-perfil {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contacto */
+.contacto-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+#form-contacto {
+  display: grid;
+  gap: 20px;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+.info-contacto {
+  background: var(--azul-primario);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 /* WhatsApp */
@@ -213,36 +234,25 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: all 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background: #128C7E;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
   }
   
   nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 15px;
   }
   
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  .cards {
+  .equipo-content {
     grid-template-columns: 1fr;
   }
   
-  .carousel-track img {
-    height: 40px;
+  .contacto-container {
+    grid-template-columns: 1fr;
   }
 }
