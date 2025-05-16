@@ -269,4 +269,26 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+
+  #referidos {
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+#referidos h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+#referidos select {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
 }
