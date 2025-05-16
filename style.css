@@ -91,6 +91,44 @@ header nav a:hover {
   margin-bottom: 1rem;
 }
 
+/* Subproductos con íconos modernos y animación suave */
+.subproductos {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  background-color: #eef2f7;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #003366;
+  list-style-type: none;
+}
+
+.subproductos li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.subproductos li::before {
+  content: "✔️"; /* Ícono de checkmark */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  color: #003366;
+}
+
+.card:hover .subproductos {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
 .carousel {
   overflow: hidden;
   position: relative;
