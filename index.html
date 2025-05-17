@@ -148,51 +148,72 @@
   </section>
 
   <section id="referidos" class="section container contacto">
-  <h2>Programa de Referidos</h2>
-  <p>¿Conoces a alguien que podría estar interesado en nuestros productos financieros? Refierelo llenando este formulario. Si la gestión se concreta, podrás recibir una comisión por tu recomendación.</p>
+    <h2>Programa de Referidos</h2>
+    <p>¿Conoces a alguien que podría estar interesado en nuestros productos financieros? Refierelo llenando este formulario. Si la gestión se concreta, podrás recibir una comisión por tu recomendación.</p>
 
-  <form action="https://script.google.com/macros/s/AKfycbwTskdtgC8E6nYMRsdb4iYHDUnFsPxiOpiQKAso8xcRZSSg_OjzTERHtDq9Uww4xPXH/exec" method="POST">
-  <h3>Tus Datos (Referente)</h3>
-  <input type="text" name="referente_nombre" placeholder="Tu nombre completo" required />
-  <input type="email" name="referente_email" placeholder="Tu correo electrónico" required />
-  <input type="tel" name="referente_telefono" placeholder="Tu teléfono" required />
+    <form id="referidos-form">
+      <h3>Tus Datos (Referente)</h3>
+      <input type="text" name="referente_nombre" placeholder="Tu nombre completo" required />
+      <input type="email" name="referente_email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="referente_telefono" placeholder="Tu teléfono" required />
 
-  <h3>Datos del Referido</h3>
-  <input type="text" name="referido_nombre" placeholder="Nombre del referido" required />
-  <input type="email" name="referido_email" placeholder="Correo del referido" />
-  <input type="tel" name="referido_telefono" placeholder="Teléfono del referido" />
+      <h3>Datos del Referido</h3>
+      <input type="text" name="referido_nombre" placeholder="Nombre del referido" required />
+      <input type="email" name="referido_email" placeholder="Correo del referido" />
+      <input type="tel" name="referido_telefono" placeholder="Teléfono del referido" />
 
-  <label for="producto_interes">Producto de interés del referido:</label>
-  <select name="producto_interes" id="producto_interes" required>
-    <option value="">-- Selecciona una opción --</option>
-    <option value="Crédito Hipotecario">Crédito Hipotecario</option>
-    <option value="Crédito Vehicular">Crédito Vehicular</option>
-    <option value="Libre Inversión">Libre Inversión</option>
-    <option value="Protección Patrimonial">Protección Patrimonial</option>
-    <option value="Residentes en el Exterior">Residentes en el Exterior</option>
-  </select>
+      <label for="producto_interes">Producto de interés del referido:</label>
+      <select name="producto_interes" id="producto_interes" required>
+        <option value="">-- Selecciona una opción --</option>
+        <option value="Crédito Hipotecario">Crédito Hipotecario</option>
+        <option value="Crédito Vehicular">Crédito Vehicular</option>
+        <option value="Libre Inversión">Libre Inversión</option>
+        <option value="Protección Patrimonial">Protección Patrimonial</option>
+        <option value="Residentes en el Exterior">Residentes en el Exterior</option>
+      </select>
 
-  <textarea name="comentario" placeholder="¿Deseas agregar un comentario o contexto?" rows="4"></textarea>
+      <textarea name="comentario" placeholder="¿Deseas agregar un comentario o contexto?" rows="4"></textarea>
 
-  <label style="display: flex; align-items: center; gap: 0.5rem;">
-    <input type="checkbox" name="acepto" required />
-    Acepto ser contactado(a) y los términos del programa de referidos.
-  </label>
+      <label style="display: flex; align-items: center; gap: 0.5rem;">
+        <input type="checkbox" name="acepto" required />
+        Acepto ser contactado(a) y los términos del programa de referidos.
+      </label>
 
-  <button type="submit">Enviar Referencia</button>
-  <p id="mensaje-confirmacion-referido" style="display: none; color: green;">¡Gracias por tu recomendación!</p>
-</form>
+      <button type="submit">Enviar Referencia</button>
+      <p id="mensaje-confirmacion-referido" style="display: none; color: green;">¡Gracias por tu recomendación!</p>
+    </form>
 
-</section>
+    <script>
+      document.getElementById("referidos-form").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-  <footer>
-    <p>📱 318 326 9385 ✉️ comercial@especialistasfinancieros.com</p>
-    <p>&copy; 2025 Especialistas Financieros | Todos los derechos reservados</p>
+        const form = e.target;
+        const data = new FormData(form);
+        const url = "https://script.google.com/macros/s/AKfycbwTskdtgC8E6nYMRsdb4iYHDUnFsPxiOpiQKAso8xcRZSSg_OjzTERHtDq9Uww4xPXH/exec";
+
+        fetch(url, {
+          method: "POST",
+          body: data,
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.result === "success") {
+            document.getElementById("mensaje-confirmacion-referido").style.display = "block";
+            form.reset();
+          } else {
+            alert("Error en el envío: " + (result.error || "Error desconocido"));
+          }
+        })
+        .catch(error => {
+          console.error("Error en el envío:", error);
+          alert("No se pudo enviar el formulario. Por favor intenta más tarde.");
+        });
+      });
+    </script>
+  </section>
+
+  <footer class="section container footer">
+    <p>© 2024 Especialistas Financieros. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="script.js"></script>
-  <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 </body>
 </html>
