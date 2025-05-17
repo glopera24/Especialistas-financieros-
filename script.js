@@ -55,4 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1000);
     });
   }
+
+  // Formulario de referidos (nueva función)
+  const formReferidos = document.querySelector('form[action*="script.google.com/macros"]');
+  const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
+
+  if (formReferidos) {
+    formReferidos.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(formReferidos);
+
+      fetch(formReferidos.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // evita error CORS con Google Apps Script
+      }).then(() => {
+        if (mensajeConfirmacionReferido) {
+          mensajeConfirmacionReferido.style.display = 'block';
+        }
+        formReferidos.reset();
+      }).catch((error) => {
+        alert('Hubo un error al enviar el formulario de referidos. Intenta de nuevo.');
+        console.error('Error al enviar formulario referidos:', error);
+      });
+    });
+  }
 });
