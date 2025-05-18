@@ -10,135 +10,179 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
-      color: #1c1c1c;
-    }
-    header {
-      background-color: #0d2c54;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo-titulo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .logo {
-      height: 40px;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      background-color: #e5ecf5;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #0d2c54;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      padding: 1.5rem;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    .card h3 {
-      color: #0d2c54;
-      margin-bottom: 0.5rem;
-    }
-    .subproductos {
-      padding-left: 1rem;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      color: #0d2c54;
-      font-weight: 700;
-      text-align: center;
-    }
-    form input, form textarea, form select, form button {
-      display: block;
-      width: 100%;
-      margin-top: 0.75rem;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
-    }
-    form button {
-      background-color: #0d2c54;
-      color: white;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
-    footer {
-      background: #0d2c54;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-  </style>
 </head>
 <body>
+  <header class="sticky">
+    <div class="logo-titulo">
+      <img src="favicon.png" alt="Logo Especialistas Financieros" class="logo" />
+      <h1>Especialistas Financieros</h1>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#alianzas">Bancos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-<!-- Contenido original copiado intacto para conservar funcionalidades y URLs -->
-<!-- Pega aquí tu contenido completo del <body> anterior -->
+  <section class="hero">
+    <h2>Tu camino financiero empieza aquí</h2>
+    <p>Asesoría experta en créditos hipotecarios, vehiculares, libre inversión y más. Atención especializada para colombianos en el exterior.</p>
+  </section>
 
-<script src="script.js"></script>
-<a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <section id="servicios" class="section">
+    <h2>Nuestros Productos</h2>
+    <div class="cards productos">
+      <div class="card">
+        <img src="hipotecario.jpg" alt="Hipotecario">
+        <h3>Crédito Hipotecario</h3>
+        <p>Compra, mejora, leasing y más. Tasa competitiva y trámites ágiles.</p>
+        <ul class="subproductos">
+          <li>Compra de vivienda</li>
+          <li>Leasing habitacional</li>
+          <li>Remodelación o ampliación</li>
+          <li>Compra sobre planos</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="vehiculo.jpg" alt="Vehicular">
+        <h3>Crédito Vehicular</h3>
+        <p>Nuevo, usado o leasing. El vehículo que sueñas está más cerca.</p>
+        <ul class="subproductos">
+          <li>Compra de vehículo nuevo</li>
+          <li>Compra de vehículo usado</li>
+          <li>Leasing financiero</li>
+          <li>Crédito para flotas empresariales</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="libre-inversion.jpg" alt="Libre Inversión">
+        <h3>Libre Inversión</h3>
+        <p>Usa tu crédito como lo necesites, sin restricciones.</p>
+        <ul class="subproductos">
+          <li>Estudios y educación</li>
+          <li>Viajes y turismo</li>
+          <li>Proyectos personales</li>
+          <li>Consolidación de deudas</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="proteccion.webp" alt="Protección Patrimonial">
+        <h3>Protección Patrimonial</h3>
+        <p>Asegura tu futuro financiero y el de tu familia con nuestros planes.</p>
+        <ul class="subproductos">
+          <li>Seguros de vida</li>
+          <li>Seguros generales</li>
+          <li>Asesoría en inversiones</li>
+          <li>Planeación financiera familiar</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="exterior.jpg" alt="Residentes en el exterior">
+        <h3>Residentes en el Exterior</h3>
+        <p>Financiación especializada para colombianos fuera del país.</p>
+        <ul class="subproductos">
+          <li>Créditos hipotecarios desde el exterior</li>
+          <li>Compra de vivienda en Colombia</li>
+          <li>Asesoría financiera en moneda extranjera</li>
+          <li>Inversión desde el exterior</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="alianzas" class="section">
+    <h2>Entidades Aliadas</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="https://i.pinimg.com/474x/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.jpg" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ita%C3%BA_Unibanco_logo_2023.svg/2048px-Ita%C3%BA_Unibanco_logo_2023.svg.png" />
+        <img src="https://www.valoraanalitik.com/wp-content/uploads/2021/12/Scotiabank-colpatria.jpg" />
+        <img src="https://www.bancodeoccidente.com.co/BuscadordePuntosOccidente/images/occidenteIconBancoCuadrado.png" />
+        <img src="https://suzuki.com.co/sites/default/files/2024-02/LOGO%20VEHIGRUPO.png" />
+        <img src="https://play-lh.googleusercontent.com/m2L9SbuInUaaTiJfW163NqXDLh_ilqXERaZIpYEyTYvO51YwmjtrRn5doyVOa-YV2w" />
+        <img src="https://play-lh.googleusercontent.com/zBd7Q4x1OcQbBubjxwrCYzj2bJx8-tpF045EkxWgSDzQ33wOLhoqiHJp0ovSzTdCI54" />
+        <img src="https://play-lh.googleusercontent.com/pyqnUp4ZXvISJXjMCBRybMsyEKZd-tqJa00LzmHaCf7LElBtY_3yYXqImdb6k-b5IHmT" />
+        <img src="https://inelco.com.co/wp-content/uploads/2024/06/finesa-logo-categorizador-hrz-color-corto.png" />
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="section container simulador">
+    <h2>Simulador de Crédito</h2>
+    <form id="form-simulador">
+      <label>Monto (COP):<input type="number" id="monto" required /></label>
+      <label>Plazo (meses):<input type="number" id="plazo" required /></label>
+      <label>Tasa anual (%):<input type="number" id="tasa" step="0.01" required /></label>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado-simulador"></div>
+  </section>
+
+  <section id="nosotros" class="section">
+    <h2>¿Quiénes somos?</h2>
+    <div class="perfil">
+      <img src="https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/497629075_1239978097753276_7374253345382436966_n.jpg" alt="Gustavo Lopera" />
+      <p>Somos una firma especializada en banca y finanzas, con amplia trayectoria. Acompañamos decisiones financieras acertadas con ética y profesionalismo.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="section container contacto">
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/mwpoonwv" method="POST" id="form-contacto">
+      <input type="text" name="nombre" placeholder="Nombre" required />
+      <input type="tel" name="telefono" placeholder="Teléfono" required />
+      <input type="email" name="email" placeholder="Correo" required />
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+      <p id="mensaje-confirmacion">¡Gracias! Te contactaremos pronto.</p>
+    </form>
+  </section>
+
+  <section id="referidos" class="section container contacto">
+    <h2>Programa de Referidos</h2>
+    <p>¿Conoces a alguien que podría estar interesado en nuestros productos financieros? Refierelo llenando este formulario. Si la gestión se concreta, podrás recibir una comisión por tu recomendación.</p>
+    <form action="https://script.google.com/macros/s/AKfycbwTskdtgC8E6nYMRsdb4iYHDUnFsPxiOpiQKAso8xcRZSSg_OjzTERHtDq9Uww4xPXH/exec" method="POST">
+      <h3>Tus Datos (Referente)</h3>
+      <input type="text" name="referente_nombre" placeholder="Tu nombre completo" required />
+      <input type="email" name="referente_email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="referente_telefono" placeholder="Tu teléfono" required />
+
+      <h3>Datos del Referido</h3>
+      <input type="text" name="referido_nombre" placeholder="Nombre del referido" required />
+      <input type="email" name="referido_email" placeholder="Correo del referido" />
+      <input type="tel" name="referido_telefono" placeholder="Teléfono del referido" />
+
+      <label for="producto_interes">Producto de interés del referido:</label>
+      <select name="producto_interes" id="producto_interes" required>
+        <option value="">-- Selecciona una opción --</option>
+        <option value="Crédito Hipotecario">Crédito Hipotecario</option>
+        <option value="Crédito Vehicular">Crédito Vehicular</option>
+        <option value="Libre Inversión">Libre Inversión</option>
+        <option value="Protección Patrimonial">Protección Patrimonial</option>
+        <option value="Residentes en el Exterior">Residentes en el Exterior</option>
+      </select>
+
+      <textarea name="comentario" placeholder="¿Deseas agregar un comentario o contexto?" rows="4"></textarea>
+
+      <label style="display: flex; align-items: center; gap: 0.5rem;">
+        <input type="checkbox" name="acepto" required />
+        Acepto ser contactado(a) y los términos del programa de referidos.
+      </label>
+
+      <button type="submit">Enviar Referencia</button>
+      <p id="mensaje-confirmacion-referido" style="display: none; color: green;">¡Gracias por tu recomendación!</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>📱 318 326 9385 ✉️ comercial@especialistasfinancieros.com</p>
+    <p>&copy; 2025 Especialistas Financieros | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>
