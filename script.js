@@ -7,81 +7,92 @@ document.addEventListener('DOMContentLoaded', () => {
     formSimulador.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      // Obtener los valores del formulario
       const monto = parseFloat(document.getElementById('monto').value);
       const plazo = parseInt(document.getElementById('plazo').value);
       const tasa = parseFloat(document.getElementById('tasa').value) / 100 / 12;
 
+      // Validación de los campos
       if (isNaN(monto) || isNaN(plazo) || isNaN(tasa)) {
         resultadoSimulador.innerHTML = '<p style="color:red">Todos los campos son obligatorios y deben ser válidos.</p>';
         return;
       }
 
+      // Cálculo de la cuota mensual y total a pagar
       const cuota = (monto * tasa) / (1 - Math.pow(1 + tasa, -plazo));
       const total = cuota * plazo;
 
+      // Mostrar los resultados formateados
       resultadoSimulador.innerHTML = `
         <div class="resultado">
-          <p><strong>Cuota mensual:</strong> $${cuota.toLocaleString()}</p>
-          <p><strong>Total a pagar:</strong> $${total.toLocaleString()}</p>
+          <p><strong>Cuota mensual:</strong> $${cuota.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+          <p><strong>Total a pagar:</strong> $${total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
         </div>
       `;
     });
   }
 
-  // Función general para enviar formulario con fetch evitando redirección
-  function manejarEnvioForm(form, mensajeOk, mensajeError) {
-    form.addEventListener('submit', (e) => {
+  // Formulario de contacto usando Formspree, evitando salir de la página
+  const formContacto = document.getElementById('form-contacto');
+  const mensajeConfirmacionContacto = document.getElementById('mensaje-confirmacion');
+
+  if (formContacto) {
+    mensajeConfirmacionContacto.style.display = 'none'; // Oculto al inicio
+    formContacto.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      mensajeOk.style.display = 'none';
-      mensajeError.style.display = 'none';
+      const formData = new FormData(formContacto);
 
-      const formData = new FormData(form);
-
-      fetch(form.action, {
+      fetch(formContacto.action, {
         method: 'POST',
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       })
       .then(response => {
         if (response.ok) {
-          mensajeOk.style.display = 'block';
-          form.reset();
+          mensajeConfirmacionContacto.style.display = 'block';
+          formContacto.reset();
         } else {
           return response.json().then(data => {
-            throw new Error(data.error || 'Error en el envío');
+            throw new Error(data.error || 'Error al enviar formulario');
           });
         }
       })
-      .catch(() => {
-        mensajeError.style.display = 'block';
+      .catch(error => {
+        alert('Error al enviar el formulario de contacto. Por favor intenta más tarde.');
+        console.error(error);
       });
     });
   }
 
-  // Formulario contacto
-  const formContacto = document.getElementById('form-contacto');
-  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
-
-  if (formContacto && mensajeConfirmacion) {
-    // Crear un mensaje de error para contacto
-    let mensajeErrorContacto = document.createElement('p');
-    mensajeErrorContacto.style.display = 'none';
-    mensajeErrorContacto.style.color = 'red';
-    mensajeErrorContacto.textContent = 'Error al enviar el formulario, intenta de nuevo.';
-    formContacto.appendChild(mensajeErrorContacto);
-
-    manejarEnvioForm(formContacto, mensajeConfirmacion, mensajeErrorContacto);
-  }
-
-  // Formulario referidos
+  // Formulario de referidos usando fetch para enviar sin salir
   const formReferidos = document.getElementById('form-referidos');
   const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
-  const mensajeErrorReferido = document.getElementById('mensaje-error-referido');
 
-  if (formReferidos && mensajeConfirmacionReferido && mensajeErrorReferido) {
-    manejarEnvioForm(formReferidos, mensajeConfirmacionReferido, mensajeErrorReferido);
+  if (formReferidos) {
+    mensajeConfirmacionReferido.style.display = 'none'; // Oculto al inicio
+    formReferidos.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Preparar los datos para enviar, aquí debes cambiar la URL y método según tu backend
+      const formData = new FormData(formReferidos);
+
+      fetch('TU_ENDPOINT_PARA_REFERIDOS', {  // Cambia por tu URL real
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        if (response.ok) {
+          mensajeConfirmacionReferido.style.display = 'block';
+          formReferidos.reset();
+        } else {
+          throw new Error('Error al enviar formulario de referidos');
+        }
+      })
+      .catch(error => {
+        alert('Error al enviar el formulario de referidos. Intenta más tarde.');
+        console.error(error);
+      });
+    });
   }
 });
