@@ -207,17 +207,15 @@
   </section>
 
 <section id="referidos" class="section container contacto">
-  <h3>Programa de Referidos</h3>
+  <h2>Programa de Referidos</h2>
+
   <p style="font-size: 1.1rem; font-weight: 500; color: #1d3557;">
     <strong>Recomienda y gana:</strong> ¿Conoces a alguien que necesita asesoría financiera o busca mejores condiciones de crédito? 
     <span style="color: #457b9d;">Refiérelo llenando nuestro formulario</span> y, si su gestión se concreta, 
     <strong>recibirás una comisión</strong> como reconocimiento por tu recomendación. ¡Fácil, seguro y sin complicaciones!
   </p>
-  </section>
 
-<section id="referidos" class="section container contacto">
-  <h2>Programa de Referidos</h2>
-  <form id="form-referidos">
+  <form id="form-referidos" action="https://formspree.io/f/tu-form-id" method="POST">
     <h3>Tus Datos (Referente)</h3>
     <input type="text" name="referente_nombre" placeholder="Tu nombre completo" required />
     <input type="email" name="referente_email" placeholder="Tu correo electrónico" required />
@@ -246,10 +244,11 @@
     </label>
 
     <button type="submit">Enviar Referencia</button>
+
     <p id="mensaje-confirmacion-referido" style="display: none; color: green;">¡Gracias por tu recomendación!</p>
+    <p id="mensaje-error-referido" style="display: none; color: red;">Error al enviar el formulario, intenta de nuevo.</p>
   </form>
 </section>
-
 
 <!-- Incluye el script justo antes de cerrar body -->
 <script src="formReferidos.js"></script>
