@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(formReferidos);
 
-      fetch('https://script.google.com/macros/s/TU_SCRIPT_ID/exec', { // Cambia TU_SCRIPT_ID por el correcto
+      fetch('https://script.google.com/macros/s/AKfycbzq5nlyMaxwWnHE6-kmLaqsDYYBd_oO5AXLyu2BiexhjrYUNzdHtGmFIsDAFmlaJ38S/exec', { // Cambia TU_SCRIPT_ID por el correcto
         method: 'POST',
         body: formData,
         mode: 'cors' // 'no-cors' limita respuestas, mejor cors si configuras correctamente el Apps Script
