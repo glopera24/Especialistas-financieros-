@@ -30,28 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   });
 
-  // Formulario de contacto
-  const formContacto = document.getElementById('form-contacto');
-  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+document.addEventListener('DOMContentLoaded', () => {
+  const formReferidos = document.getElementById('form-referidos');
+  const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
 
-  if (formContacto) {
-    formContacto.addEventListener('submit', (e) => {
-      e.preventDefault(); // Evitar el envío inmediato para validaciones
-      // Verificar que todos los campos estén llenos antes de mostrar confirmación
-      const nombre = formContacto.nombre.value;
-      const telefono = formContacto.telefono.value;
-      const email = formContacto.email.value;
-      const mensaje = formContacto.mensaje.value;
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzq5nlyMaxwWnHE6-kmLaqsDYYBd_oO5AXLyu2BiexhjrYUNzdHtGmFIsDAFmlaJ38S/exec";
 
-      if (!nombre || !telefono || !email || !mensaje) {
-        alert('Todos los campos son obligatorios');
-        return;
-      }
+  if (formReferidos) {
+    formReferidos.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-      // Simular el envío y mostrar confirmación después de 1 segundo
-      setTimeout(() => {
-        mensajeConfirmacion.style.display = 'block';
-        formContacto.reset();
-      }, 1000);
+      const formData = new FormData(formReferidos);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(() => {
+        if (mensajeConfirmacionReferido) {
+          mensajeConfirmacionReferido.style.display = 'block';
+        }
+        formReferidos.reset();
+      })
+      .catch((error) => {
+        alert('Hubo un error al enviar el formulario de referidos. Intenta de nuevo.');
+        console.error('Error al enviar formulario referidos:', error);
+      });
     });
+  }
+});
   }
