@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Simulador de crédito
+  // Simulador de crédito (igual que antes)
   const formSimulador = document.getElementById('form-simulador');
   const resultadoSimulador = document.getElementById('resultado-simulador');
 
@@ -28,15 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Formulario referidos (sin envío real, solo simulación)
+  // Formulario referidos usando Formspree con fetch para evitar redirección
   const formReferidos = document.getElementById('form-referidos');
   const mensajeConfirmacion = document.getElementById('mensaje-confirmacion-referido');
+  const mensajeError = document.getElementById('mensaje-error-referido');
 
   if (formReferidos) {
     formReferidos.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Validar campos obligatorios del formulario referidos
+      // Validar campos obligatorios
       const nombreReferente = formReferidos.referente_nombre.value.trim();
       const emailReferente = formReferidos.referente_email.value.trim();
       const telefonoReferente = formReferidos.referente_telefono.value.trim();
@@ -48,12 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simular envío y mostrar mensaje
       mensajeConfirmacion.style.display = 'none';
-      setTimeout(() => {
-        mensajeConfirmacion.style.display = 'block';
-        formReferidos.reset();
-      }, 500);
+      mensajeError.style.display = 'none';
+
+      const formData = new FormData(formReferidos);
+
+      fetch(formReferidos.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          mensajeConfirmacion.style.display = 'block';
+          formReferidos.reset();
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.error || 'Error en el envío');
+          });
+        }
+      })
+      .catch(() => {
+        mensajeError.style.display = 'block';
+      });
     });
   }
 });
