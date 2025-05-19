@@ -32,32 +32,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const formReferidos = document.getElementById('form-referidos');
-  const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
-
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzq5nlyMaxwWnHE6-kmLaqsDYYBd_oO5AXLyu2BiexhjrYUNzdHtGmFIsDAFmlaJ38S/exec";
+  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion-referido');
+  const mensajeError = document.getElementById('mensaje-error-referido');
 
   if (formReferidos) {
     formReferidos.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      mensajeConfirmacion.style.display = 'none';
+      mensajeError.style.display = 'none';
+
       const formData = new FormData(formReferidos);
 
-      fetch(scriptURL, {
+      fetch('https://script.google.com/macros/s/TU_SCRIPT_ID/exec', { // Cambia TU_SCRIPT_ID por el correcto
         method: 'POST',
         body: formData,
-        mode: 'no-cors'
+        mode: 'cors' // 'no-cors' limita respuestas, mejor cors si configuras correctamente el Apps Script
       })
-      .then(() => {
-        if (mensajeConfirmacionReferido) {
-          mensajeConfirmacionReferido.style.display = 'block';
+      .then(response => response.json())
+      .then(data => {
+        if(data.result === 'success') {
+          mensajeConfirmacion.style.display = 'block';
+          formReferidos.reset();
+        } else {
+          mensajeError.style.display = 'block';
+          console.error('Error en respuesta:', data.error);
         }
-        formReferidos.reset();
       })
-      .catch((error) => {
-        alert('Hubo un error al enviar el formulario de referidos. Intenta de nuevo.');
-        console.error('Error al enviar formulario referidos:', error);
+      .catch(error => {
+        mensajeError.style.display = 'block';
+        console.error('Error al enviar formulario:', error);
       });
     });
   }
 });
-  }
+
+}
