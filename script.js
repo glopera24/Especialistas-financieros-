@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Simulador de crédito (igual que antes)
+  // Simulador de crédito
   const formSimulador = document.getElementById('form-simulador');
   const resultadoSimulador = document.getElementById('resultado-simulador');
 
@@ -28,33 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Formulario referidos usando Formspree con fetch para evitar redirección
-  const formReferidos = document.getElementById('form-referidos');
-  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion-referido');
-  const mensajeError = document.getElementById('mensaje-error-referido');
-
-  if (formReferidos) {
-    formReferidos.addEventListener('submit', (e) => {
+  // Función general para enviar formulario con fetch evitando redirección
+  function manejarEnvioForm(form, mensajeOk, mensajeError) {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Validar campos obligatorios
-      const nombreReferente = formReferidos.referente_nombre.value.trim();
-      const emailReferente = formReferidos.referente_email.value.trim();
-      const telefonoReferente = formReferidos.referente_telefono.value.trim();
-      const nombreReferido = formReferidos.referido_nombre.value.trim();
-      const productoInteres = formReferidos.producto_interes.value;
-
-      if (!nombreReferente || !emailReferente || !telefonoReferente || !nombreReferido || !productoInteres) {
-        alert('Por favor completa todos los campos obligatorios.');
-        return;
-      }
-
-      mensajeConfirmacion.style.display = 'none';
+      mensajeOk.style.display = 'none';
       mensajeError.style.display = 'none';
 
-      const formData = new FormData(formReferidos);
+      const formData = new FormData(form);
 
-      fetch(formReferidos.action, {
+      fetch(form.action, {
         method: 'POST',
         body: formData,
         headers: {
@@ -63,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         if (response.ok) {
-          mensajeConfirmacion.style.display = 'block';
-          formReferidos.reset();
+          mensajeOk.style.display = 'block';
+          form.reset();
         } else {
           return response.json().then(data => {
             throw new Error(data.error || 'Error en el envío');
@@ -75,5 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
         mensajeError.style.display = 'block';
       });
     });
+  }
+
+  // Formulario contacto
+  const formContacto = document.getElementById('form-contacto');
+  const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+
+  if (formContacto && mensajeConfirmacion) {
+    // Crear un mensaje de error para contacto
+    let mensajeErrorContacto = document.createElement('p');
+    mensajeErrorContacto.style.display = 'none';
+    mensajeErrorContacto.style.color = 'red';
+    mensajeErrorContacto.textContent = 'Error al enviar el formulario, intenta de nuevo.';
+    formContacto.appendChild(mensajeErrorContacto);
+
+    manejarEnvioForm(formContacto, mensajeConfirmacion, mensajeErrorContacto);
+  }
+
+  // Formulario referidos
+  const formReferidos = document.getElementById('form-referidos');
+  const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
+  const mensajeErrorReferido = document.getElementById('mensaje-error-referido');
+
+  if (formReferidos && mensajeConfirmacionReferido && mensajeErrorReferido) {
+    manejarEnvioForm(formReferidos, mensajeConfirmacionReferido, mensajeErrorReferido);
   }
 });
