@@ -1,294 +1,94 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --card: #fff;
+  --primary: #003366;
+  --accent: #0066cc;
+}
+[data-theme='dark'] {
+  --bg: #111;
+  --text: #f0f0f0;
+  --card: #1e1e1e;
+  --primary: #00bfff;
+  --accent: #3399ff;
+}
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f7fa;
-  color: #1a1a1a;
-  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
-
 header {
-  background-color: #003366;
-  color: #fff;
-  padding: 1rem 2rem;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
-
-.logo-titulo {
+.toggle-theme {
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+.logo {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
-.logo {
-  height: 50px;
-  width: 50px;
-  border-radius: 10px;
-}
-
-header nav a {
-  color: #fff;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header nav a:hover {
-  color: #00b2ff;
-}
-
-.hero {
-  background: linear-gradient(to right, #002244, #004488);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.section {
-  padding: 3rem 2rem;
-}
-
-.cards {
+.productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 2rem;
 }
-
-.card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 1rem;
-  text-align: center;
+.producto {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
-
-.card:hover {
-  transform: translateY(-5px);
+.hover-scale:hover {
+  transform: scale(1.03);
 }
-
-.card img {
-  max-width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/* Subproductos con íconos modernos y animación suave */
-.subproductos {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  margin-top: 0;
-  padding: 0.5rem 1rem;
-  background-color: #eef2f7;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 0.9rem;
-  color: #003366;
-  list-style-type: none;
-}
-
-.subproductos li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-.subproductos li::before {
-  content: "✔️"; /* Ícono de checkmark */
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 18px;
-  color: #003366;
-}
-
-.card:hover .subproductos {
-  max-height: 300px;
-  opacity: 1;
+.btn {
+  display: inline-block;
   margin-top: 1rem;
-}
-
-.carousel {
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-track {
-  display: flex;
-  animation: scroll 30s linear infinite;
-  gap: 2rem;
-  align-items: center;
-}
-
-.carousel-track img {
-  height: 80px;
-  object-fit: contain;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-.simulador form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.simulador input,
-.simulador button {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  font-size: 1rem;
-}
-
-.simulador button {
-  background-color: #003366;
-  color: white;
-  cursor: pointer;
-}
-
-.simulador button:hover {
-  background-color: #0055a5;
-}
-
-.perfil {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.perfil img {
-  max-width: 250px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.contacto input,
-.contacto textarea,
-.contacto button {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.contacto textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contacto button {
-  background-color: #003366;
-  color: white;
-  cursor: pointer;
-}
-
-.contacto button:hover {
-  background-color: #0055a5;
-}
-
-#mensaje-confirmacion {
-  color: green;
-  font-weight: bold;
-  display: none;
-  text-align: center;
-}
-
-footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  z-index: 9999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   text-decoration: none;
+  font-weight: bold;
 }
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav {
-    margin-top: 1rem;
-  }
-
-  .perfil {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #referidos {
-  background-color: #f0f8ff;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-top: 3rem;
-}
-
-#referidos h3 {
-  margin-top: 2rem;
+form input, form textarea {
+  width: 100%;
+  padding: 0.7rem;
   margin-bottom: 1rem;
-  color: #003366;
-}
-
-#referidos select {
-  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  background: white;
 }
-
+form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
