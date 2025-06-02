@@ -10,6 +10,9 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Animate On Scroll CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
   <header class="sticky">
@@ -34,7 +37,7 @@
   <h2>Nuestros Productos</h2>
   <div class="cards productos">
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img src="hipotecario.jpg" alt="Hipotecario">
       <h3>Crédito Hipotecario</h3>
       <p>Compra, mejora, leasing y más. Tasa competitiva y trámites ágiles.</p>
@@ -47,7 +50,7 @@
       <a href="hipotecario/" class="btn">Ver más</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img src="vehiculo.jpg" alt="Vehicular">
       <h3>Crédito Vehicular</h3>
       <p>Nuevo, usado o leasing. El vehículo que sueñas está más cerca.</p>
@@ -60,7 +63,7 @@
       <a href="vehiculo/" class="btn">Ver más</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img src="libre-inversion.jpg" alt="Libre Inversión">
       <h3>Libre Inversión</h3>
       <p>Usa tu crédito como lo necesites, sin restricciones.</p>
@@ -73,7 +76,7 @@
       <a href="libreinversion/" class="btn">Ver más</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img src="proteccion.webp" alt="Protección Patrimonial">
       <h3>Protección Patrimonial</h3>
       <p>Asegura tu futuro financiero y el de tu familia con nuestros planes.</p>
@@ -86,7 +89,7 @@
       <a href="proteccion/" class="btn">Ver más</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img src="exterior.jpg" alt="Residentes en el exterior">
       <h3>Residentes en el Exterior</h3>
       <p>Financiación especializada para colombianos fuera del país.</p>
@@ -276,5 +279,13 @@
   </footer>
 
   <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank">💬</a>
+<!-- AOS Animate On Scroll JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 </body>
 </html>
