@@ -1,1 +1,30 @@
+name: Agregar Lead al CRM
+
+on:
+  push:
+    paths:
+      - '_leads/*.json'
+
+jobs:
+  agregar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Git
+        run: |
+          git config user.name "CRM Bot"
+          git config user.email "crm-bot@users.noreply.github.com"
+
+      - name: Agregar lead a crm/leads.json
+        run: |
+          LEAD=$(cat $(ls _leads/*.json | head -n 1))
+          jq ". + [${LEAD}]" crm/leads.json > crm/temp.json
+          mv crm/temp.json crm/leads.json
+          rm -f _leads/*.json
+          git add crm/leads.json
+          git rm _leads/*.json
+          git commit -m "Lead agregado automáticamente"
+          git push
 
