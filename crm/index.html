@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRM Interno | Especialistas Financieros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-blue-900 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">CRM Especialistas Financieros</h1>
+    <a href="#" onclick="logout()" class="bg-red-500 px-3 py-1 rounded text-sm">Cerrar sesión</a>
+  </header>
+
+  <main class="p-4">
+    <h2 class="text-xl font-semibold mb-4">Leads Registrados</h2>
+    <div class="overflow-x-auto bg-white p-4 rounded shadow">
+      <table class="table w-full" id="leadsTable">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Producto</th>
+            <th>Ingresos</th>
+            <th>Subsidio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Leads serán inyectados aquí -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("auth");
+      window.location.href = "login.html";
+    }
+
+    async function cargarLeads() {
+      const res = await fetch("leads.json");
+      const data = await res.json();
+      const tbody = document.querySelector("#leadsTable tbody");
+      data.forEach(lead => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${lead.fecha}</td>
+          <td>${lead.nombre}</td>
+          <td>${lead.telefono}</td>
+          <td>${lead.correo}</td>
+          <td>${lead.producto}</td>
+          <td>${lead.ingresos}</td>
+          <td>${lead.subsidio}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    cargarLeads();
+  </script>
+</body>
+</html>
 
