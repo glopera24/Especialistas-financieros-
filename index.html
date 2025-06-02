@@ -4,75 +4,267 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Especialistas Financieros</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="favicon.png" alt="Logo" />
+  <header class="sticky">
+    <div class="logo-titulo">
+      <img src="favicon.png" alt="Logo Especialistas Financieros" class="logo" />
       <h1>Especialistas Financieros</h1>
     </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#alianzas">Bancos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <section class="productos">
-    <h2>Conoce nuestros productos</h2>
-    <div class="productos-grid">
-      <div class="producto">
-        <h3>Crédito Vehicular</h3>
-        <p>Compra tu vehículo nuevo o usado con tasas preferenciales.</p>
-        <a href="vehiculo.html" class="btn">Ver más</a>
-      </div>
-      <div class="producto">
+  <section class="hero">
+    <h2>Tu camino financiero empieza aquí</h2>
+    <p>Somos los especialistas financieros que te ayudarán a encontrar y conseguir el crédito que necesitas, sin importar si es personal, hipotecario, para autos o para empresas, nosotros te asesoramos para conseguirlo</p>
+  </section>
+
+  <section id="servicios" class="section">
+    <h2>Nuestros Productos</h2>
+    <div class="cards productos">
+      <div class="card">
+        <img src="hipotecario.jpg" alt="Hipotecario">
         <h3>Crédito Hipotecario</h3>
-        <p>Adquiere vivienda propia con el respaldo de entidades bancarias.</p>
-        <a href="hipotecario.html" class="btn">Ver más</a>
+        <p>Compra, mejora, leasing y más. Tasa competitiva y trámites ágiles.</p>
+        <ul class="subproductos">
+          <li>Compra de vivienda nueva o usada</li>
+          <li>Leasing habitacional/Comercial</li>
+          <li>Remodelación/Libre inversión</li>
+          <li>Compra de cartera</li>
+        </ul>
       </div>
-      <div class="producto">
+      <div class="card">
+        <img src="vehiculo.jpg" alt="Vehicular">
+        <h3>Crédito Vehicular</h3>
+        <p>Nuevo, usado o leasing. El vehículo que sueñas está más cerca.</p>
+        <ul class="subproductos">
+          <li>Compra de vehículo nuevo o usado</li>
+          <li>Compra de cartera</li>
+          <li>Leasing financiero</li>
+          <li>Crédito para flotas empresariales</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="libre-inversion.jpg" alt="Libre Inversión">
         <h3>Libre Inversión</h3>
-        <p>Obtén liquidez para cumplir tus metas personales y familiares.</p>
-        <a href="libre_inversion.html" class="btn">Ver más</a>
+        <p>Usa tu crédito como lo necesites, sin restricciones.</p>
+        <ul class="subproductos">
+          <li>Estudios y educación</li>
+          <li>Viajes y turismo</li>
+          <li>Proyectos personales</li>
+          <li>Consolidación de deudas</li>
+        </ul>
       </div>
-      <div class="producto">
+      <div class="card">
+        <img src="proteccion.webp" alt="Protección Patrimonial">
         <h3>Protección Patrimonial</h3>
-        <p>Asegura tu futuro con planes de ahorro e inversión en dólares.</p>
-        <a href="proteccion_patrimonial.html" class="btn">Ver más</a>
+        <p>Asegura tu futuro financiero y el de tu familia con nuestros planes.</p>
+        <ul class="subproductos">
+          <li>Seguros de vida</li>
+          <li>Renta vitalicia</li>
+          <li>Asesoría en inversiones</li>
+          <li>Planeación financiera familiar</li>
+        </ul>
       </div>
-      <div class="producto">
-        <h3>Colombianos en el Exterior</h3>
-        <p>Invierte desde el exterior en vivienda en Colombia con respaldo.</p>
-        <a href="residentes_exterior.html" class="btn">Ver más</a>
+      <div class="card">
+        <img src="exterior.jpg" alt="Residentes en el exterior">
+        <h3>Residentes en el Exterior</h3>
+        <p>Financiación especializada para colombianos fuera del país.</p>
+        <ul class="subproductos">
+          <li>Créditos hipotecarios desde el exterior</li>
+          <li>Compra de vivienda en Colombia</li>
+          <li>Compra de vivienda en el estado de la florida</li>
+          <li>Fondos de Inversión</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="contacto" id="contacto">
-    <h2>Contáctanos</h2>
-    <form id="form-contacto" action="https://formspree.io/f/mwpoonwv" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre completo" required />
-      <input type="email" name="email" placeholder="Correo electrónico" required />
+  <section id="alianzas" class="section">
+    <h2>Entidades Aliadas</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="https://i.pinimg.com/474x/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.jpg" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ita%C3%BA_Unibanco_logo_2023.svg/2048px-Ita%C3%BA_Unibanco_logo_2023.svg.png" />
+        <img src="https://www.valoraanalitik.com/wp-content/uploads/2021/12/Scotiabank-colpatria.jpg" />
+        <img src="https://www.bancodeoccidente.com.co/BuscadordePuntosOccidente/images/occidenteIconBancoCuadrado.png" />
+        <img src="https://suzuki.com.co/sites/default/files/2024-02/LOGO%20VEHIGRUPO.png" />
+        <img src="https://play-lh.googleusercontent.com/m2L9SbuInUaaTiJfW163NqXDLh_ilqXERaZIpYEyTYvO51YwmjtrRn5doyVOa-YV2w" />
+        <img src="https://play-lh.googleusercontent.com/zBd7Q4x1OcQbBubjxwrCYzj2bJx8-tpF045EkxWgSDzQ33wOLhoqiHJp0ovSzTdCI54" />
+        <img src="https://play-lh.googleusercontent.com/pyqnUp4ZXvISJXjMCBRybMsyEKZd-tqJa00LzmHaCf7LElBtY_3yYXqImdb6k-b5IHmT" />
+        <img src="https://inelco.com.co/wp-content/uploads/2024/06/finesa-logo-categorizador-hrz-color-corto.png" />
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="section container simulador">
+    <h2>Simulador de Crédito</h2>
+    <form id="form-simulador">
+      <label>Monto (COP):<input type="number" id="monto" required /></label>
+      <label>Plazo (meses):<input type="number" id="plazo" required /></label>
+      <label>Tasa anual (%):<input type="number" id="tasa" step="0.01" required /></label>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado-simulador"></div>
+  </section>
+
+  <section id="proceso" class="section">
+  <h2>¿Cómo lo hacemos?</h2>
+  <p>Te acompañamos con una metodología probada, paso a paso:</p>
+  <ul>
+    <li>Entrevista para perfilamiento.</li>
+    <li>Planteamiento de opciones según tu perfil.</li>
+    <li>Pre-evaluación y estrategia personalizada.</li>
+    <li>Seguimiento completo durante todo el proceso.</li>
+    <li>Red de aliados: bancos, peritos, notarios, inmobiliarias.</li>
+    <li>Asesoría personalizada.</li>
+  </ul>
+</section>
+
+<section id="nosotros" class="section">
+  <h2>¿Quiénes somos?</h2>
+  <div class="perfil">
+    <img src="favicon.png" alt="Especialistas Financieros" style="width: 120px; height: 120px; border-radius: 50%;" />
+    <div>
+      <p>Somos una firma especializada en banca y finanzas con amplia trayectoria. Acompañamos decisiones financieras acertadas con ética y profesionalismo.</p>
+    </div>
+  </div>
+</section>
+
+  </section>
+  <h3 style="margin-top: 3rem; text-align: center; color: #0d2c54;">¿Por qué elegirnos?</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>✔️ Certeza legal</h4>
+      <p>Te garantizamos un proceso confiable.</p>
+    </div>
+    <div class="card">
+      <h4>📈 Mejora tu historial</h4>
+      <p>Te ayudamos a estructurar tu perfil financiero y a mejorar tu score</p>
+    </div>
+    <div class="card">
+      <h4>🧾 Plan de negocios</h4>
+      <p>Te acompañamos en todo el proceso para presentar al banco lo que realmente necesita. Ideal para crédito PyME.</p>
+    </div>
+  </div>
+  </section>
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/crm/index.html" class="btn-primary" target="_blank">Acceder al CRM</a>
+</div>
+  </section>
+<div class="section" style="text-align: center; margin-top: 3rem;">
+  <h3>¿A quiénes asesoramos?</h3>
+  <p>Brindamos soluciones financieras personalizadas a personas naturales y empresas que cuenten con capacidad de pago, historial crediticio adecuado y deseen optimizar sus condiciones financieras o acceder a nuevas oportunidades de inversión.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>13+</h3>
+      <p>Años de experiencia</p>
+    </div>
+    <div class="card">
+      <h3>3</h3>
+      <p>Atención personalizada</p>
+    </div>
+    <div class="card">
+      <h3>10+</h3>
+      <p>Productos financieros</p>
+    </div>
+    <div class="card">
+      <h3>2000+</h3>
+      <p>Clientes asesorados</p>
+    </div>
+  </div>
+</div>
+
+  <div class="section" style="margin-top: 3rem;">
+    <h3 style="text-align: center; color: #0d2c54;">¿Cómo te ayudamos?</h3>
+    <ol style="max-width: 600px; margin: 2rem auto; text-align: left;">
+      <li>Nos contactas para contarnos tu necesidad financiera.</li>
+      <li>Te hacemos un diagnóstico y trazamos una estrategia.</li>
+      <li>Te acompañamos paso a paso hasta lograr el crédito ideal.</li>
+     </ol>
+  </div>
+</section>
+
+  <section id="contacto" class="section container contacto">
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/mwpoonwv" method="POST" id="form-contacto">
+      <input type="text" name="nombre" placeholder="Nombre" required />
       <input type="tel" name="telefono" placeholder="Teléfono" required />
-      <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+      <input type="email" name="email" placeholder="Correo" required />
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
       <button type="submit">Enviar</button>
-      <p id="mensaje-confirmacion" class="confirmacion" style="display:none; color: green; margin-top: 1rem;">✅ Gracias por escribirnos. Te contactaremos en menos de 24 horas.</p>
+      <p id="mensaje-confirmacion">¡Gracias! Te contactaremos pronto.</p>
     </form>
   </section>
 
-  <section class="referidos" id="referidos">
-    <h2>Refiere a un amigo</h2>
-    <form id="form-referidos" action="https://formspree.io/f/mwpoonwv" method="POST">
-      <input type="text" name="tu_nombre" placeholder="Tu nombre" required />
-      <input type="email" name="tu_email" placeholder="Tu correo electrónico" required />
-      <input type="text" name="referido_nombre" placeholder="Nombre del referido" required />
-      <input type="email" name="referido_email" placeholder="Correo del referido" required />
-      <button type="submit">Enviar recomendación</button>
-      <p id="mensaje-confirmacion-referido" class="confirmacion" style="display:none; color: green; margin-top: 1rem;">✅ Gracias por tu recomendación. ¡Nos pondremos en contacto con tu referido!</p>
-    </form>
-  </section>
+<section id="referidos" class="section container contacto">
+  <h2>Programa de Referidos</h2>
+
+  <p style="font-size: 1.1rem; font-weight: 500; color: #1d3557;">
+    <strong>Recomienda y gana:</strong> ¿Conoces a alguien que necesita asesoría financiera o busca mejores condiciones de crédito? 
+    <span style="color: #457b9d;">Refiérelo llenando nuestro formulario</span> y, si su gestión se concreta, 
+    <strong>recibirás una comisión</strong> como reconocimiento por tu recomendación. ¡Fácil, seguro y sin complicaciones!
+  </p>
+
+  <form id="form-referidos" action="https://formspree.io/f/tu-form-id" method="POST">
+    <h3>Tus Datos (Referente)</h3>
+    <input type="text" name="referente_nombre" placeholder="Tu nombre completo" required />
+    <input type="email" name="referente_email" placeholder="Tu correo electrónico" required />
+    <input type="tel" name="referente_telefono" placeholder="Tu teléfono" required />
+
+    <h3>Datos del Referido</h3>
+    <input type="text" name="referido_nombre" placeholder="Nombre del referido" required />
+    <input type="email" name="referido_email" placeholder="Correo del referido" />
+    <input type="tel" name="referido_telefono" placeholder="Teléfono del referido" />
+
+    <label for="producto_interes">Producto de interés del referido:</label>
+    <select name="producto_interes" id="producto_interes" required>
+      <option value="">-- Selecciona una opción --</option>
+      <option value="Crédito Hipotecario">Crédito Hipotecario</option>
+      <option value="Crédito Vehicular">Crédito Vehicular</option>
+      <option value="Libre Inversión">Libre Inversión</option>
+      <option value="Protección Patrimonial">Protección Patrimonial</option>
+      <option value="Residentes en el Exterior">Residentes en el Exterior</option>
+    </select>
+
+    <textarea name="comentario" placeholder="¿Deseas agregar un comentario o contexto?" rows="4"></textarea>
+
+    <label style="display: flex; align-items: center; gap: 0.5rem;">
+      <input type="checkbox" name="acepto" required />
+      Acepto ser contactado(a) y los términos del programa de referidos.
+    </label>
+
+    <button type="submit">Enviar Referencia</button>
+
+    <p id="mensaje-confirmacion-referido" style="display: none; color: green;">¡Gracias por tu recomendación!</p>
+    <p id="mensaje-error-referido" style="display: none; color: red;">Error al enviar el formulario, intenta de nuevo.</p>
+  </form>
+</section>
+
+<!-- Incluye el script justo antes de cerrar body -->
+<script src="formReferidos.js"></script>
+
+  <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
 
   <footer>
-    <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+    <p>&copy; 2025 Especialistas Financieros. Todos los derechos reservados.</p>
   </footer>
+
+  <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank">💬</a>
 </body>
 </html>
