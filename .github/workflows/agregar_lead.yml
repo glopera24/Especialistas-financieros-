@@ -23,8 +23,13 @@ jobs:
           jq ". + [${LEAD}]" crm/leads.json > crm/temp.json
           mv crm/temp.json crm/leads.json
           rm -f _leads/*.json
-          git add crm/leads.json
-          git rm _leads/*.json
-          git commit -m "Lead agregado automáticamente"
-          git push
 
+      - name: Commit y push con token personal
+        env:
+          TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/glopera24/Especialistas-financieros-.git
+          git add crm/leads.json
+          git rm -f _leads/*.json
+          git commit -m "Lead agregado automáticamente"
+          git push origin main
