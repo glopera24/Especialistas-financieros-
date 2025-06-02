@@ -1,1 +1,173 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libre Inversión | Especialistas Financieros</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #1a1a1a;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1573166364524-01aa2b3c6ae8?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 5rem 2rem;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    .hero a {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #ffffff;
+      color: #003366;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 3rem auto 1rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #003366;
+    }
+    .form-section {
+      background: white;
+      padding: 3rem 2rem;
+      max-width: 700px;
+      margin: 2rem auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .form-section input,
+    .form-section textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .form-section button {
+      background: #003366;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky">
+    <div class="logo-titulo">
+      <img src="../favicon.png" alt="Logo" class="logo">
+      <h1 style="color: #003366;">Crédito de Libre Inversión</h1>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Tu libertad financiera empieza hoy</h1>
+    <p>Financia tus sueños: estudios, emprendimiento, salud o viajes. Te ayudamos a encontrar el crédito adecuado según tu perfil y capacidad de pago.</p>
+    <a href="#formulario">Solicita asesoría</a>
+  </section>
+
+  <section class="section-title">¿A quién va dirigido?</section>
+  <div class="features">
+    <div class="card">
+      <h3>👔 Empleados formales</h3>
+      <p>Con estabilidad laboral e ingresos desde 2.5 SMLV.</p>
+    </div>
+    <div class="card">
+      <h3>🧾 Independientes o prestadores de servicios</h3>
+      <p>Con actividad económica regular y capacidad de pago comprobable.</p>
+    </div>
+    <div class="card">
+      <h3>👵 Pensionados y rentistas</h3>
+      <p>Que deseen invertir o cubrir necesidades puntuales.</p>
+    </div>
+  </div>
+
+  <section class="section-title">¿Para qué puedes usarlo?</section>
+  <div class="features">
+    <div class="card">
+      <h3>🎓 Educación y posgrados</h3>
+      <p>Financia estudios en Colombia o el exterior.</p>
+    </div>
+    <div class="card">
+      <h3>🛫 Viajes o mudanzas</h3>
+      <p>Organiza tu movilidad personal o profesional.</p>
+    </div>
+    <div class="card">
+      <h3>💼 Capital de trabajo</h3>
+      <p>Impulsa tu emprendimiento o negocio formal.</p>
+    </div>
+    <div class="card">
+      <h3>🏥 Salud y bienestar</h3>
+      <p>Cubre tratamientos médicos o gastos familiares.</p>
+    </div>
+  </div>
+
+  <section class="section-title">Solicita asesoría gratuita</section>
+  <section id="formulario" class="form-section">
+    <form action="https://formspree.io/f/tu_form_id" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="text" name="ingresos" placeholder="¿Cuál es tu ingreso mensual?">
+      <textarea name="mensaje" rows="4" placeholder="¿Qué deseas financiar y en qué plazo?"></textarea>
+      <label style="display: flex; align-items: center; gap: 0.5rem;">
+        <input type="checkbox" name="acepto" required>
+        Acepto ser contactado(a) para recibir asesoría sobre libre inversión.
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
