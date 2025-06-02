@@ -59,6 +59,10 @@
         tbody.appendChild(tr);
       });
     }
+    // Proteger acceso directo al CRM
+if (!localStorage.getItem("auth")) {
+  window.location.href = "login.html";
+}
 
     cargarLeads();
   </script>
