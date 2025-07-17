@@ -1,166 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crédito Hipotecario | Especialistas Financieros</title>
-  <link rel="stylesheet" href="../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
-      color: #1c1c1e;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1592595896551-c7d43c30f063?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      padding: 5rem 2rem;
-      color: white;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    .hero a {
-      margin-top: 2rem;
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #ffffff;
-      color: #003366;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin-top: 0.5rem;
-      color: #003366;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin: 3rem auto 1rem;
-    }
-    .form-section {
-      background: white;
-      padding: 3rem 2rem;
-      max-width: 700px;
-      margin: 2rem auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-    .form-section input,
-    .form-section textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .form-section button {
-      background: #003366;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Hipotecario | Especialistas Financieros</title>
+    
+    <meta name="description" content="Encuentra el mejor crédito hipotecario para comprar vivienda nueva o usada, realizar compra de cartera, leasing habitacional y más. Asesoría especializada para tu hogar ideal.">
+    <meta name="keywords" content="crédito hipotecario, compra de vivienda, leasing habitacional, compra de cartera hipotecaria, crédito construcción, subsidios vivienda, especialistas financieros, hipotecas Colombia">
+    <meta name="author" content="Especialistas Financieros">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/hipotecario/">
+    <meta property="og:title" content="Crédito Hipotecario | Especialistas Financieros">
+    <meta property="og:description" content="Encuentra el mejor crédito hipotecario para comprar vivienda nueva o usada, realizar compra de cartera, leasing habitacional y más. Asesoría especializada para tu hogar ideal.">
+    <meta property="og:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/hipotecario.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/hipotecario/">
+    <meta property="twitter:title" content="Crédito Hipotecario | Especialistas Financieros">
+    <meta property="twitter:description" content="Encuentra el mejor crédito hipotecario para comprar vivienda nueva o usada, realizar compra de cartera, leasing habitacional y más. Asesoría especializada para tu hogar ideal.">
+    <meta property="twitter:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/hipotecario.jpg">
+
+    <link rel="stylesheet" href="../style.css"> <link rel="stylesheet" href="hipotecario-lp.css"> <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header class="sticky">
-    <div class="logo-titulo">
-      <img src="../favicon.png" alt="Logo" class="logo">
-      <h1 style="color: #003366;">Crédito Hipotecario</h1>
-    </div>
-  </header>
+    <header class="sticky">
+        <div class="logo-titulo">
+            <img src="../favicon.png" alt="Logo Especialistas Financieros" class="logo">
+            <h1 style="color: #003366;">Crédito Hipotecario</h1>
+        </div>
+        <nav>
+            <a href="../">Inicio</a>
+            <a href="../#contacto">Contacto</a>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>Tu casa propia comienza aquí</h1>
-    <p>Compara múltiples opciones de crédito hipotecario y encuentra el plan ideal para ti. Con asesoría integral, tasas competitivas y acompañamiento legal completo.</p>
-    <a href="#formulario">Solicita asesoría personalizada</a>
-  </section>
+    <section class="hero">
+        <h1>Tu casa propia comienza aquí</h1>
+        <p>Compara múltiples opciones de crédito hipotecario y encuentra el plan ideal para ti. Con asesoría integral, tasas competitivas y acompañamiento legal completo.</p>
+        <a href="#formulario" class="btn-hero">Solicita asesoría personalizada</a>
+    </section>
 
-  <section class="section-title">Opciones para cada perfil</section>
-  <div class="features">
-    <div class="card">
-      <h3>🏡 Compra de vivienda nueva o usada</h3>
-      <p>Te guiamos en la compra del hogar ideal con tasas preferenciales.</p>
+    <h2 class="section-title" data-aos="fade-up">Opciones para cada perfil</h2>
+    <div class="features">
+        <div class="card" data-aos="fade-up">
+            <h3>🏡 Compra de vivienda nueva o usada</h3>
+            <p>Te guiamos en la compra del hogar ideal con tasas preferenciales.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🔁 Compra de cartera hipotecaria</h3>
+            <p>Mejora tu crédito actual con mejores condiciones y ahorra millones.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>📄 Leasing habitacional</h3>
+            <p>Una opción flexible para personas naturales o empresas.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🏗️ Crédito para construcción</h3>
+            <p>Financia tu proyecto desde cero con respaldo profesional.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>💸 Crédito con subsidio</h3>
+            <p>Gestionamos el acceso a subsidios de vivienda VIS o No VIS.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>📉 Ahorros en cesantías</h3>
+            <p>Usa tus cesantías como parte de la cuota inicial.</p>
+        </div>
     </div>
-    <div class="card">
-      <h3>🔁 Compra de cartera hipotecaria</h3>
-      <p>Mejora tu crédito actual con mejores condiciones y ahorra millones.</p>
-    </div>
-    <div class="card">
-      <h3>📄 Leasing habitacional</h3>
-      <p>Una opción flexible para personas naturales o empresas.</p>
-    </div>
-    <div class="card">
-      <h3>🏗️ Crédito para construcción</h3>
-      <p>Financia tu proyecto desde cero con respaldo profesional.</p>
-    </div>
-    <div class="card">
-      <h3>💸 Crédito con subsidio</h3>
-      <p>Gestionamos el acceso a subsidios de vivienda VIS o No VIS.</p>
-    </div>
-    <div class="card">
-      <h3>📉 Ahorros en cesantías</h3>
-      <p>Usa tus cesantías como parte de la cuota inicial.</p>
-    </div>
-  </div>
 
-  <section class="section-title">Solicita asesoría sin costo</section>
-  <section id="formulario" class="form-section">
-    <form action="https://formspree.io/f/tu_form_id" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre completo" required>
-      <input type="tel" name="telefono" placeholder="Teléfono" required>
-      <input type="email" name="email" placeholder="Correo electrónico" required>
-      <input type="text" name="ingresos" placeholder="¿Cuál es tu ingreso mensual aproximado?">
-      <textarea name="mensaje" rows="4" placeholder="¿Qué tipo de crédito te interesa o en qué ciudad deseas comprar?"></textarea>
-      <label style="display: flex; align-items: center; gap: 0.5rem;">
-        <input type="checkbox" name="acepto" required>
-        Acepto ser contactado(a) para recibir asesoría financiera.
-      </label>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <h2 class="section-title" data-aos="fade-up">Solicita asesoría sin costo</h2>
+    <section id="formulario" class="form-section" data-aos="fade-up">
+        <form action="https://formspree.io/f/xldlekpj" method="POST" id="form-hipotecario">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" name="ingresos" placeholder="¿Cuál es tu ingreso mensual aproximado?">
+            <textarea name="mensaje" rows="4" placeholder="¿Qué tipo de crédito te interesa o en qué ciudad deseas comprar?"></textarea>
+            <label style="display: flex; align-items: center; gap: 0.5rem;">
+                <input type="checkbox" name="acepto" required>
+                Acepto ser contactado(a) para recibir asesoría financiera.
+            </label>
+            <button type="submit">Enviar</button>
+            <p id="mensaje-confirmacion" class="form-message success">¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.</p>
+            <p id="mensaje-error" class="form-message error">Error al enviar el formulario. Por favor, intenta de nuevo.</p>
+        </form>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+    </footer>
+
+    <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true // Las animaciones solo se ejecutan una vez
+        });
+
+        // Script para manejar el envío del formulario con Formspree
+        const formHipotecario = document.getElementById('form-hipotecario');
+        const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        formHipotecario.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita el envío por defecto del formulario
+
+            const response = await fetch(formHipotecario.action, {
+                method: formHipotecario.method,
+                body: new FormData(formHipotecario),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formHipotecario.reset(); // Limpia el formulario
+                mensajeConfirmacion.style.display = 'block'; // Muestra el mensaje de éxito
+                mensajeError.style.display = 'none'; // Oculta cualquier mensaje de error previo
+            } else {
+                mensajeError.style.display = 'block'; // Muestra el mensaje de error
+                mensajeConfirmacion.style.display = 'none'; // Oculta cualquier mensaje de éxito previo
+            }
+        });
+    </script>
 </body>
 </html>
-
