@@ -1,153 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crédito Vehicular | Especialistas Financieros</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: linear-gradient(to bottom, #f8f9fb, #e9eef5);
-      color: #1a1a1a;
-      margin: 0;
-      padding: 0;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-    .hero h1,
-    .hero p,
-    .hero a {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .btn-primary {
-      padding: 0.8rem 1.5rem;
-      background: #00c6ff;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin-top: 0.5rem;
-      color: #003366;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin: 3rem auto 1rem;
-    }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crédito Vehicular | Especialistas Financieros</title>
+    
+    <meta name="description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta name="keywords" content="crédito vehicular, carro nuevo, carro usado, compra de cartera vehicular, leasing financiero, flotas empresariales, financiamiento automotriz, especialistas financieros">
+    <meta name="author" content="Especialistas Financieros">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo/">
+    <meta property="og:title" content="Crédito Vehicular | Especialistas Financieros">
+    <meta property="og:description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta property="og:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo.webp"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo/">
+    <meta property="twitter:title" content="Crédito Vehicular | Especialistas Financieros">
+    <meta property="twitter:description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta property="twitter:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo.webp">
+
+    <link rel="stylesheet" href="../style.css" /> <link rel="stylesheet" href="vehiculo-lp.css" /> <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header class="sticky">
-    <div class="logo-titulo">
-      <img src="../favicon.png" alt="Logo" class="logo">
-      <h1 style="color: #003366;">Crédito Vehicular</h1>
-    </div>
-  </header>
+    <header class="sticky">
+        <div class="logo-titulo">
+            <img src="../favicon.png" alt="Logo Especialistas Financieros" class="logo">
+            <h1 style="color: #003366;">Crédito Vehicular</h1>
+        </div>
+        <nav>
+            <a href="../">Inicio</a>
+            <a href="../#contacto">Contacto</a>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>Tu vehículo soñado está más cerca</h1>
-    <p>Compara opciones de crédito, recibe asesoría personalizada y obtén aprobación ágil desde cualquier lugar.</p>
-    <a href="#formulario" class="btn-primary">Solicita asesoría gratuita</a>
-  </section>
+    <section class="hero">
+        <h1>Tu vehículo soñado está más cerca</h1>
+        <p>Compara opciones de crédito, recibe asesoría personalizada y obtén aprobación ágil desde cualquier lugar.</p>
+        <a href="#formulario" class="btn-primary">Solicita asesoría gratuita</a>
+    </section>
 
-  <section class="section-title">Opciones para cada necesidad</section>
-  <div class="features">
-    <div class="card">
-      <h3>🚗 Compra de vehículo nuevo o usado</h3>
-      <p>Accede a tasas competitivas para adquirir el carro que siempre has querido.</p>
+    <h2 class="section-title" data-aos="fade-up">Opciones para cada necesidad</h2>
+    <div class="features">
+        <div class="card" data-aos="fade-up">
+            <h3>🚗 Compra de vehículo nuevo o usado</h3>
+            <p>Accede a tasas competitivas para adquirir el carro que siempre has querido.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🔄 Compra de cartera vehicular</h3>
+            <p>Reduce tu cuota o plazo trasladando tu crédito a una entidad con mejores condiciones.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>📄 Leasing financiero</h3>
+            <p>Alternativa ideal para empresas o profesionales que desean deducibilidad tributaria.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🚛 Flotas empresariales</h3>
+            <p>Soluciones de financiamiento para parque automotor corporativo o vehículos de trabajo.</p>
+        </div>
     </div>
-    <div class="card">
-      <h3>🔄 Compra de cartera vehicular</h3>
-      <p>Reduce tu cuota o plazo trasladando tu crédito a una entidad con mejores condiciones.</p>
-    </div>
-    <div class="card">
-      <h3>📄 Leasing financiero</h3>
-      <p>Alternativa ideal para empresas o profesionales que desean deducibilidad tributaria.</p>
-    </div>
-    <div class="card">
-      <h3>🚛 Flotas empresariales</h3>
-      <p>Soluciones de financiamiento para parque automotor corporativo o vehículos de trabajo.</p>
-    </div>
-  </div>
 
-  <section class="section-title">Solicita asesoría ahora</section>
-  <section id="formulario" style="padding: 2rem; max-width: 600px; margin: auto;">
-    <form action="https://formspree.io/f/tu_form_id" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem;">
-      <input type="tel" name="telefono" placeholder="Teléfono" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem;">
-      <input type="email" name="email" placeholder="Correo electrónico" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem;">
-      <input type="text" name="tipo-vehiculo" placeholder="¿Qué tipo de vehículo deseas?" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem;">
-      <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu necesidad..." style="width: 100%; padding: 0.8rem;"></textarea>
-      <label style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
-        <input type="checkbox" name="acepto" required>
-        Acepto ser contactado(a) para recibir asesoría financiera.
-      </label>
-      <button type="submit" class="btn-primary" style="margin-top: 1rem;">Enviar</button>
-    </form>
-  </section>
+    <h2 class="section-title" data-aos="fade-up">Solicita asesoría ahora</h2>
+    <section id="formulario" class="form-section" data-aos="fade-up">
+        <form action="https://formspree.io/f/xnnzqyge" method="POST" id="form-vehicular">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" name="tipo-vehiculo" placeholder="¿Qué tipo de vehículo deseas? (ej. carro, moto, camión)" >
+            <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu necesidad: ¿Nuevo o usado? ¿Cuál es tu presupuesto?"></textarea>
+            <label>
+                <input type="checkbox" name="acepto" required>
+                Acepto ser contactado(a) para recibir asesoría financiera.
+            </label>
+            <button type="submit" class="btn-primary">Enviar</button>
+            <p id="mensaje-confirmacion" class="form-message success">¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.</p>
+            <p id="mensaje-error" class="form-message error">Error al enviar el formulario. Por favor, intenta de nuevo.</p>
+        </form>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+    </footer>
+
+    <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true // Las animaciones solo se ejecutan una vez
+        });
+
+        // Script para manejar el envío del formulario con Formspree
+        const formVehicular = document.getElementById('form-vehicular');
+        const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        formVehicular.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita el envío por defecto del formulario
+
+            const response = await fetch(formVehicular.action, {
+                method: formVehicular.method,
+                body: new FormData(formVehicular),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formVehicular.reset(); // Limpia el formulario
+                mensajeConfirmacion.style.display = 'block'; // Muestra el mensaje de éxito
+                mensajeError.style.display = 'none'; // Oculta cualquier mensaje de error previo
+            } else {
+                mensajeError.style.display = 'block'; // Muestra el mensaje de error
+                mensajeConfirmacion.style.display = 'none'; // Oculta cualquier mensaje de éxito previo
+            }
+        });
+    </script>
 </body>
 </html>
-
