@@ -1,10 +1,19 @@
-// 🔹 Conexión Supabase
+// ==============================
+// 🔹 CONEXIÓN SUPABASE (CDN v2 CORRECTA)
+// ==============================
+
 const supabaseUrl = "https://ctybuzownpuyqpexbbrj.supabase.co";
 const supabaseKey = "sb_publishable_1XQhEKitO80NwoBjWxVLKA_BodBfHm_";
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+// Import correcto desde el namespace global del CDN
+const { createClient } = supabase;
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
 
-// 🔹 Scroll suave a secciones
+// ==============================
+// 🔹 SCROLL SUAVE
+// ==============================
+
 function scrollToSection(id) {
     const target = document.getElementById(id);
     if (target) {
@@ -12,6 +21,10 @@ function scrollToSection(id) {
     }
 }
 
+
+// ==============================
+// 🔹 CUANDO CARGA EL DOM
+// ==============================
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -165,6 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 🔹 Cargar bancos al iniciar
+    cargarBancos();
+
 });
 
 
@@ -175,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function cargarBancos() {
 
     try {
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from("bancos")
             .select("*")
             .eq("activo", true)
@@ -189,5 +205,3 @@ async function cargarBancos() {
         console.error("Error cargando bancos:", error);
     }
 }
-
-cargarBancos();
