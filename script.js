@@ -1,4 +1,10 @@
-// Scroll suave a secciones
+// 🔹 Conexión Supabase
+const supabaseUrl = "https://ctybuzownpuyqpexbbrj.supabase.co";
+const supabaseKey = "sb_publishable_1XQhEKitO80NwoBjWxVLKA_BodBfHm_";
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+
+// 🔹 Scroll suave a secciones
 function scrollToSection(id) {
     const target = document.getElementById(id);
     if (target) {
@@ -6,8 +12,13 @@ function scrollToSection(id) {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Simulador de crédito
+
+    // ==============================
+    // 🔹 SIMULADOR DE CRÉDITO
+    // ==============================
+
     const formSimulador = document.getElementById('form-simulador');
     const resultadoSimulador = document.getElementById('resultado-simulador');
 
@@ -25,11 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (tasaAnual < 0 || tasaAnual > 1000) {
-                resultadoSimulador.innerHTML = '<p class="error-message">La tasa anual parece irreal. Intenta un valor más bajo.</p>';
+                resultadoSimulador.innerHTML = '<p class="error-message">La tasa anual parece irreal.</p>';
                 return;
             }
+
             if (plazo > 360) {
-                resultadoSimulador.innerHTML = '<p class="error-message">El plazo es demasiado largo. Intenta un valor menor.</p>';
+                resultadoSimulador.innerHTML = '<p class="error-message">El plazo es demasiado largo.</p>';
                 return;
             }
 
@@ -45,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 total = cuota * plazo;
             }
 
-            if (isNaN(cuota) || !isFinite(cuota) || isNaN(total) || !isFinite(total)) {
-                resultadoSimulador.innerHTML = '<p class="error-message">No fue posible calcular. Verifica tus entradas (tasa o plazo).</p>';
+            if (!isFinite(cuota) || !isFinite(total)) {
+                resultadoSimulador.innerHTML = '<p class="error-message">Error en el cálculo.</p>';
                 return;
             }
 
@@ -59,121 +71,123 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Formulario de contacto (Formspree)
+
+    // ==============================
+    // 🔹 FORMULARIO CONTACTO
+    // ==============================
+
     const formContacto = document.getElementById('form-contacto');
     const mensajeConfirmacionContacto = document.getElementById('mensaje-confirmacion');
     const mensajeErrorContacto = document.getElementById('mensaje-error-contacto');
 
     if (formContacto && mensajeConfirmacionContacto && mensajeErrorContacto) {
+
         mensajeConfirmacionContacto.style.display = 'none';
         mensajeErrorContacto.style.display = 'none';
 
-        formContacto.addEventListener('submit', (e) => {
+        formContacto.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             mensajeConfirmacionContacto.style.display = 'none';
             mensajeErrorContacto.style.display = 'none';
 
-            const formData = new FormData(formContacto);
+            try {
+                const response = await fetch(formContacto.action, {
+                    method: 'POST',
+                    body: new FormData(formContacto),
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            fetch(formContacto.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    mensajeConfirmacionContacto.style.display = 'block';
-                    formContacto.reset();
-                    setTimeout(() => {
-                        mensajeConfirmacionContacto.style.display = 'none';
-                    }, 5000);
-                } else {
-                    return response.json().then(data => {
-                        throw new Error(data.error || 'Error desconocido al enviar formulario');
-                    });
-                }
-            })
-            .catch(error => {
+                if (!response.ok) throw new Error();
+
+                mensajeConfirmacionContacto.style.display = 'block';
+                formContacto.reset();
+
+                setTimeout(() => {
+                    mensajeConfirmacionContacto.style.display = 'none';
+                }, 5000);
+
+            } catch (error) {
                 console.error('Error de contacto:', error);
                 mensajeErrorContacto.style.display = 'block';
+
                 setTimeout(() => {
                     mensajeErrorContacto.style.display = 'none';
                 }, 5000);
-            });
+            }
         });
     }
 
-    // Formulario de referidos (Formspree)
+
+    // ==============================
+    // 🔹 FORMULARIO REFERIDOS
+    // ==============================
+
     const formReferidos = document.getElementById('form-referidos');
     const mensajeConfirmacionReferido = document.getElementById('mensaje-confirmacion-referido');
     const mensajeErrorReferido = document.getElementById('mensaje-error-referido');
 
     if (formReferidos && mensajeConfirmacionReferido && mensajeErrorReferido) {
+
         mensajeConfirmacionReferido.style.display = 'none';
         mensajeErrorReferido.style.display = 'none';
 
-        formReferidos.addEventListener('submit', (e) => {
+        formReferidos.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             mensajeConfirmacionReferido.style.display = 'none';
             mensajeErrorReferido.style.display = 'none';
 
-            // *** ELIMINA O COMENTA ESTAS LÍNEAS DE CÓDIGO ***
-            // const formAction = formReferidos.action;
-            // if (formAction.includes('https://formspree.io/f/mwpoonwv')) {
-            //     alert('¡Advertencia! El ID del formulario de referidos en el HTML no ha sido reemplazado. Por favor, actualiza el "action" del formulario con tu ID real de Formspree.');
-            //     mensajeErrorReferido.innerText = 'Error: ID de formulario no configurado.';
-            //     mensajeErrorReferido.style.display = 'block';
-            //     return;
-            // }
-            // *** FIN DE LAS LÍNEAS A ELIMINAR/COMENTAR ***
+            try {
+                const response = await fetch(formReferidos.action, {
+                    method: 'POST',
+                    body: new FormData(formReferidos),
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            const formData = new FormData(formReferidos);
+                if (!response.ok) throw new Error();
 
-            fetch(formReferidos.action, { // Ahora usa directamente formReferidos.action
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    mensajeConfirmacionReferido.style.display = 'block';
-                    formReferidos.reset();
-                    setTimeout(() => {
-                        mensajeConfirmacionReferido.style.display = 'none';
-                    }, 5000);
-                } else {
-                    return response.json().then(data => {
-                        throw new Error(data.error || 'Error desconocido al enviar formulario');
-                    });
-                }
-            })
-            .catch(error => {
+                mensajeConfirmacionReferido.style.display = 'block';
+                formReferidos.reset();
+
+                setTimeout(() => {
+                    mensajeConfirmacionReferido.style.display = 'none';
+                }, 5000);
+
+            } catch (error) {
                 console.error('Error de referidos:', error);
                 mensajeErrorReferido.style.display = 'block';
+
                 setTimeout(() => {
                     mensajeErrorReferido.style.display = 'none';
                 }, 5000);
-            });
+            }
         });
     }
 
-    // Animación carrusel (si aplica)
-    // El código CSS ya maneja la animación.
 });
 
+
+// ==============================
+// 🔹 CARGAR BANCOS DESDE SUPABASE
+// ==============================
+
 async function cargarBancos() {
-  const { data, error } = await supabase
-    .from("bancos")
-    .select("*")
-    .eq("activo", true)
-    .order("orden", { ascending: true });
 
-  if (error) {
-    console.error("Error cargando bancos:", error);
-    return;
-  }
+    try {
+        const { data, error } = await supabase
+            .from("bancos")
+            .select("*")
+            .eq("activo", true)
+            .order("orden", { ascending: true });
 
-  console.log("Bancos desde Supabase:", data);
+        if (error) throw error;
+
+        console.log("Bancos desde Supabase:", data);
+
+    } catch (error) {
+        console.error("Error cargando bancos:", error);
+    }
 }
 
 cargarBancos();
