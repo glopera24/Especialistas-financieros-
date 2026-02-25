@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multisimulador Financiero - Créditos Colombia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f8fafc;
+            transition: background-color 0.2s;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg no-print">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold"><i class="fas fa-calculator mr-2"></i>Multisimulador Financiero</h1>
+                    <p class="text-sm opacity-90 mt-1">Compara créditos hipotecarios en Colombia - Febrero 2026</p>
+                </div>
+                <button onclick="window.location.href='admin.html'" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition">
+                    <i class="fas fa-cog mr-2"></i>Panel Admin
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Simulador Form -->
+        <div class="bg-white rounded-xl card-shadow p-8 mb-8 no-print">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-home text-purple-600 mr-2"></i>Simulador de Crédito
+            </h2>
+            
+            <form id="simulatorForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Producto -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-tag text-purple-500 mr-1"></i>Producto Financiero
+                        </label>
+                        <select id="producto" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="">Seleccione un producto</option>
+                        </select>
+                    </div>
+
+                    <!-- Tipo de Vivienda -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-building text-purple-500 mr-1"></i>Tipo de Vivienda
+                        </label>
+                        <select id="tipoVivienda" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="">Seleccione tipo</option>
+                            <option value="VIS">VIS - Vivienda de Interés Social</option>
+                            <option value="NO_VIS">NO VIS - Vivienda Estándar</option>
+                        </select>
+                    </div>
+
+                    <!-- Valor del Inmueble -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-dollar-sign text-purple-500 mr-1"></i>Valor del Inmueble (COP)
+                        </label>
+                        <input type="number" id="valorInmueble" required min="1000000" step="1000000" 
+                               placeholder="Ej: 200000000"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Cuota Inicial -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-percentage text-purple-500 mr-1"></i>Cuota Inicial (%)
+                        </label>
+                        <input type="number" id="cuotaInicial" required min="0" max="100" step="1" value="30"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <p class="text-xs text-gray-500 mt-1">Monto: <span id="montoCuotaInicial" class="font-semibold">$0</span></p>
+                    </div>
+
+                    <!-- Monto a Financiar -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-money-bill-wave text-purple-500 mr-1"></i>Monto a Financiar (COP)
+                        </label>
+                        <input type="number" id="montoFinanciar" readonly
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-700 font-semibold">
+                    </div>
+
+                    <!-- Plazo en Años -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-calendar-alt text-purple-500 mr-1"></i>Plazo (Años)
+                        </label>
+                        <select id="plazoAnios" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="5">5 años</option>
+                            <option value="10">10 años</option>
+                            <option value="15" selected>15 años</option>
+                            <option value="20">20 años</option>
+                            <option value="25">25 años</option>
+                            <option value="30">30 años</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Botón Simular -->
+                <div class="flex justify-center pt-4">
+                    <button type="submit" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition shadow-lg transform hover:scale-105">
+                        <i class="fas fa-chart-line mr-2"></i>Simular Crédito
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8 no-print">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-6 card-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Mejor Cuota</p>
+                            <h3 id="bestQuota" class="text-2xl font-bold mt-1">$0</h3>
+                        </div>
+                        <i class="fas fa-trophy text-3xl opacity-80"></i>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl p-6 card-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Mejor Tasa</p>
+                            <h3 id="bestRate" class="text-2xl font-bold mt-1">0%</h3>
+                        </div>
+                        <i class="fas fa-percent text-3xl opacity-80"></i>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-6 card-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Bancos Comparados</p>
+                            <h3 id="totalBanks" class="text-2xl font-bold mt-1">0</h3>
+                        </div>
+                        <i class="fas fa-university text-3xl opacity-80"></i>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl p-6 card-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Rango de Ahorro</p>
+                            <h3 id="savingsRange" class="text-xl font-bold mt-1">$0</h3>
+                        </div>
+                        <i class="fas fa-piggy-bank text-3xl opacity-80"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparative Table -->
+            <div class="bg-white rounded-xl card-shadow p-8 mb-8">
+                <div class="flex justify-between items-center mb-6 no-print">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <i class="fas fa-table text-purple-600 mr-2"></i>Comparativa de Bancos
+                    </h2>
+                    <div class="space-x-2">
+                        <button onclick="sortTable('cuota')" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-purple-200 transition">
+                            <i class="fas fa-sort-amount-down mr-1"></i>Ordenar por Cuota
+                        </button>
+                        <button onclick="exportToPDF()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+                            <i class="fas fa-file-pdf mr-1"></i>Exportar PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulation Parameters (for PDF) -->
+                <div id="simulationParams" class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-gray-700 mb-2">Parámetros de Simulación:</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div><span class="font-semibold">Producto:</span> <span id="paramProducto"></span></div>
+                        <div><span class="font-semibold">Tipo:</span> <span id="paramTipo"></span></div>
+                        <div><span class="font-semibold">Valor Inmueble:</span> <span id="paramValor"></span></div>
+                        <div><span class="font-semibold">Cuota Inicial:</span> <span id="paramCuota"></span></div>
+                        <div><span class="font-semibold">Monto Financiar:</span> <span id="paramMonto"></span></div>
+                        <div><span class="font-semibold">Plazo:</span> <span id="paramPlazo"></span></div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table id="resultsTable" class="w-full table-hover">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                <th class="px-6 py-4 text-left font-semibold">Posición</th>
+                                <th class="px-6 py-4 text-left font-semibold">Banco</th>
+                                <th class="px-6 py-4 text-right font-semibold">Tasa EA</th>
+                                <th class="px-6 py-4 text-right font-semibold">Tasa MV</th>
+                                <th class="px-6 py-4 text-right font-semibold">Cuota Mensual</th>
+                                <th class="px-6 py-4 text-right font-semibold">Total Pagado</th>
+                                <th class="px-6 py-4 text-right font-semibold">Intereses Totales</th>
+                                <th class="px-6 py-4 text-right font-semibold no-print">Ahorro vs Mayor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                            <!-- Results will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Multi-Scenario Comparison (Optional Advanced Feature) -->
+            <div class="bg-white rounded-xl card-shadow p-8 no-print">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-sliders-h text-purple-600 mr-2"></i>Comparación de Escenarios
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="scenarioComparison">
+                    <!-- Scenario cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 no-print">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm opacity-80">
+                <i class="fas fa-info-circle mr-1"></i>
+                Tasas de referencia vigentes a Febrero 2026. Sujeto a estudio crediticio y aplican T&C.
+            </p>
+            <p class="text-xs opacity-60 mt-2">
+                Sistema de amortización francés (cuota fija). Los valores son aproximados y pueden variar según perfil del cliente.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/simulator.js"></script>
+</body>
+</html>
