@@ -160,3 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animación carrusel (si aplica)
     // El código CSS ya maneja la animación.
 });
+
+async function cargarBancos() {
+  const { data, error } = await supabase
+    .from("bancos")
+    .select("*")
+    .eq("activo", true)
+    .order("orden", { ascending: true });
+
+  if (error) {
+    console.error("Error cargando bancos:", error);
+    return;
+  }
+
+  console.log("Bancos desde Supabase:", data);
+}
+
+cargarBancos();
