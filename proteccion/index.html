@@ -1,127 +1,1617 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protección Patrimonial | Especialistas Financieros</title>
-    
-    <meta name="description" content="Asegura tu futuro financiero y el de tu familia con soluciones de protección patrimonial: renta vitalicia, ahorro internacional, seguros de vida con acumulación y más.">
-    <meta name="keywords" content="protección patrimonial, renta vitalicia, ahorro internacional, seguros de vida, planificación financiera, patrimonio familiar, especialistas financieros">
-    <meta name="author" content="Especialistas Financieros">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/proteccion/">
-    <meta property="og:title" content="Protección Patrimonial | Especialistas Financieros">
-    <meta property="og:description" content="Asegura tu futuro financiero y el de tu familia con soluciones de protección patrimonial: renta vitalicia, ahorro internacional, seguros de vida con acumulación y más.">
-    <meta property="og:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/proteccion.webp"> <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/proteccion/">
-    <meta property="twitter:title" content="Protección Patrimonial | Especialistas Financieros">
-    <meta property="twitter:description" content="Asegura tu futuro financiero y el de tu familia con soluciones de protección patrimonial: renta vitalicia, ahorro internacional, seguros de vida con acumulación y más.">
-    <meta property="twitter:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/proteccion.webp">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inversión en Dolares y Protección Patrimonial | Especialistas Financieros</title>
 
-    <link rel="stylesheet" href="../style.css"> <link rel="stylesheet" href="proteccion-lp.css"> <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta name="description" content="Inversión en dólares, protección de capitales, fondos de inversión globales y seguros de vida con valor de rescate. Asesoría patrimonial de clase mundial para ejecutivos y familias de alto patrimonio.">
+  <meta name="keywords" content="inversión en dólares, protección de capitales, fondos de inversión, seguros de vida valor de rescate, renta vitalicia, patrimonio internacional, especialistas financieros">
+  <meta name="author" content="Especialistas Financieros">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Inversión y Protección Patrimonial | Especialistas Financieros">
+  <meta property="og:description" content="Soluciones patrimoniales de clase mundial: inversión en dólares, fondos globales, seguros de vida con acumulación y renta vitalicia internacional.">
+
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0a1f44;
+      --navy-mid:    #0d2c5c;
+      --navy-deep:   #060f22;
+      --blue:        #1a4a8a;
+      --accent:      #c8a96e;
+      --accent-dark: #a8843e;
+      --accent-lt:   rgba(200,169,110,.15);
+      --light:       #f4f7fb;
+      --white:       #ffffff;
+      --gray:        #6b7280;
+      --gray-light:  #e8edf5;
+      --text:        #1e293b;
+      --shadow:      0 4px 24px rgba(10,31,68,.10);
+      --shadow-md:   0 8px 40px rgba(10,31,68,.15);
+      --shadow-lg:   0 20px 60px rgba(10,31,68,.22);
+      --radius:      14px;
+      --radius-sm:   8px;
+      --transition:  .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a   { text-decoration: none; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section    { padding: 110px 0; }
+    .section-sm { padding: 60px 0; }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-lt);
+      color: var(--accent-dark);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      padding: .3rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .tag-light {
+      background: rgba(200,169,110,.18);
+      border: 1px solid rgba(200,169,110,.3);
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 4vw, 2.85rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+    .section-title-serif {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+    .section-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-top: .85rem;
+      line-height: 1.8;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700; font-size: .9rem;
+      padding: .85rem 2rem;
+      border-radius: var(--radius-sm);
+      border: none; cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: .02em;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,169,110,.4);
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: transparent;
+      color: var(--accent);
+      font-weight: 600; font-size: .875rem;
+      padding: .75rem 1.75rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid rgba(200,169,110,.5);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-ghost:hover {
+      background: rgba(200,169,110,.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-white {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 700; font-size: .9rem;
+      padding: .85rem 2rem;
+      border-radius: var(--radius-sm);
+      border: none; cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-white:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,.25);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(10,31,68,.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      transition: box-shadow .3s;
+    }
+    header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.35); }
+
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: .9rem; }
+    .logo-wrap img { width: 40px; height: 40px; border-radius: 9px; object-fit: contain; }
+    .logo-wrap span { font-size: 1.05rem; font-weight: 700; color: var(--white); letter-spacing: .02em; }
+    .logo-wrap span em { color: var(--accent); font-style: normal; }
+
+    nav { display: flex; align-items: center; gap: .2rem; }
+    nav a {
+      color: rgba(255,255,255,.72); font-size: .85rem; font-weight: 500;
+      padding: .5rem .95rem; border-radius: 6px; transition: var(--transition);
+    }
+    nav a:hover { color: var(--white); background: rgba(255,255,255,.08); }
+    .nav-cta {
+      background: var(--accent) !important; color: var(--navy) !important;
+      font-weight: 700 !important; margin-left: .5rem;
+    }
+    .nav-cta:hover { background: var(--accent-dark) !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 45%, #122756 100%);
+      position: relative; overflow: hidden;
+      padding: 140px 0 120px;
+      min-height: 100vh;
+      display: flex; align-items: center;
+    }
+
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 70% 60% at 75% 40%, rgba(200,169,110,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 15% 80%, rgba(26,74,138,.2) 0%, transparent 55%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; overflow: hidden; opacity: .04;
+      background-image:
+        linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
+    }
+
+    .hero-left {}
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(200,169,110,.14);
+      border: 1px solid rgba(200,169,110,.35);
+      color: var(--accent);
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem 1.1rem; border-radius: 50px; margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent { color: var(--accent); font-style: italic; }
+    .hero h1 .thin { font-weight: 300; font-family: 'Inter', sans-serif; font-size: .6em; display: block; letter-spacing: .05em; margin-top: .3rem; }
+
+    .hero-desc {
+      font-size: clamp(.95rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,.68);
+      max-width: 530px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+    .hero-trust {
+      display: flex; flex-direction: column; gap: .7rem;
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .82rem; color: rgba(255,255,255,.5);
+    }
+    .hero-trust-item i { color: var(--accent); font-size: .9rem; }
+
+    /* Hero Right Card */
+    .hero-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      border-radius: 20px 20px 0 0;
+    }
+    .hero-card-title {
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .hero-card-product {
+      display: flex; align-items: center; gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .hero-card-product:last-of-type { border-bottom: none; }
+    .hero-card-product-icon {
+      width: 42px; height: 42px; min-width: 42px;
+      background: rgba(200,169,110,.12);
+      border: 1px solid rgba(200,169,110,.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--accent);
+    }
+    .hero-card-product-name { font-size: .88rem; font-weight: 600; color: var(--white); }
+    .hero-card-product-sub  { font-size: .75rem; color: rgba(255,255,255,.45); margin-top: .1rem; }
+    .hero-card-product-yield {
+      margin-left: auto;
+      font-size: .85rem; font-weight: 700; color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .hero-card-cta {
+      margin-top: 1.75rem;
+      width: 100%;
+      justify-content: center;
+      font-size: .88rem;
+    }
+
+    /* Floating dots decoration */
+    .hero-dot {
+      position: absolute; border-radius: 50%;
+      background: var(--accent); opacity: .15;
+      pointer-events: none;
+    }
+    .hero-dot-1 { width: 280px; height: 280px; top: -60px; right: -60px; }
+    .hero-dot-2 { width: 140px; height: 140px; bottom: 40px; left: 60px; opacity: .06; }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--navy-deep);
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .trust-bar-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .trust-stat {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; min-width: 120px;
+    }
+    .trust-stat-num {
+      font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1;
+    }
+    .trust-stat-lbl {
+      font-size: .75rem; color: rgba(255,255,255,.45);
+      text-transform: uppercase; letter-spacing: .08em; margin-top: .4rem;
+      text-align: center;
+    }
+    .trust-divider {
+      width: 1px; height: 50px; background: rgba(255,255,255,.08); flex-shrink: 0;
+    }
+
+    /* ===== PRODUCTS / SOLUCIONES ===== */
+    #soluciones { background: var(--light); }
+
+    .sol-header { text-align: center; margin-bottom: 4rem; }
+
+    .sol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .sol-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-light);
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .sol-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(200,169,110,.35);
+    }
+
+    .sol-card-top {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 2.25rem 2rem 1.75rem;
+      position: relative; overflow: hidden;
+    }
+    .sol-card-top::after {
+      content: '';
+      position: absolute; right: -30px; top: -30px;
+      width: 150px; height: 150px;
+      background: rgba(255,255,255,.04);
+      border-radius: 50%;
+    }
+    .sol-card-icon {
+      width: 56px; height: 56px;
+      background: rgba(200,169,110,.18);
+      border: 1px solid rgba(200,169,110,.3);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--accent);
+      margin-bottom: 1.25rem;
+      position: relative; z-index: 1;
+    }
+    .sol-card-top h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--white);
+      margin-bottom: .5rem; position: relative; z-index: 1;
+    }
+    .sol-card-top p {
+      font-size: .85rem; color: rgba(255,255,255,.6);
+      line-height: 1.7; position: relative; z-index: 1;
+    }
+
+    .sol-card-body { padding: 1.75rem 2rem; flex: 1; display: flex; flex-direction: column; }
+
+    .sol-features {
+      list-style: none; flex: 1; margin-bottom: 1.5rem;
+    }
+    .sol-features li {
+      display: flex; align-items: flex-start; gap: .7rem;
+      font-size: .875rem; color: #374151;
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .sol-features li:last-child { border-bottom: none; }
+    .sol-features li i { color: var(--accent); font-size: .9rem; margin-top: .18rem; flex-shrink: 0; }
+
+    .sol-card-footer {
+      padding: 1.25rem 2rem;
+      background: var(--light);
+      border-top: 1px solid var(--gray-light);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sol-card-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--accent-dark);
+      background: var(--accent-lt); padding: .25rem .75rem; border-radius: 50px;
+    }
+
+    /* Full-width highlight card */
+    .sol-card-wide {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 60%, #163567 100%);
+      border-radius: var(--radius);
+      padding: 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+    .sol-card-wide:hover { transform: translateY(-5px); box-shadow: 0 30px 70px rgba(6,15,34,.45); }
+    .sol-card-wide-left h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--white); line-height: 1.2; margin-bottom: .9rem;
+    }
+    .sol-card-wide-left h3 em { color: var(--accent); font-style: italic; }
+    .sol-card-wide-left p { font-size: .95rem; color: rgba(255,255,255,.6); line-height: 1.8; margin-bottom: 1.5rem; }
+    .sol-card-wide-right {}
+    .sol-metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .sol-metric {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px; padding: 1.25rem;
+      transition: var(--transition);
+    }
+    .sol-metric:hover { background: rgba(200,169,110,.09); border-color: rgba(200,169,110,.25); }
+    .sol-metric-num { font-size: 1.8rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .sol-metric-lbl { font-size: .75rem; color: rgba(255,255,255,.5); margin-top: .4rem; }
+
+    /* ===== POR QUÉ ===== */
+    #diferenciadores { background: var(--white); }
+
+    .dif-header { text-align: center; margin-bottom: 4rem; }
+
+    .dif-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+
+    .dif-card {
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--gray-light);
+      position: relative; overflow: hidden;
+      transition: var(--transition);
+    }
+    .dif-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), rgba(200,169,110,.1));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .45s ease;
+    }
+    .dif-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+    .dif-card:hover::before { transform: scaleX(1); }
+
+    .dif-card-num {
+      position: absolute; top: 1.5rem; right: 1.75rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 4.5rem; font-weight: 400;
+      color: rgba(10,31,68,.04); line-height: 1;
+      pointer-events: none;
+    }
+    .dif-icon {
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 15px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .dif-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .65rem; }
+    .dif-card p  { font-size: .875rem; color: var(--gray); line-height: 1.75; }
+
+    /* ===== PROCESO ===== */
+    #proceso { background: var(--navy); }
+
+    .proceso-header { text-align: center; margin-bottom: 4rem; }
+    .proceso-header .section-title-serif { color: var(--white); }
+    .proceso-header .section-sub { color: rgba(255,255,255,.55); margin: .85rem auto 0; }
+
+    .proceso-timeline {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+      position: relative;
+    }
+    .proceso-timeline::before {
+      content: '';
+      position: absolute; top: 32px; left: 10%; right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(200,169,110,.1), rgba(200,169,110,.5), rgba(200,169,110,.1));
+      z-index: 0;
+    }
+
+    .proceso-step {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 0 1rem;
+      position: relative; z-index: 1;
+    }
+    .proceso-step-num {
+      width: 64px; height: 64px;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 1.35rem; font-weight: 800;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 0 6px rgba(200,169,110,.15);
+      transition: var(--transition);
+    }
+    .proceso-step:hover .proceso-step-num {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(200,169,110,.12);
+    }
+    .proceso-step h4 { font-size: .9rem; font-weight: 700; color: var(--white); margin-bottom: .5rem; }
+    .proceso-step p  { font-size: .78rem; color: rgba(255,255,255,.48); line-height: 1.6; }
+
+    /* ===== AUDIENCIA ===== */
+    #audiencia { background: var(--light); }
+
+    .aud-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center;
+    }
+    .aud-text .section-title { margin-bottom: 1rem; }
+    .aud-text > p { color: var(--gray); font-size: 1rem; line-height: 1.85; margin-bottom: 2rem; }
+
+    .aud-cards { display: flex; flex-direction: column; gap: 1.1rem; }
+    .aud-card {
+      background: var(--white);
+      border-radius: 12px; padding: 1.4rem 1.6rem;
+      box-shadow: var(--shadow);
+      display: flex; align-items: flex-start; gap: 1.1rem;
+      border-left: 4px solid var(--accent);
+      transition: var(--transition);
+    }
+    .aud-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
+    .aud-card-icon { font-size: 1.6rem; margin-top: .1rem; }
+    .aud-card h5 { font-size: .95rem; font-weight: 700; color: var(--navy); }
+    .aud-card p  { font-size: .83rem; color: var(--gray); margin-top: .25rem; line-height: 1.6; }
+
+    .aud-visual {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: 20px; padding: 3rem;
+      display: flex; flex-direction: column; gap: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .aud-visual::before {
+      content: '';
+      position: absolute; right: -40px; bottom: -40px;
+      width: 200px; height: 200px;
+      background: rgba(200,169,110,.08); border-radius: 50%;
+    }
+    .aud-quote {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; font-style: italic;
+      color: rgba(255,255,255,.88); line-height: 1.65;
+      border-left: 3px solid var(--accent); padding-left: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .aud-quote-author {
+      font-size: .8rem; font-family: 'Inter', sans-serif; font-style: normal;
+      color: rgba(255,255,255,.45); margin-top: .75rem; letter-spacing: .04em;
+    }
+    .aud-checklist { list-style: none; display: flex; flex-direction: column; gap: .75rem; position: relative; z-index: 1; }
+    .aud-checklist li {
+      display: flex; align-items: center; gap: .8rem;
+      font-size: .88rem; color: rgba(255,255,255,.7);
+    }
+    .aud-checklist li i { color: var(--accent); font-size: .85rem; flex-shrink: 0; }
+
+    /* ===== MÉTRICAS ===== */
+    #metricas {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    }
+    .metricas-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: rgba(255,255,255,.07);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .metrica-item {
+      padding: 3.5rem 2rem; text-align: center; background: transparent;
+      transition: var(--transition);
+    }
+    .metrica-item:hover { background: rgba(200,169,110,.07); }
+    .metrica-num { font-size: clamp(2.5rem, 4.5vw, 3.8rem); font-weight: 800; color: var(--accent); line-height: 1; }
+    .metrica-lbl { font-size: .8rem; color: rgba(255,255,255,.5); margin-top: .65rem; text-transform: uppercase; letter-spacing: .07em; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonios { background: var(--white); }
+    .test-header { text-align: center; margin-bottom: 3.5rem; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .test-card {
+      border-radius: var(--radius); padding: 2rem;
+      border: 1px solid var(--gray-light);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .test-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(200,169,110,.3); }
+    .test-stars { color: var(--accent); font-size: .9rem; letter-spacing: .1rem; margin-bottom: 1.25rem; }
+    .test-text {
+      font-size: .9rem; color: var(--gray); line-height: 1.75;
+      font-style: italic; flex: 1; margin-bottom: 1.5rem;
+    }
+    .test-text::before { content: '"'; font-size: 2rem; color: var(--accent); line-height: .1; vertical-align: -0.55rem; margin-right: .2rem; }
+    .test-text::after  { content: '"'; font-size: 2rem; color: var(--accent); line-height: .1; vertical-align: -0.55rem; margin-left: .2rem; }
+    .test-author { display: flex; align-items: center; gap: .9rem; }
+    .test-author-avatar {
+      width: 44px; height: 44px; min-width: 44px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-weight: 700; font-size: 1rem;
+    }
+    .test-author-name { font-size: .9rem; font-weight: 700; color: var(--navy); }
+    .test-author-role { font-size: .77rem; color: var(--gray); }
+
+    /* ===== CONTACTO ===== */
+    #contacto { background: var(--light); }
+
+    .contacto-grid {
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 4.5rem; align-items: start;
+    }
+    .contacto-info .tag { margin-bottom: .85rem; }
+    .contacto-info .section-title { margin-bottom: 1rem; }
+    .contacto-info > p { color: var(--gray); font-size: 1rem; margin-bottom: 2.25rem; line-height: 1.85; }
+
+    .contacto-datos { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 2rem; }
+    .contacto-dato { display: flex; align-items: center; gap: 1rem; }
+    .contacto-dato-icon {
+      width: 46px; height: 46px; min-width: 46px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1rem;
+    }
+    .contacto-dato span { font-size: .88rem; color: var(--gray); }
+    .contacto-dato strong { display: block; font-size: .95rem; color: var(--navy); }
+
+    .contacto-disclaimer {
+      background: rgba(200,169,110,.08); border: 1px solid rgba(200,169,110,.2);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      font-size: .8rem; color: var(--gray); line-height: 1.65;
+      display: flex; gap: .75rem; align-items: flex-start;
+    }
+    .contacto-disclaimer i { color: var(--accent); font-size: .9rem; margin-top: .15rem; flex-shrink: 0; }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-light);
+    }
+    .contact-form-header {
+      margin-bottom: 2rem; padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--gray-light);
+    }
+    .contact-form-header h3 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+    .contact-form-header p  { font-size: .83rem; color: var(--gray); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1rem; }
+    .form-group label { font-size: .75rem; font-weight: 700; color: var(--navy); letter-spacing: .06em; text-transform: uppercase; }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      padding: .8rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem; color: var(--text);
+      background: var(--white);
+      transition: border-color .25s, box-shadow .25s;
+      outline: none; width: 100%;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,74,138,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .85rem center; background-size: 1.2rem; padding-right: 2.5rem; }
+
+    .form-checkbox {
+      display: flex; align-items: flex-start; gap: .75rem;
+      font-size: .83rem; color: var(--gray); line-height: 1.5; margin-bottom: 1.25rem;
+    }
+    .form-checkbox input[type="checkbox"] { margin-top: .18rem; accent-color: var(--navy); flex-shrink: 0; }
+
+    .form-submit { width: 100%; justify-content: center; font-size: .95rem; padding: 1rem 2rem; }
+
+    .form-message {
+      display: none; padding: .9rem 1.25rem; border-radius: 8px;
+      font-size: .88rem; font-weight: 600; margin-top: 1rem; text-align: center;
+    }
+    .form-message.success { background: #d1fae5; color: #065f46; }
+    .form-message.error   { background: #fee2e2; color: #991b1b; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--navy-deep); color: rgba(255,255,255,.5); }
+
+    .footer-main {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 3rem; padding: 5rem 0 3.5rem;
+    }
+    .footer-brand img { width: 44px; height: 44px; border-radius: 10px; margin-bottom: 1rem; }
+    .footer-brand h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: .75rem; }
+    .footer-brand h4 em { color: var(--accent); font-style: normal; }
+    .footer-brand p { font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.42); max-width: 290px; }
+
+    .footer-col h5 {
+      font-size: .75rem; font-weight: 700; color: var(--accent);
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.35rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.45); transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07); padding: 1.75rem 0;
+      display: flex; justify-content: space-between; align-items: center; font-size: .8rem;
+    }
+    .footer-bottom p { color: rgba(255,255,255,.3); }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { color: rgba(255,255,255,.3); transition: var(--transition); }
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ===== WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem;
+      width: 60px; height: 60px;
+      background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-size: 1.65rem;
+      z-index: 9999; box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      transition: var(--transition);
+    }
+    .whatsapp-float:hover { transform: scale(1.12); background: #20ba5a; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-inner      { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-card       { max-width: 480px; }
+      .sol-grid        { grid-template-columns: 1fr; }
+      .sol-card-wide   { grid-template-columns: 1fr; gap: 2rem; }
+      .dif-grid        { grid-template-columns: 1fr 1fr; }
+      .aud-inner       { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contacto-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
+      .metricas-grid   { grid-template-columns: repeat(2, 1fr); }
+      .footer-main     { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .test-grid       { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section       { padding: 75px 0; }
+      .proceso-timeline { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .proceso-timeline::before { display: none; }
+      .dif-grid      { grid-template-columns: 1fr; }
+      .form-row      { grid-template-columns: 1fr; }
+      .test-grid     { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      nav.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: var(--navy); padding: 1rem;
+        border-top: 1px solid rgba(255,255,255,.08);
+      }
+      .trust-bar-inner { justify-content: center; gap: 1.25rem; }
+      .trust-divider   { display: none; }
+      .footer-main     { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom   { flex-direction: column; gap: .75rem; text-align: center; }
+      .footer-legal    { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.25rem; }
+      .metricas-grid { grid-template-columns: 1fr 1fr; }
+      .proceso-timeline { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+
+    /* scroll counter animation */
+    .counter { display: inline-block; }
+  </style>
 </head>
 <body>
-    <header class="sticky">
-        <div class="logo-titulo">
-            <img src="../favicon.png" alt="Logo Especialistas Financieros" class="logo">
-            <h1 style="color: #003366;">Protección Patrimonial</h1>
-        </div>
-        <nav>
-            <a href="../">Inicio</a>
-            <a href="../#contacto">Contacto</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Protege tu futuro con estrategias patrimoniales inteligentes</h1>
-        <p>Renta vitalicia, ahorro en dólares, seguros acumulativos y respaldo internacional para garantizar tu tranquilidad financiera a largo plazo.</p>
-        <a href="#formulario" class="btn-hero">Solicitar asesoría confidencial</a>
-    </section>
-
-    <h2 class="section-title" data-aos="fade-up">Soluciones de clase mundial</h2>
-    <div class="features">
-        <div class="card" data-aos="fade-up">
-            <h3>💵 Renta vitalicia en dólares</h3>
-            <p>Asegura tu pensión futura con el respaldo de **compañías internacionales de excelente calificación y vasta experiencia**.</p>
-        </div>
-        <div class="card" data-aos="fade-up">
-            <h3>🌍 Ahorro internacional</h3>
-            <p>Accede a oportunidades de inversión globales con **entidades reconocidas en el exterior**, desde montos accesibles y con exposición a fondos indexados (S&P500, Nasdaq).</p>
-        </div>
-        <div class="card" data-aos="fade-up">
-            <h3>🛡️ Seguros de vida con acumulación</h3>
-            <p>Protección y ahorro programado con beneficios a largo plazo, ofrecidos por **aseguradoras líderes**.</p>
-        </div>
-        <div class="card" data-aos="fade-up">
-            <h3>🏥 Seguros médicos y temporales</h3>
-            <p>Coberturas complementarias para proteger tu bienestar y el de tu familia con **las mejores opciones del mercado**.</p>
-        </div>
-    </div>
-
-    <h2 class="section-title" data-aos="fade-up">Solicita asesoría personalizada</h2>
-    <section id="formulario" class="form-section" data-aos="fade-up">
-        <form action="https://formspree.io/f/xrblgvyv" method="POST" id="form-proteccion">
-            <input type="text" name="nombre" placeholder="Nombre completo" required>
-            <input type="tel" name="telefono" placeholder="Teléfono" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="number" name="edad" placeholder="Edad actual" required>
-            <textarea name="objetivo" rows="4" placeholder="¿Qué deseas proteger o planificar?"></textarea>
-            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                <input type="checkbox" name="acepto" required>
-                Acepto ser contactado(a) para recibir asesoría patrimonial internacional.
-            </label>
-            <button type="submit">Enviar</button>
-            <p id="mensaje-confirmacion" class="form-message success">¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.</p>
-            <p id="mensaje-error" class="form-message error">Error al enviar el formulario. Por favor, intenta de nuevo.</p>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
-    </footer>
-
-    <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- ===== HEADER ===== -->
+<header id="site-header">
+  <div class="header-inner">
+    <a class="logo-wrap" href="../">
+      <img src="../favicon.png" alt="Logo Especialistas Financieros" />
+      <span>Especialistas <em>Financieros</em></span>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true // Las animaciones solo se ejecutan una vez
-        });
+    <nav id="main-nav">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#diferenciadores">¿Por qué nosotros?</a>
+      <a href="#proceso">Metodología</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto" class="nav-cta">Solicitar asesoría</a>
+    </nav>
 
-        // Script para manejar el envío del formulario con Formspree
-        const formProteccion = document.getElementById('form-proteccion');
-        const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
-        const mensajeError = document.getElementById('mensaje-error');
+    <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-        formProteccion.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Evita el envío por defecto del formulario
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-dot hero-dot-1"></div>
+  <div class="hero-dot hero-dot-2"></div>
 
-            const response = await fetch(formProteccion.action, {
-                method: formProteccion.method,
-                body: new FormData(formProteccion),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+  <div class="hero-inner">
+    <div class="hero-left" data-aos="fade-right">
+      <div class="hero-badge">
+        <i class="fas fa-shield-halved"></i>
+        Gestión patrimonial de clase mundial
+      </div>
 
-            if (response.ok) {
-                formProteccion.reset(); // Limpia el formulario
-                mensajeConfirmacion.style.display = 'block'; // Muestra el mensaje de éxito
-                mensajeError.style.display = 'none'; // Oculta cualquier mensaje de error previo
-            } else {
-                mensajeError.style.display = 'block'; // Muestra el mensaje de error
-                mensajeConfirmacion.style.display = 'none'; // Oculta cualquier mensaje de éxito previo
-            }
-        });
-    </script>
+      <h1>
+        Tu capital merece<br />
+        <span class="accent">crecer y protegerse</span>
+        <span class="thin">en dólares, con respaldo internacional</span>
+      </h1>
+
+      <p class="hero-desc">
+        Diseñamos estrategias financieras personalizadas para ejecutivos y familias
+        de alto patrimonio: inversión en dólares, fondos globales indexados, seguros
+        de vida con acumulación y protección patrimonial internacional.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">
+          Agenda tu diagnóstico gratuito <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#soluciones" class="btn-ghost">
+          Ver soluciones <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <i class="fas fa-check-circle"></i>
+          Sin costo por asesoría inicial — 100% confidencial
+        </div>
+        <div class="hero-trust-item">
+          <i class="fas fa-check-circle"></i>
+          Acceso a entidades financieras con calificación AAA internacional
+        </div>
+        <div class="hero-trust-item">
+          <i class="fas fa-check-circle"></i>
+          Portafolios desde USD $5,000 con exposición a S&P 500 y Nasdaq
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
+      <div class="hero-card float-anim">
+        <div class="hero-card-title">
+          <i class="fas fa-chart-line" style="margin-right:.4rem;"></i>
+          Soluciones disponibles
+        </div>
+
+        <div class="hero-card-product">
+          <div class="hero-card-product-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div>
+            <div class="hero-card-product-name">Inversión en dólares</div>
+            <div class="hero-card-product-sub">Portafolios indexados globales</div>
+          </div>
+          <div class="hero-card-product-yield">S&P 500 📈</div>
+        </div>
+
+        <div class="hero-card-product">
+          <div class="hero-card-product-icon"><i class="fas fa-shield-halved"></i></div>
+          <div>
+            <div class="hero-card-product-name">Seguro de vida + acumulación</div>
+            <div class="hero-card-product-sub">Valor de rescate garantizado</div>
+          </div>
+          <div class="hero-card-product-yield">VUL / IUL</div>
+        </div>
+
+        <div class="hero-card-product">
+          <div class="hero-card-product-icon"><i class="fas fa-coins"></i></div>
+          <div>
+            <div class="hero-card-product-name">Renta vitalicia en USD</div>
+            <div class="hero-card-product-sub">Ingreso garantizado de por vida</div>
+          </div>
+          <div class="hero-card-product-yield">Vitalicio 🔒</div>
+        </div>
+
+        <div class="hero-card-product">
+          <div class="hero-card-product-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <div class="hero-card-product-name">Protección patrimonial</div>
+            <div class="hero-card-product-sub">Estructuras internacionales</div>
+          </div>
+          <div class="hero-card-product-yield">Multi-divisa</div>
+        </div>
+
+        <a href="#contacto" class="btn-primary hero-card-cta">
+          Quiero saber más <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-stat">
+      <div class="trust-stat-num counter" data-target="13">13+</div>
+      <div class="trust-stat-lbl">Años de experiencia</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <div class="trust-stat-num counter" data-target="2000">2.000+</div>
+      <div class="trust-stat-lbl">Clientes asesorados</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <div class="trust-stat-num">AAA</div>
+      <div class="trust-stat-lbl">Calificación de aliados</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <div class="trust-stat-num">USD</div>
+      <div class="trust-stat-lbl">Inversiones en dólares</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <div class="trust-stat-num">100%</div>
+      <div class="trust-stat-lbl">Asesoría confidencial</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SOLUCIONES ===== -->
+<section id="soluciones" class="section">
+  <div class="container">
+    <div class="sol-header" data-aos="fade-up">
+      <span class="tag">Portafolio premium</span>
+      <h2 class="section-title">Soluciones financieras<br />de clase mundial</h2>
+      <p class="section-sub">
+        Cada estrategia es diseñada a la medida de tu perfil, objetivos y horizonte temporal.
+        Tu patrimonio en las mejores manos.
+      </p>
+    </div>
+
+    <div class="sol-grid">
+
+      <!-- Inversión en dólares -->
+      <div class="sol-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="sol-card-top">
+          <div class="sol-card-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h3>Inversión en Dólares</h3>
+          <p>Accede a mercados internacionales con portafolios diversificados y de alto rendimiento ajustado al riesgo.</p>
+        </div>
+        <div class="sol-card-body">
+          <ul class="sol-features">
+            <li><i class="fas fa-check"></i> Fondos indexados S&P 500, Nasdaq y mercados emergentes</li>
+            <li><i class="fas fa-check"></i> Entidades financieras con respaldo internacional grado de inversión</li>
+            <li><i class="fas fa-check"></i> Portafolios desde USD $5,000 sin restricción de acceso</li>
+            <li><i class="fas fa-check"></i> Diversificación en renta fija, variable y activos alternativos</li>
+            <li><i class="fas fa-check"></i> Informes periódicos de rendimiento y rebalanceo profesional</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-card-tag">Largo plazo · USD</span>
+          <a href="#contacto" class="btn-primary">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Protección de capitales -->
+      <div class="sol-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="sol-card-top">
+          <div class="sol-card-icon"><i class="fas fa-vault"></i></div>
+          <h3>Protección de Capitales</h3>
+          <p>Estrategias diseñadas para blindar tu patrimonio ante la devaluación, inflación y riesgos del mercado local.</p>
+        </div>
+        <div class="sol-card-body">
+          <ul class="sol-features">
+            <li><i class="fas fa-check"></i> Dolarización estratégica de activos patrimoniales</li>
+            <li><i class="fas fa-check"></i> Estructuras jurídicas internacionales de protección</li>
+            <li><i class="fas fa-check"></i> Cobertura ante riesgos cambiarios y macroeconómicos</li>
+            <li><i class="fas fa-check"></i> Acceso a cuentas en jurisdicciones internacionales seguras</li>
+            <li><i class="fas fa-check"></i> Planificación sucesoria y transferencia de patrimonio</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-card-tag">Patrimonio · Internacional</span>
+          <a href="#contacto" class="btn-primary">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Fondos de Inversión -->
+      <div class="sol-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="sol-card-top">
+          <div class="sol-card-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3>Fondos de Inversión Globales</h3>
+          <p>Acceso a los mejores vehículos de inversión del mundo, gestionados por casas de fondos de primer nivel internacional.</p>
+        </div>
+        <div class="sol-card-body">
+          <ul class="sol-features">
+            <li><i class="fas fa-check"></i> Fondos mutuos y ETFs de bajo costo y alta liquidez</li>
+            <li><i class="fas fa-check"></i> Gestión activa y pasiva según perfil de riesgo</li>
+            <li><i class="fas fa-check"></i> Acceso a mercados de EE.UU., Europa y Asia</li>
+            <li><i class="fas fa-check"></i> Rendimientos históricos ajustados al riesgo desde 7% anual USD</li>
+            <li><i class="fas fa-check"></i> Asesoría fiscal y optimización de portafolio</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-card-tag">Alta rentabilidad · Diversificado</span>
+          <a href="#contacto" class="btn-primary">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Seguros de vida con valor de rescate -->
+      <div class="sol-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="sol-card-top">
+          <div class="sol-card-icon"><i class="fas fa-heart-pulse"></i></div>
+          <h3>Seguros de Vida con Valor de Rescate</h3>
+          <p>Protección de vida y ahorro acumulativo en dólares. Tu familia siempre protegida, tu capital siempre creciendo.</p>
+        </div>
+        <div class="sol-card-body">
+          <ul class="sol-features">
+            <li><i class="fas fa-check"></i> Pólizas VUL (Variable Universal Life) e IUL (Indexed Universal Life)</li>
+            <li><i class="fas fa-check"></i> Acumulación de valor en efectivo con acceso a préstamos</li>
+            <li><i class="fas fa-check"></i> Capital asegurado desde USD $50,000 hasta millones</li>
+            <li><i class="fas fa-check"></i> Beneficio fiscal sobre el crecimiento del valor en efectivo</li>
+            <li><i class="fas fa-check"></i> Valor de rescate disponible desde el primer año según póliza</li>
+          </ul>
+        </div>
+        <div class="sol-card-footer">
+          <span class="sol-card-tag">Protección · Acumulación</span>
+          <a href="#contacto" class="btn-primary">Conocer más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Wide card: Renta vitalicia -->
+      <div class="sol-card-wide" data-aos="fade-up">
+        <div class="sol-card-wide-left">
+          <h3>
+            Renta Vitalicia en Dólares:<br />
+            <em>Tu ingreso garantizado de por vida</em>
+          </h3>
+          <p>
+            Convierte tu patrimonio en un flujo de ingresos constante en dólares,
+            garantizado de por vida por aseguradoras internacionales con calificación AA+.
+            La solución definitiva para quienes quieren vivir de sus inversiones sin depender
+            del mercado laboral ni de las pensiones locales.
+          </p>
+          <a href="#contacto" class="btn-primary">
+            Simular mi renta vitalicia <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="sol-card-wide-right">
+          <div class="sol-metrics-grid">
+            <div class="sol-metric">
+              <div class="sol-metric-num">5–8%</div>
+              <div class="sol-metric-lbl">Rendimiento anual estimado en USD</div>
+            </div>
+            <div class="sol-metric">
+              <div class="sol-metric-num">AA+</div>
+              <div class="sol-metric-lbl">Calificación de aseguradoras aliadas</div>
+            </div>
+            <div class="sol-metric">
+              <div class="sol-metric-num">Vitalicio</div>
+              <div class="sol-metric-lbl">Pago garantizado de por vida</div>
+            </div>
+            <div class="sol-metric">
+              <div class="sol-metric-num">100%</div>
+              <div class="sol-metric-lbl">Respaldo internacional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIADORES ===== -->
+<section id="diferenciadores" class="section">
+  <div class="container">
+    <div class="dif-header" data-aos="fade-up">
+      <span class="tag">Por qué elegirnos</span>
+      <h2 class="section-title">La diferencia que protege<br />y hace crecer tu patrimonio</h2>
+      <p class="section-sub">
+        No somos un banco ni una aseguradora. Somos tus asesores independientes, comprometidos
+        exclusivamente con tu beneficio.
+      </p>
+    </div>
+
+    <div class="dif-grid">
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="dif-card-num">01</div>
+        <div class="dif-icon"><i class="fas fa-user-tie"></i></div>
+        <h4>Asesoría 100% independiente</h4>
+        <p>No trabajamos para ninguna entidad financiera. Evaluamos el mercado completo y recomendamos lo que realmente es mejor para tu perfil y objetivos.</p>
+      </div>
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="dif-card-num">02</div>
+        <div class="dif-icon"><i class="fas fa-globe"></i></div>
+        <h4>Acceso a mercados internacionales</h4>
+        <p>Conectamos tu capital con los mejores vehículos financieros de EE.UU., Europa y el Caribe, con respaldo regulatorio de primer nivel mundial.</p>
+      </div>
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="dif-card-num">03</div>
+        <div class="dif-icon"><i class="fas fa-lock"></i></div>
+        <h4>Confidencialidad absoluta</h4>
+        <p>Tu información patrimonial está protegida bajo estrictos protocolos de privacidad. Todo proceso se maneja con discreción profesional y total reserva.</p>
+      </div>
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="dif-card-num">04</div>
+        <div class="dif-icon"><i class="fas fa-sliders"></i></div>
+        <h4>Estrategias totalmente personalizadas</h4>
+        <p>Cada plan es diseñado desde cero para tu perfil de riesgo, horizonte temporal, objetivos de vida y estructura familiar. No existen soluciones genéricas.</p>
+      </div>
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="dif-card-num">05</div>
+        <div class="dif-icon"><i class="fas fa-handshake"></i></div>
+        <h4>Acompañamiento post-contratación</h4>
+        <p>Tu relación con nosotros no termina al firmar. Te acompañamos con seguimiento periódico, revisión de portafolio y ajustes proactivos según el mercado.</p>
+      </div>
+
+      <div class="dif-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="dif-card-num">06</div>
+        <div class="dif-icon"><i class="fas fa-award"></i></div>
+        <h4>13+ años de trayectoria sólida</h4>
+        <p>Más de una década asesorando a familias, ejecutivos y empresas en decisiones financieras de alto impacto. Experiencia que se traduce en resultados reales.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MÉTRICAS ===== -->
+<section id="metricas" class="section section-sm">
+  <div class="container">
+    <div class="metricas-grid" data-aos="fade-up">
+      <div class="metrica-item">
+        <div class="metrica-num">13+</div>
+        <div class="metrica-lbl">Años de experiencia en finanzas</div>
+      </div>
+      <div class="metrica-item">
+        <div class="metrica-num">2.000+</div>
+        <div class="metrica-lbl">Clientes asesorados con éxito</div>
+      </div>
+      <div class="metrica-item">
+        <div class="metrica-num">10+</div>
+        <div class="metrica-lbl">Entidades financieras aliadas</div>
+      </div>
+      <div class="metrica-item">
+        <div class="metrica-num">USD</div>
+        <div class="metrica-lbl">Portafolios denominados en dólares</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESO ===== -->
+<section id="proceso" class="section">
+  <div class="container">
+    <div class="proceso-header" data-aos="fade-up">
+      <span class="tag tag-light">Metodología</span>
+      <h2 class="section-title-serif">¿Cómo trabajamos?</h2>
+      <p class="section-sub">Un proceso estructurado, transparente y orientado a maximizar el rendimiento de tu patrimonio.</p>
+    </div>
+
+    <div class="proceso-timeline" data-aos="fade-up" data-aos-delay="100">
+      <div class="proceso-step">
+        <div class="proceso-step-num">1</div>
+        <h4>Diagnóstico patrimonial</h4>
+        <p>Analizamos tu situación actual, ingresos, activos, pasivos y objetivos financieros de vida.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-num">2</div>
+        <h4>Perfil de riesgo</h4>
+        <p>Determinamos tu tolerancia al riesgo y horizonte temporal para diseñar la estrategia idónea.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-num">3</div>
+        <h4>Diseño de estrategia</h4>
+        <p>Construimos un plan patrimonial a medida con los mejores instrumentos del mercado internacional.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-num">4</div>
+        <h4>Implementación</h4>
+        <p>Gestionamos toda la operativa de contratación con las entidades financieras aliadas seleccionadas.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-num">5</div>
+        <h4>Seguimiento continuo</h4>
+        <p>Monitoreo permanente del portafolio con reportes periódicos y ajustes proactivos según el mercado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUDIENCIA ===== -->
+<section id="audiencia" class="section">
+  <div class="container">
+    <div class="aud-inner">
+      <div class="aud-text" data-aos="fade-right">
+        <span class="tag">¿Para quién?</span>
+        <h2 class="section-title">Diseñado para quienes<br />piensan en grande</h2>
+        <p>
+          Nuestras soluciones están pensadas para personas que entienden que el verdadero capital
+          no solo se gana, sino que se protege y se hace crecer de forma inteligente, sostenida
+          y con visión a largo plazo.
+        </p>
+
+        <div class="aud-cards">
+          <div class="aud-card">
+            <div class="aud-card-icon">👔</div>
+            <div>
+              <h5>Ejecutivos corporativos y directivos</h5>
+              <p>Altos ingresos que requieren estrategias de inversión sofisticadas para maximizar su patrimonio y planificar su retiro en dólares.</p>
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-card-icon">🏢</div>
+            <div>
+              <h5>Empresarios y dueños de empresa</h5>
+              <p>Separación inteligente del patrimonio personal y empresarial con blindaje ante contingencias jurídicas y macroeconómicas.</p>
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-card-icon">✈️</div>
+            <div>
+              <h5>Colombianos residentes en el exterior</h5>
+              <p>Optimización de activos internacionales, inversión en propiedades en Colombia o EE.UU. y planificación del retorno patrimonial.</p>
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-card-icon">👨‍👩‍👧‍👦</div>
+            <div>
+              <h5>Familias con visión multigeneracional</h5>
+              <p>Estructuración patrimonial para garantizar la preservación y transferencia ordenada del capital a las próximas generaciones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aud-visual" data-aos="fade-left" data-aos-delay="150">
+        <div class="aud-quote">
+          "El mejor momento para proteger y hacer crecer tu patrimonio fue ayer. El segundo mejor momento es hoy."
+          <div class="aud-quote-author">— Filosofía de gestión patrimonial</div>
+        </div>
+        <ul class="aud-checklist">
+          <li><i class="fas fa-check-circle"></i> Inversión mínima accesible desde USD $5,000</li>
+          <li><i class="fas fa-check-circle"></i> Sin necesidad de conocimientos financieros previos</li>
+          <li><i class="fas fa-check-circle"></i> Proceso 100% remoto o presencial según preferencia</li>
+          <li><i class="fas fa-check-circle"></i> Asesoría inicial gratuita y sin compromiso</li>
+          <li><i class="fas fa-check-circle"></i> Retornos históricos anuales entre 6% y 12% en USD</li>
+          <li><i class="fas fa-check-circle"></i> Entidades reguladas por la SEC, FCA y organismos AAA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section id="testimonios" class="section">
+  <div class="container">
+    <div class="test-header" data-aos="fade-up">
+      <span class="tag">Testimonios</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub">Más de 2.000 familias y ejecutivos han confiado en nosotros para proteger y hacer crecer su patrimonio.</p>
+    </div>
+
+    <div class="test-grid">
+
+      <div class="test-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Gracias a su asesoría logré mover parte de mi patrimonio a dólares antes de la devaluación. Hoy tengo tranquilidad total sobre mi futuro financiero y el de mis hijos.</p>
+        <div class="test-author">
+          <div class="test-author-avatar">CR</div>
+          <div>
+            <div class="test-author-name">Carlos R.</div>
+            <div class="test-author-role">Director Comercial · Bogotá</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Nunca pensé que con USD $10,000 podía acceder a un fondo indexado al S&P 500. El equipo me explicó todo con claridad y hoy veo crecer mi inversión mes a mes.</p>
+        <div class="test-author">
+          <div class="test-author-avatar">ML</div>
+          <div>
+            <div class="test-author-name">Marcela L.</div>
+            <div class="test-author-role">Gerente de operaciones · Medellín</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">El seguro de vida con valor de rescate que contraté es exactamente lo que necesitaba: protección para mi familia y ahorro en dólares que puedo usar cuando quiera.</p>
+        <div class="test-author">
+          <div class="test-author-avatar">AP</div>
+          <div>
+            <div class="test-author-name">Andrés P.</div>
+            <div class="test-author-role">Empresario · Cali</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="contacto-grid">
+
+      <div class="contacto-info" data-aos="fade-right">
+        <span class="tag">Contacto directo</span>
+        <h2 class="section-title">Agenda tu diagnóstico<br />patrimonial gratuito</h2>
+        <p>
+          Un especialista certificado revisará tu situación actual y te presentará
+          un plan personalizado de inversión y protección patrimonial en dólares.
+          Sin costo, sin compromiso.
+        </p>
+
+        <div class="contacto-datos">
+          <div class="contacto-dato">
+            <div class="contacto-dato-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <strong>WhatsApp Directo</strong>
+              <span><a href="https://wa.me/573183269385" target="_blank" style="color:var(--gray);">+57 318 326 9385</a></span>
+            </div>
+          </div>
+          <div class="contacto-dato">
+            <div class="contacto-dato-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Horario de atención</strong>
+              <span>Lun – Vie: 8:00 am – 6:00 pm</span>
+            </div>
+          </div>
+          <div class="contacto-dato">
+            <div class="contacto-dato-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <strong>Atención</strong>
+              <span>Presencial y virtual en toda Colombia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacto-disclaimer">
+          <i class="fas fa-shield-halved"></i>
+          <span>Tu información patrimonial es completamente confidencial. No compartimos ni vendemos datos a terceros. Nos regimos por los más altos estándares de ética profesional.</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" data-aos-delay="150">
+        <div class="contact-form">
+          <div class="contact-form-header">
+            <h3>💼 Solicita tu asesoría patrimonial</h3>
+            <p>Completa el formulario y un especialista te contactará en menos de 24 horas.</p>
+          </div>
+
+          <form action="https://formspree.io/f/xrblgvyv" method="POST" id="form-inversion">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nombre completo *</label>
+                <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required />
+              </div>
+              <div class="form-group">
+                <label>Teléfono / WhatsApp *</label>
+                <input type="tel" name="telefono" placeholder="+57 300 000 0000" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Correo electrónico *</label>
+              <input type="email" name="email" placeholder="nombre@empresa.com" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Edad actual</label>
+                <input type="number" name="edad" placeholder="Ej. 42" min="18" max="80" />
+              </div>
+              <div class="form-group">
+                <label>Capital disponible estimado</label>
+                <select name="capital">
+                  <option value="" disabled selected>Selecciona un rango</option>
+                  <option value="5000-20000">USD $5.000 – $20.000</option>
+                  <option value="20000-50000">USD $20.000 – $50.000</option>
+                  <option value="50000-100000">USD $50.000 – $100.000</option>
+                  <option value="100000-500000">USD $100.000 – $500.000</option>
+                  <option value="500000+">Más de USD $500.000</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>¿Qué solución te interesa más?</label>
+              <select name="solucion">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="inversion-dolares">Inversión en dólares / Fondos globales</option>
+                <option value="seguro-vida">Seguro de vida con valor de rescate</option>
+                <option value="renta-vitalicia">Renta vitalicia en dólares</option>
+                <option value="proteccion-patrimonial">Protección patrimonial internacional</option>
+                <option value="todo">Quiero conocer todas las opciones</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Cuéntanos tu objetivo financiero</label>
+              <textarea name="objetivo" placeholder="¿Qué deseas lograr? Ej: Asegurar mi retiro, proteger el patrimonio familiar, diversificar en dólares..."></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" name="acepto" id="acepto" required />
+              <label for="acepto">
+                Acepto ser contactado(a) para recibir asesoría patrimonial internacional y confirmo que la información proporcionada es verídica.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">
+              <i class="fas fa-paper-plane"></i> Solicitar asesoría gratuita
+            </button>
+
+            <p id="mensaje-confirmacion" class="form-message success">
+              ✅ ¡Gracias! Tu solicitud fue enviada exitosamente. Un especialista te contactará pronto.
+            </p>
+            <p id="mensaje-error" class="form-message error">
+              ⚠️ Error al enviar. Por favor intenta de nuevo o contáctanos por WhatsApp.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="../favicon.png" alt="Logo Especialistas Financieros" />
+        <h4>Especialistas <em>Financieros</em></h4>
+        <p>
+          Asesoría patrimonial de clase mundial para ejecutivos y familias de alto
+          patrimonio. Inversión en dólares, protección de capitales y planificación
+          financiera con respaldo internacional.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Soluciones</h5>
+        <ul>
+          <li><a href="#soluciones">Inversión en dólares</a></li>
+          <li><a href="#soluciones">Protección de capitales</a></li>
+          <li><a href="#soluciones">Fondos de inversión</a></li>
+          <li><a href="#soluciones">Seguros con valor de rescate</a></li>
+          <li><a href="#soluciones">Renta vitalicia en USD</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="../">Inicio</a></li>
+          <li><a href="../#nosotros">Quiénes somos</a></li>
+          <li><a href="../#proceso">Metodología</a></li>
+          <li><a href="../#alianzas">Nuestros aliados</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://wa.me/573183269385" target="_blank"><i class="fab fa-whatsapp" style="margin-right:.4rem;"></i>WhatsApp Directo</a></li>
+          <li><a href="#contacto">Agendar diagnóstico</a></li>
+          <li><a href="../#contacto">Formulario general</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+      <div class="footer-legal">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de uso</a>
+        <a href="#">Aviso legal</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  /* AOS */
+  AOS.init({ duration: 950, once: true, offset: 60 });
+
+  /* Sticky header shadow */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* Hamburger */
+  const hamburger = document.getElementById('hamburger');
+  const mainNav   = document.getElementById('main-nav');
+  hamburger.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* Form submit */
+  const formInversion        = document.getElementById('form-inversion');
+  const msgConfirmacion      = document.getElementById('mensaje-confirmacion');
+  const msgError             = document.getElementById('mensaje-error');
+
+  formInversion.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = formInversion.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+    try {
+      const res = await fetch(formInversion.action, {
+        method: 'POST',
+        body: new FormData(formInversion),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        formInversion.reset();
+        msgConfirmacion.style.display = 'block';
+        msgError.style.display        = 'none';
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado con éxito!';
+      } else {
+        throw new Error('Error en respuesta');
+      }
+    } catch {
+      msgError.style.display        = 'block';
+      msgConfirmacion.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Solicitar asesoría gratuita';
+    }
+  });
+</script>
 </body>
 </html>
