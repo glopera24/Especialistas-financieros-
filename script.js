@@ -28,62 +28,95 @@ function scrollToSection(id) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==============================
-    // 🔹 SIMULADOR DE CRÉDITO
-    // ==============================
+// ==============================
+// 🔹 SIMULADOR FINTECH AVANZADO
+// ==============================
 
-    const formSimulador = document.getElementById('form-simulador');
-    const resultadoSimulador = document.getElementById('resultado-simulador');
+const formSimulador = document.getElementById('form-simulador');
+const resultadoSimulador = document.getElementById('resultado-simulador');
 
-    if (formSimulador && resultadoSimulador) {
-        formSimulador.addEventListener('submit', (e) => {
-            e.preventDefault();
+if (formSimulador && resultadoSimulador) {
 
-            const monto = parseFloat(document.getElementById('monto').value);
-            const plazo = parseInt(document.getElementById('plazo').value, 10);
-            const tasaAnual = parseFloat(document.getElementById('tasa').value);
+    formSimulador.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            if (isNaN(monto) || isNaN(plazo) || isNaN(tasaAnual) || monto <= 0 || plazo <= 0) {
-                resultadoSimulador.innerHTML = '<p class="error-message">Por favor ingresa valores válidos.</p>';
-                return;
-            }
+        const tipo = document.getElementById('tipo-credito').value;
+        const valorBien = parseFloat(document.getElementById('valor-bien').value);
+        const monto = parseFloat(document.getElementById('monto').value);
+        const plazo = parseInt(document.getElementById('plazo').value);
+        const ingreso = parseFloat(document.getElementById('ingreso').value);
 
-            if (tasaAnual < 0 || tasaAnual > 1000) {
-                resultadoSimulador.innerHTML = '<p class="error-message">La tasa anual parece irreal.</p>';
-                return;
-            }
+        let plazoMax = 72;
+        let porcentajeMax = 0.7;
+        let tasa = 0.14 / 12;
 
-            if (plazo > 360) {
-                resultadoSimulador.innerHTML = '<p class="error-message">El plazo es demasiado largo.</p>';
-                return;
-            }
+        if (tipo === "hipotecario") {
+            plazoMax = 240;
+            porcentajeMax = 0.7;
+            tasa = 0.115 / 12;
+        }
 
-            const tasaMensual = tasaAnual / 12 / 100;
-            let cuota;
-            let total;
+        if (tipo === "leasing") {
+            plazoMax = 240;
+            porcentajeMax = 0.8;
+            tasa = 0.125 / 12;
+        }
 
-            if (tasaMensual === 0) {
-                cuota = monto / plazo;
-                total = monto;
-            } else {
-                cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazo));
-                total = cuota * plazo;
-            }
+        const maxCredito = valorBien * porcentajeMax;
 
-            if (!isFinite(cuota) || !isFinite(total)) {
-                resultadoSimulador.innerHTML = '<p class="error-message">Error en el cálculo.</p>';
-                return;
-            }
+        if (monto > maxCredito && tipo === "hipotecario") {
 
             resultadoSimulador.innerHTML = `
-                <div class="resultado">
-                    <p><strong>Cuota mensual:</strong> ${cuota.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</p>
-                    <p><strong>Total a pagar:</strong> ${total.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</p>
-                </div>
+                <p class="error-message">
+                Para financiación superior al 70% se recomienda leasing habitacional.
+                </p>
             `;
-        });
-    }
+            return;
+        }
 
+        if (plazo > plazoMax) {
+
+            resultadoSimulador.innerHTML = `
+                <p class="error-message">
+                El plazo máximo permitido es ${plazoMax} meses.
+                </p>
+            `;
+            return;
+        }
+
+        const cuota =
+            (monto * tasa) /
+            (1 - Math.pow(1 + tasa, -plazo));
+
+        let seguro = 0;
+
+        if (tipo === "vehiculo") {
+            seguro = (monto / 1000000) * 900;
+        }
+
+        const cuotaTotal = cuota + seguro;
+
+        const capacidad = ingreso * 0.35;
+
+        let mensaje = "";
+
+        if (cuotaTotal > capacidad) {
+            mensaje = "⚠️ La cuota supera la capacidad recomendada.";
+        } else {
+            mensaje = "✅ Cliente dentro de capacidad de pago.";
+        }
+
+        resultadoSimulador.innerHTML = `
+            <div class="resultado">
+                <p><strong>Monto máximo financiable:</strong> ${maxCredito.toLocaleString('es-CO', {style:'currency',currency:'COP'})}</p>
+                <p><strong>Seguro estimado:</strong> ${seguro.toLocaleString('es-CO', {style:'currency',currency:'COP'})}</p>
+                <p><strong>Cuota mensual estimada:</strong> ${cuotaTotal.toLocaleString('es-CO', {style:'currency',currency:'COP'})}</p>
+                <p><strong>Capacidad recomendada:</strong> ${capacidad.toLocaleString('es-CO', {style:'currency',currency:'COP'})}</p>
+                <p><strong>${mensaje}</strong></p>
+            </div>
+        `;
+    });
+}
 
     // ==============================
     // 🔹 FORMULARIO CONTACTO
