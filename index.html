@@ -1335,7 +1335,72 @@
             <div class="audiencia-card-icon">🌱</div>
             <div>
   </section>
+<section id="simulador" class="section">
+  <div class="container">
 
+    <div class="section-title">
+      <span class="tag">Herramienta</span>
+      <h2>Simula tu crédito en segundos</h2>
+      <p>Calcula cuota, capacidad de pago y opciones de financiación para vehículo o vivienda.</p>
+    </div>
+
+    <div class="simulador-card">
+
+      <div class="sim-grid">
+
+        <div>
+          <label>Tipo de crédito</label>
+          <select id="tipoCredito" onchange="configurarCredito()">
+            <option value="vehiculo">Vehículo</option>
+            <option value="hipotecario">Crédito Hipotecario</option>
+            <option value="leasing">Leasing Habitacional</option>
+          </select>
+
+          <label>Valor del bien</label>
+          <input type="number" id="valorBien" placeholder="Ej: 500000000">
+
+          <label>Monto solicitado</label>
+          <input type="number" id="montoCredito">
+
+        </div>
+
+        <div>
+
+          <label>Plazo (meses)</label>
+          <input type="number" id="plazo">
+
+          <label>Ingreso mensual</label>
+          <input type="number" id="ingreso">
+
+          <button class="btn-primary" onclick="simularCredito()">
+            Simular crédito
+          </button>
+
+        </div>
+
+      </div>
+
+      <div id="resultadoSimulador" class="resultado"></div>
+
+      <canvas id="graficaCredito"></canvas>
+
+      <table class="tabla-amortizacion">
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th>Cuota</th>
+            <th>Capital</th>
+            <th>Interés</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody id="tablaAmortizacion"></tbody>
+      </table>
+
+    </div>
+
+  </div>
+</section>
   <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="section">
     <div class="container">
