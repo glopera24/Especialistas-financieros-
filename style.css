@@ -635,4 +635,64 @@ footer {
     footer {
         padding: 1.5rem;
     }
+    /* ===== SIMULADOR ===== */
+
+.simulador-card{
+background:var(--white);
+padding:40px;
+border-radius:var(--radius);
+box-shadow:var(--shadow-md);
+margin-top:40px;
+}
+
+.sim-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-bottom:30px;
+}
+
+.simulador-card input,
+.simulador-card select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid var(--gray-light);
+border-radius:8px;
+font-size:14px;
+}
+
+.resultado{
+background:var(--light);
+padding:20px;
+border-radius:8px;
+margin-bottom:20px;
+font-weight:500;
+}
+
+.tabla-amortizacion{
+width:100%;
+border-collapse:collapse;
+font-size:13px;
+}
+
+.tabla-amortizacion th{
+background:var(--navy);
+color:white;
+padding:8px;
+}
+
+.tabla-amortizacion td{
+padding:6px;
+border-bottom:1px solid var(--gray-light);
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.sim-grid{
+grid-template-columns:1fr;
+}
+
+}
 }
