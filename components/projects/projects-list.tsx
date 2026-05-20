@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import ProjectScore from "./project-score";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -92,6 +93,26 @@ export default function ProjectsList() {
               <p className="text-2xl font-bold mt-1">
                 ${Number(project.investment_amount).toLocaleString("es-CO")}
               </p>
+
+              <ProjectScore
+                score={
+                (
+                    (
+                        (project.experience_years || 0) * 5 +
+                        (project.projected_jobs || 0) * 1 +
+                        (project.beneficiaries || 0) * 0.3
+                ) / 2
+                ) > 100
+                ? 100
+                : Math.floor(
+                    (
+                        (project.experience_years || 0) * 5 +
+                        (project.projected_jobs || 0) * 1 +
+                        (project.beneficiaries || 0) * 0.3
+                     ) / 2
+            )
+         }
+        />
 
             </div>
 
