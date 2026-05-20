@@ -19,6 +19,9 @@ const NAV_LINKS = [
   { label: "Sectores", href: "#sectores" },
   { label: "IA Asistente", href: "#ia-asistente" },
   { label: "Plataforma", href: "#dashboard" },
+
+  { label: "Proyectos Productivos", href: "https://especialistas-financieros.vercel.app" },
+
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -92,7 +95,7 @@ export default function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                href="#contacto"
+                href="https://especialistas-financieros.vercel.app/login"
                 className={cn(
                   "text-sm font-medium transition-colors",
                   scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/70 hover:text-white"
@@ -162,7 +165,7 @@ export default function Navbar() {
                   </Link>
                 </Button>
                 <Button asChild variant="secondary" size="lg" className="w-full">
-                  <Link href="#contacto" onClick={() => setMobileOpen(false)}>
+                  <Link href="https://especialistas-financieros.vercel.app/login" onClick={() => setMobileOpen(false)}>
                     Iniciar sesión
                   </Link>
                 </Button>
