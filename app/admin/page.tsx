@@ -35,19 +35,15 @@ export default function AdminPage() {
 
     <div className="min-h-screen bg-black text-white p-10">
 
-      <div className="flex items-center justify-between mb-10">
+      <div className="mb-10">
 
-        <div>
+        <h1 className="text-5xl font-bold">
+          Admin CRM
+        </h1>
 
-          <h1 className="text-5xl font-bold">
-            Admin CRM
-          </h1>
-
-          <p className="text-zinc-400 mt-2">
-            Especialistas Financieros
-          </p>
-
-        </div>
+        <p className="text-zinc-400 mt-2">
+          Especialistas Financieros
+        </p>
 
       </div>
 
@@ -68,11 +64,12 @@ export default function AdminPage() {
             Capital solicitado
           </p>
 
-          <h2 className="text-4xl font-bold mt-2">
+          <h2 className="text-2xl font-bold mt-2">
             $
             {projects
               .reduce(
-                (acc, p) => acc + Number(p.investment_amount || 0),
+                (acc, p) =>
+                  acc + Number(p.investment_amount || 0),
                 0
               )
               .toLocaleString("es-CO")}
@@ -85,9 +82,7 @@ export default function AdminPage() {
           </p>
 
           <h2 className="text-4xl font-bold mt-2">
-            {
-              new Set(projects.map((p) => p.sector)).size
-            }
+            {new Set(projects.map((p) => p.sector)).size}
           </h2>
         </div>
 
@@ -146,7 +141,7 @@ export default function AdminPage() {
 
               </div>
 
-              <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
 
                 <div>
                   <p className="text-zinc-500 text-sm">
@@ -200,3 +195,8 @@ export default function AdminPage() {
         </div>
 
       </div>
+
+    </div>
+
+  );
+}
