@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crédito Vehicular | Especialistas Financieros</title>
+    
+    <meta name="description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta name="keywords" content="crédito vehicular, carro nuevo, carro usado, compra de cartera vehicular, leasing financiero, flotas empresariales, financiamiento automotriz, especialistas financieros">
+    <meta name="author" content="Especialistas Financieros">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo/">
+    <meta property="og:title" content="Crédito Vehicular | Especialistas Financieros">
+    <meta property="og:description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta property="og:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo.webp"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo/">
+    <meta property="twitter:title" content="Crédito Vehicular | Especialistas Financieros">
+    <meta property="twitter:description" content="Encuentra el crédito vehicular ideal para tu carro nuevo o usado, compra de cartera, leasing financiero y flotas empresariales. Asesoría personalizada y aprobación ágil.">
+    <meta property="twitter:image" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/vehiculo.webp">
+
+    <link rel="stylesheet" href="../style.css" /> <link rel="stylesheet" href="vehiculo-lp.css" /> <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="sticky">
+        <div class="logo-titulo">
+            <img src="../favicon.png" alt="Logo Especialistas Financieros" class="logo">
+            <h1 style="color: #003366;">Crédito Vehicular</h1>
+        </div>
+        <nav>
+            <a href="../">Inicio</a>
+            <a href="../#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Tu vehículo soñado está más cerca</h1>
+        <p>Compara opciones de crédito, recibe asesoría personalizada y obtén aprobación ágil desde cualquier lugar.</p>
+        <a href="#formulario" class="btn-primary">Solicita asesoría gratuita</a>
+    </section>
+
+    <h2 class="section-title" data-aos="fade-up">Opciones para cada necesidad</h2>
+    <div class="features">
+        <div class="card" data-aos="fade-up">
+            <h3>🚗 Compra de vehículo nuevo o usado</h3>
+            <p>Accede a tasas competitivas para adquirir el carro que siempre has querido.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🔄 Compra de cartera vehicular</h3>
+            <p>Reduce tu cuota o plazo trasladando tu crédito a una entidad con mejores condiciones.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>📄 Leasing financiero</h3>
+            <p>Alternativa ideal para empresas o profesionales que desean deducibilidad tributaria.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>🚛 Flotas empresariales</h3>
+            <p>Soluciones de financiamiento para parque automotor corporativo o vehículos de trabajo.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title" data-aos="fade-up">Solicita asesoría ahora</h2>
+    <section id="formulario" class="form-section" data-aos="fade-up">
+        <form action="https://formspree.io/f/xnnzqyge" method="POST" id="form-vehicular">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" name="tipo-vehiculo" placeholder="¿Qué tipo de vehículo deseas? (ej. carro, moto, camión)" >
+            <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu necesidad: ¿Nuevo o usado? ¿Cuál es tu presupuesto?"></textarea>
+            <label>
+                <input type="checkbox" name="acepto" required>
+                Acepto ser contactado(a) para recibir asesoría financiera.
+            </label>
+            <button type="submit" class="btn-primary">Enviar</button>
+            <p id="mensaje-confirmacion" class="form-message success">¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.</p>
+            <p id="mensaje-error" class="form-message error">Error al enviar el formulario. Por favor, intenta de nuevo.</p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Especialistas Financieros — Todos los derechos reservados</p>
+    </footer>
+
+    <a href="https://wa.me/573183269385" class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true // Las animaciones solo se ejecutan una vez
+        });
+
+        // Script para manejar el envío del formulario con Formspree
+        const formVehicular = document.getElementById('form-vehicular');
+        const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        formVehicular.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita el envío por defecto del formulario
+
+            const response = await fetch(formVehicular.action, {
+                method: formVehicular.method,
+                body: new FormData(formVehicular),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formVehicular.reset(); // Limpia el formulario
+                mensajeConfirmacion.style.display = 'block'; // Muestra el mensaje de éxito
+                mensajeError.style.display = 'none'; // Oculta cualquier mensaje de error previo
+            } else {
+                mensajeError.style.display = 'block'; // Muestra el mensaje de error
+                mensajeConfirmacion.style.display = 'none'; // Oculta cualquier mensaje de éxito previo
+            }
+        });
+    </script>
+</body>
+</html>
