@@ -316,9 +316,83 @@ export default function ProjectForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const nextStep = () => {
-    if (validateStep()) setStep((s) => Math.min(s + 1, 5) as FormStep);
-  };
+const nextStep = async () => {
+
+  if (!validateStep()) return;
+
+  // ── Auto IA Step 2 → 3 ─────────────────────
+
+  if (step === 2) {
+
+    try {
+
+      const response = await fetch(
+        "/api/ai/generate",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+
+            field: "full_project_analysis",
+
+            context: `
+Proyecto: ${data.project_name}
+Sector: ${data.sector}
+Ubicación: ${data.location}
+
+Descripción:
+${data.description}
+            `,
+
+          }),
+
+        }
+      );
+
+      const aiData = await response.json();
+
+      setData((prev) => ({
+        ...prev,
+
+        productive_capacity:
+          aiData.productive_capacity ||
+          prev.productive_capacity,
+
+        social_impact:
+          aiData.social_impact ||
+          prev.social_impact,
+
+        environmental_impact:
+          aiData.environmental_impact ||
+          prev.environmental_impact,
+
+        projected_jobs:
+          aiData.projected_jobs ||
+          prev.projected_jobs,
+
+        beneficiaries:
+          aiData.beneficiaries ||
+          prev.beneficiaries,
+
+      }));
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
+
+  setStep((s) =>
+    Math.min(s + 1, 5) as FormStep
+  );
+
+};
 
   const prevStep = () => setStep((s) => Math.max(s - 1, 1) as FormStep);
 

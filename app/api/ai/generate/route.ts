@@ -18,6 +18,8 @@ export async function POST(req: Request) {
 
     let prompt = "";
 
+    // ── Single field generation ─────────────────────
+
     if (field === "description") {
 
       prompt = `
@@ -25,48 +27,38 @@ export async function POST(req: Request) {
       profesional para este proyecto:
 
       ${context}
-
-      La respuesta debe ser clara,
-      estructurada y profesional.
       `;
 
     }
 
-    if (field === "social_impact") {
+    // ── Full auto generation ───────────────────────
+
+    if (field === "full_project_analysis") {
 
       prompt = `
-      Describe el impacto social,
-      generación de empleo y
-      fortalecimiento económico local
-      para este proyecto:
-
-      ${context}
-      `;
-
-    }
-
-    if (field === "environmental") {
-
-      prompt = `
-      Describe prácticas ambientales,
-      sostenibilidad, manejo de residuos,
-      eficiencia hídrica y sostenibilidad
-      para este proyecto:
-
-      ${context}
-      `;
-
-    }
-
-    if (field === "productive_capacity") {
-
-      prompt = `
-      Calcula y redacta una capacidad
-      productiva estimada para:
+      Analiza este proyecto productivo:
 
       ${context}
 
-      Redacta profesionalmente.
+      Y genera:
+
+      - capacidad productiva estimada
+      - impacto social
+      - impacto ambiental
+      - empleos proyectados
+      - beneficiarios estimados
+
+      Responde SOLO en formato JSON válido.
+
+      Ejemplo:
+
+      {
+        "productive_capacity": "",
+        "social_impact": "",
+        "environmental_impact": "",
+        "projected_jobs": 0,
+        "beneficiaries": 0
+      }
       `;
 
     }
@@ -87,9 +79,21 @@ export async function POST(req: Request) {
 
       });
 
+    const result =
+      completion.choices[0].message.content;
+
+    // ── Return JSON if full analysis ───────────────
+
+    if (field === "full_project_analysis") {
+
+      return NextResponse.json(
+        JSON.parse(result || "{}")
+      );
+
+    }
+
     return NextResponse.json({
-      result:
-        completion.choices[0].message.content,
+      result,
     });
 
   } catch (error) {
