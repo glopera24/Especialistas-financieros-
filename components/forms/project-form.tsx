@@ -524,15 +524,66 @@ export default function ProjectForm() {
                     />
                   </FormField>
                 </div>
-                <FormField label="Descripción del proyecto" required>
-                  <Textarea
-                    value={data.description || ""}
-                    onChange={(e) => updateField("description", e.target.value)}
-                    placeholder="Describe tu proyecto en tus propias palabras. ¿Qué vas a producir? ¿Cuál es tu capacidad? ¿Tienes experiencia previa?"
-                    rows={4}
-                    error={errors.description}
-                  />
-                </FormField>
+<FormField label="Descripción del proyecto" required>
+
+  <Textarea
+    value={data.description || ""}
+    onChange={(e) => updateField("description", e.target.value)}
+    placeholder="Describe tu proyecto en tus propias palabras. ¿Qué vas a producir? ¿Cuál es tu capacidad? ¿Tienes experiencia previa?"
+    rows={4}
+    error={errors.description}
+  />
+
+  <button
+    type="button"
+    onClick={async () => {
+
+      try {
+
+        const response = await fetch(
+          "/api/ai/generate",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+
+              field: "description",
+
+              context: `
+Proyecto: ${data.project_name}
+Sector: ${data.sector}
+Ubicación: ${data.location}
+              `,
+
+            }),
+
+          }
+        );
+
+        const result = await response.json();
+
+        updateField(
+          "description",
+          result.result
+        );
+
+      } catch (error) {
+
+        console.error(error);
+
+      }
+
+    }}
+    className="mt-2 text-sm text-green-500 hover:text-green-400"
+  >
+    ✨ Generar con IA
+  </button>
+
+</FormField>
                 <FormField label="Años de experiencia en el sector">
                   <Input
                     type="number"
