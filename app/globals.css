@@ -71,9 +71,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-sans);
-    line-height: 1.6;
+  @apply bg-background text-foreground;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: white;
+}
   }
 
   h1, h2, h3, h4, h5, h6 {
