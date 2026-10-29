@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -36,37 +37,65 @@ const CAPABILITIES = [
   },
 ];
 
+const TRUST_INDICATORS = [
+  "Gratis para evaluar",
+  "Sin registro previo",
+  "Disponible 24/7",
+  "Diagnóstico orientativo",
+];
+
 export default function ChatSection() {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section id="ia-asistente" className="py-24 lg:py-32 bg-navy-DEFAULT relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-brand-DEFAULT/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-[100px]" />
+    <section
+      id="ia-asistente"
+      className="relative overflow-hidden py-24 lg:py-32"
+      style={{
+        backgroundColor: "#0B1220",
+        color: "#FFFFFF",
+      }}
+    >
+      {/* Decoración de fondo */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute top-0 left-1/3 h-96 w-96 rounded-full blur-[120px]"
+          style={{ backgroundColor: "rgba(59, 130, 246, 0.12)" }}
+        />
+
+        <div
+          className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full blur-[100px]"
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.04)" }}
+        />
+
+        <div
+          className="absolute inset-0 opacity-[0.035]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-          {/* ── Left: description ─────────────────────────── */}
-          <div
-            ref={ref as React.RefObject<HTMLDivElement>}
-          >
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
+          {/* Columna izquierda: presentación del asistente */}
+          <div ref={ref as React.RefObject<HTMLDivElement>}>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
               className="mb-5"
             >
-              <Badge variant="glass" className="gap-1.5">
-                <Sparkles className="h-3 w-3 text-brand-DEFAULT" />
+              <Badge
+                variant="glass"
+                className="gap-1.5"
+              >
+                <Sparkles
+                  className="h-3.5 w-3.5"
+                  style={{ color: "#93C5FD" }}
+                />
                 IA Conversacional
               </Badge>
             </motion.div>
@@ -74,11 +103,19 @@ export default function ChatSection() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+              transition={{
+                delay: 0.1,
+                duration: 0.7,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="mb-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+              style={{ color: "#FFFFFF" }}
             >
               Cuéntanos qué necesitas.{" "}
-              <span className="font-display italic text-blue-300">
+              <span
+                className="font-display italic"
+                style={{ color: "#93C5FD" }}
+              >
                 Te orientamos al instante.
               </span>
             </motion.h2>
@@ -86,59 +123,102 @@ export default function ChatSection() {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
-              className="text-base text-white leading-relaxed mb-10"
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-10 text-base leading-relaxed sm:text-lg"
+              style={{ color: "#E2E8F0" }}
             >
-              Nuestro asistente financiero te hace un primer diagnóstico en tiempo real y te dirige a la línea de crédito o protección patrimonial que corresponde a tu caso. Sin formularios largos ni lenguaje bancario inaccesible.
+              Nuestro asistente financiero te hace un primer diagnóstico en
+              tiempo real y te dirige a la línea de crédito o protección
+              patrimonial que corresponde a tu caso. Sin formularios largos ni
+              lenguaje bancario inaccesible.
             </motion.p>
 
-            {/* Capabilities */}
-            <div className="space-y-4">
-              {CAPABILITIES.map((cap, i) => (
-                <motion.div
-                  key={cap.title}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
-                  className="flex items-start gap-4 group"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-DEFAULT/20 group-hover:border-brand-DEFAULT/30 transition-colors duration-200">
-                    <cap.icon className="h-4 w-4 text-brand-DEFAULT" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white/90 mb-0.5">{cap.title}</p>
-                    <p className="text-xs text-slate-200 leading-relaxed">{cap.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+            {/* Capacidades del asistente */}
+            <div className="space-y-5">
+              {CAPABILITIES.map((cap, i) => {
+                const Icon = cap.icon;
+
+                return (
+                  <motion.div
+                    key={cap.title}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{
+                      delay: 0.3 + i * 0.08,
+                      duration: 0.5,
+                    }}
+                    className="group flex items-start gap-4"
+                  >
+                    <div
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-200"
+                      style={{
+                        backgroundColor: "rgba(255,255,255,0.06)",
+                        borderColor: "rgba(147,197,253,0.25)",
+                      }}
+                    >
+                      <Icon
+                        className="h-5 w-5"
+                        style={{ color: "#93C5FD" }}
+                      />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <h3
+                        className="mb-1 text-sm font-bold leading-snug sm:text-base"
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {cap.title}
+                      </h3>
+
+                      <p
+                        className="text-sm leading-relaxed"
+                        style={{ color: "#CBD5E1" }}
+                      >
+                        {cap.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
 
-            {/* Trust indicators */}
+            {/* Indicadores de confianza */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.7 }}
-              className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-4"
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="mt-10 flex flex-wrap gap-x-5 gap-y-4 border-t pt-8"
+              style={{ borderColor: "rgba(255,255,255,0.15)" }}
             >
-              {[
-                "Gratis para evaluar",
-                "Sin registro previo",
-                "Disponible 24/7",
-                "Diagnóstico orientativo",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-1.5 text-xs text-slate-200">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-brand-DEFAULT/70" />
-                  {item}
+              {TRUST_INDICATORS.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2 text-sm font-medium"
+                  style={{ color: "#E2E8F0" }}
+                >
+                  <CheckCircle2
+                    className="h-4 w-4 shrink-0"
+                    style={{ color: "#93C5FD" }}
+                  />
+                  <span>{item}</span>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* ── Right: Chat interface ─────────────────────── */}
+          {/* Columna derecha: interfaz del chat */}
           <motion.div
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            animate={
+              isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : {}
+            }
+            transition={{
+              delay: 0.2,
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="h-[620px] lg:h-[680px]"
           >
             <ChatInterface />
