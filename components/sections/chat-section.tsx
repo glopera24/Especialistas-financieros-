@@ -78,7 +78,7 @@ export default function ChatSection() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
             >
               Cuéntanos qué necesitas.{" "}
-              <span className="font-display italic text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-300">
+              <span className="font-display italic text-blue-300">
                 Te orientamos al instante.
               </span>
             </motion.h2>
@@ -87,7 +87,7 @@ export default function ChatSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="text-base text-white/55 leading-relaxed mb-10"
+              className="text-base text-white leading-relaxed mb-10"
             >
               Nuestro asistente financiero te hace un primer diagnóstico en tiempo real y te dirige a la línea de crédito o protección patrimonial que corresponde a tu caso. Sin formularios largos ni lenguaje bancario inaccesible.
             </motion.p>
@@ -107,7 +107,7 @@ export default function ChatSection() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-white/90 mb-0.5">{cap.title}</p>
-                    <p className="text-xs text-white/40 leading-relaxed">{cap.desc}</p>
+                    <p className="text-xs text-slate-200 leading-relaxed">{cap.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -126,7 +126,7 @@ export default function ChatSection() {
                 "Disponible 24/7",
                 "Diagnóstico orientativo",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-1.5 text-xs text-white/40">
+                <div key={item} className="flex items-center gap-1.5 text-xs text-slate-200">
                   <CheckCircle2 className="h-3.5 w-3.5 text-brand-DEFAULT/70" />
                   {item}
                 </div>
